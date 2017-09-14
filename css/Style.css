@@ -1,0 +1,391 @@
+﻿
+body {
+    margin: 0px;
+    font-family: Tahoma;
+}
+
+img {
+    width: 100%;
+}
+
+.container1 {
+    display: table;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divcenter {
+    width: 100%;
+    text-align: center;
+    float: unset;
+}
+
+/* Begin: Button */
+.btn-user {
+    border: 1px solid white;
+    border-radius: 15px;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    color: white;
+}
+
+    .btn-user:hover, .btn-user:focus {
+        color: white !important;
+        background-color: #53d0e7;
+    }
+
+.btn-user1 {
+    border-radius: 15px;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    color: white;
+    background-color: #1b1841;
+}
+
+    .btn-user1:hover, .btn-user1:focus {
+        color: white !important;
+        background-color: #53d0e7;
+    }
+
+.btn-user3 {
+    border-radius: 15px;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    color: white;
+    background-color: #53d0e7;
+}
+
+    .btn-user3:hover, .btn-user3:focus {
+        color: white !important;
+        background-color: #1b1841;
+    }
+/* End: Button */
+
+/* Begin: Header tag */
+header {
+    background-color: #fefbdb;
+    margin: 0px;
+    padding: 10px;
+}
+
+    header h1 {
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        color: #e60404;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+/* End: Header tag */
+
+/* Begin: Menu tag */
+nav {
+    background-color: #fef9c7;
+    margin: 0px !important;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
+    nav img {
+        width: auto;
+    }
+
+    nav .nav {
+        padding-top: 10px;
+    }
+
+        nav .nav li {
+            font-size: 18px;
+            color: #e60404;
+            font-weight: 600;
+        }
+
+            nav .nav li a {
+                color: #e60404;
+            }
+/* End: Nav tag */
+
+/* Begin: Cateloge tag */
+.cateloge {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+    .cateloge img {
+        margin-bottom: 25px;
+    }
+
+
+    .cateloge h5 {
+        width: 100%;
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 30px;
+        overflow: hidden;
+        font-size: 18px;
+    }
+
+    .cateloge p {
+        height: 99px;
+        overflow: hidden;
+    }
+/* End: Caterogi tag */
+
+/* Begin: Protect active tag */
+.protectactive {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+    .protectactive h2 {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 60px;
+    }
+
+    .protectactive img {
+        /*margin-bottom: 25px;*/
+    }
+
+    .protectactive .padata {
+        display: table;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .protectactive .paitem {
+        margin-bottom: 20px;
+    }
+
+    .protectactive .pacontai {
+        width: 100%;
+        text-align: center;
+        padding: 30px 20px;
+        background-color: #f6f6f6;
+    }
+
+    .protectactive .span {
+        background-color: #53d0e7;
+        color: white;
+        padding: 2px 10px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .protectactive h5 {
+        margin-top: 25px;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 30px;
+        overflow: hidden;
+    }
+
+    .protectactive small {
+    }
+/* End: Protect active tag */
+
+
+/* Begin: View query tag */
+.viewquery {
+    background-color: #1b1841;
+    margin: 0px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+/* End: View query tag */
+
+/* Begin: Product tag */
+.product {
+    margin-bottom: 60px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+    .product img {
+        margin-bottom: 15px;
+    }
+
+    .product .pditem {
+        margin-bottom: 60px;
+    }
+
+    .product h5 {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 18px;
+        overflow: hidden;
+        font-size: 14px;
+    }
+
+    .product p {
+        height: 40px;
+        overflow: hidden;
+        font-size: 14px;
+    }
+
+    .product .price {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+/* End: Product tag */
+
+/* Begin: News tag */
+.homenews {
+    margin-bottom: 60px;
+}
+
+    .homenews h2 {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 60px;
+    }
+
+    .homenews img {
+        margin-bottom: 25px;
+    }
+
+    .homenews span {
+        background-color: #53d0e7;
+        color: white;
+        padding: 2px 10px;
+        font-size: 14px;
+    }
+
+    .homenews h5 {
+        margin-top: 25px;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 30px;
+        overflow: hidden;
+    }
+
+    .homenews p {
+        height: 99px;
+        overflow: hidden;
+    }
+/* End: News tag */
+
+/* Begin: Contact tag */
+.contact {
+    margin-bottom:80px;
+}
+
+    .contact h2 {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+.box {
+    width: 400px;
+    overflow: auto;
+}
+
+.box-left {
+    float: left;
+    padding: 5px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.box-right {
+    padding-top: 10px;
+    float: left;
+    width: 310px;
+}
+
+.row h2 {
+    font-weight: bold;
+}
+
+.box-contact {
+    margin-top: 73px;
+}
+
+    .box-contact ul {
+        width: 100%;
+        list-style: none;
+        padding: 0px;
+    }
+
+        .box-contact ul li {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+            .box-contact ul li textarea {
+                width: 100%;
+                padding: 10px;
+                height: 108px;
+            }
+
+            .box-contact ul li input[type="text" i] {
+                width: 100%;
+                padding: 10px;
+            }
+
+/* End: Contact tag */
+
+/* Begin: Footer tag */
+footer {
+    background-color: #1b1841;
+    margin: 0px;
+    padding: 10px;
+    color: white;
+}
+
+    footer p {
+        margin: 3px 0px;
+    }
+
+.ftcontainer {
+    border-bottom: 1px solid #373458;
+}
+
+.ftlogo, .ftinfo {
+    float: left;
+}
+
+.ftlogo {
+    margin-right: 80px;
+}
+
+    .ftlogo img {
+        width: auto;
+    }
+
+.ftinfo {
+    margin-bottom: 30px;
+}
+
+.ftstatus {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    width: 100%;
+    float: unset;
+    text-align: center;
+}
+
+/* End: Footer tag */
+

@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="App_Master_Site" %>
+<%@ Register Src="~/Controller/Header.ascx" TagPrefix="ctl" TagName="Header" %>
+<%@ Register Src="~/Controller/Menu.ascx" TagPrefix="ctl" TagName="Menu" %>
+<%@ Register Src="~/Controller/Footer.ascx" TagPrefix="ctl" TagName="Footer" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><%= ((Page.Title != null && Page.Title != "")?Page.Title + " - ":"") + GetSetting("Name") %></title>
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/Style.css" rel="stylesheet" />
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder id="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <ctl:Header runat="server" />
+    <ctl:Menu runat="server" />
+    <asp:ContentPlaceHolder id="MainContent" runat="server">
+        
+    </asp:ContentPlaceHolder>
+    <ctl:Footer runat="server" />
+</body>
+</html>
