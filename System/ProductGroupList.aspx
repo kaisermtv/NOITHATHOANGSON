@@ -31,7 +31,7 @@
                 <td class="DataListTableTdItemJustify"><%# Eval("DESCRIBE") %></td>
                 <td class="DataListTableTdItemJustify"><%# Eval("STATUS") %></td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="NewsGroupEdit.aspx?id=<%# Eval("ID") %>">
+                    <a href="ProductGroupEdit.aspx?id=<%# Eval("ID") %>">
                         <img src="/Images/Edit.png" alt="Chỉnh sửa thông tin">
                     </a>
                 </td>
@@ -53,7 +53,7 @@
     </cc1:CollectionPager>
 
     <br />
-    <a href="NewsGroupEdit.aspx" class="btn btn-primary">Tạo nhóm mới</a>
+    <a href="ProductGroupEdit.aspx" class="btn btn-primary">Tạo nhóm mới</a>
 
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
@@ -63,10 +63,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Xóa nhóm tin tức</h4>
+            <h4 class="modal-title">Xóa nhóm sản phẩm</h4>
           </div>
           <div class="modal-body">
-            <p>Bạn xác nhận xóa nhóm tin tức <b id="ttk"></b></p>
+            <p>Bạn xác nhận xóa nhóm sản phẩm <b id="ttk"></b></p>
           </div>
           <div class="modal-footer">
             <asp:Button ID="btnDel" runat ="server" CssClass="btn btn-primary" Text="Xác nhận xóa" OnClick="btnDel_Click" />

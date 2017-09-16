@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 public partial class System_ProductGroupList : System.Web.UI.Page
 {
     #region declare
-    private DataNewsGroup objNewsGroup = new DataNewsGroup();
+    private DataCategory objNewsGroup = new DataCategory();
 
     public int index = 0;
     #endregion
@@ -17,7 +17,7 @@ public partial class System_ProductGroupList : System.Web.UI.Page
     #region method Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
-        Context.Items["strTitle"] = "DANH SÁCH NHÓM TIN TỨC";
+        Context.Items["strTitle"] = "DANH SÁCH NHÓM SẢN PHẨM";
 
         if (!Page.IsPostBack)
         {
