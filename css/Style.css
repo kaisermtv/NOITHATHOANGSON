@@ -129,6 +129,7 @@ nav {
         height: 30px;
         overflow: hidden;
         font-size: 18px;
+        padding-top:5px;
     }
 
     .cateloge p {
@@ -187,6 +188,7 @@ nav {
         font-weight: bold;
         height: 30px;
         overflow: hidden;
+        padding-top: 5px;
     }
 
     .protectactive small {
@@ -230,6 +232,7 @@ nav {
         height: 18px;
         overflow: hidden;
         font-size: 14px;
+        padding-top: 5px;
     }
 
     .product p {
@@ -276,6 +279,7 @@ nav {
         font-weight: bold;
         height: 30px;
         overflow: hidden;
+        color:black;
     }
 
     .homenews p {

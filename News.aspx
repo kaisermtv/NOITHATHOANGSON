@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container1">
         <div class="container-fluid">
             <div class="main">
                 <div class="row show-grid">

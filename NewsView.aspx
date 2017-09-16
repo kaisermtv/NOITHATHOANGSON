@@ -62,7 +62,7 @@
                                     <a href="https://twitter.com/intent/tweet?&url=http://113.164.227.242:4083<%=Request.RawUrl %>"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
                                     <a href="https://plus.google.com?&url=http://113.164.227.242:4083<%=Request.RawUrl %>"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                                     <a href="javascript:;" id="btn-save" style="position: static !important" title="Download">
-                                        <img src="/images/word-download.png" style="height: 35px" /></a>
+                                        <img src="/images/word-download.png" style="height: 35px;width:auto;" /></a>
                                     <hr />
                                     <h3 class="tieu-de" id="BinhLuanNewsView">Bình luận </h3>
                                     <fb:comments data-id="570235299813675" data-width="100%"></fb:comments>
@@ -81,7 +81,7 @@
                                     <li>
                                         <a href="/<%# SystemClass.convertToUnSign2(Eval("Title").ToString()) %>-v<%#Eval("Id")%>" title="<%#Eval("Title") %>">
                                             <div class="img-w">
-                                                <img onerror="imgCatchError(this)" src="/Images/News/<%# Eval("ImgUrl") %>" alt="" />
+                                                <img onerror="imgCatchError(this)" src="<%# Eval("ImgUrl") %>" alt="" />
                                             </div>
                                             <div class="re-news-title">
                                                 <%# Eval("Title") %>
@@ -107,7 +107,7 @@
                                         <li>
                                             <a href="/<%# SystemClass.convertToUnSign2(Eval("Title").ToString()) %>-v<%#Eval("Id")%>" title="<%#Eval("Title") %>">
                                                 <div class="img-w">
-                                                    <img onerror="imgCatchError(this)" src="/Images/News/<%# Eval("ImgUrl") %>" alt="" />
+                                                    <img onerror="imgCatchError(this)" src="<%# Eval("ImgUrl") %>" alt="" />
                                                 </div>
                                                 <div class="re-news-title">
                                                     <%# Eval("Title") %>

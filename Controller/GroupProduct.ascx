@@ -29,6 +29,6 @@
     <div class="col-sm-3 gpItem">
         <h5>Đèn trang trí</h5>
         <img src="/Images/POST/den.png" alt="Đèn trang trí" />
-        <p>Ván sàn Châu Âu -Chất lượng Cao và phù hợp nhất trên thị trường hiện nay. Giao hàng nhanh 24h · Đổi trả miễn phí</p>
+        <p>Đèn trang trí -Chất lượng Cao và phù hợp nhất trên thị trường hiện nay. Giao hàng nhanh 24h · Đổi trả miễn phí</p>
     </div>
 </section>

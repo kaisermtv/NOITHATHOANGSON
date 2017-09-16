@@ -5,9 +5,10 @@
     <asp:Repeater ID="dtlnews" runat="server">
         <ItemTemplate>
             <div class="col-sm-4 hnItem">
-                <img src="<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" />
+                <a href="/<%# SystemClass.convertToUnSign2(Eval("Title").ToString()) %>-v<%#Eval("Id")%>" title="<%# Eval("Title") %>">
+                <img src="<%# Eval("ImgUrl") %>" alt="<%# Eval("Title") %>" /></a>
                 <span class="newsdate"><%# ((DateTime)Eval("DayPost")).ToString("dd.MM.yyyy") %></span>
-                <h5><%# Eval("Title") %></h5>
+                <a href="/<%# SystemClass.convertToUnSign2(Eval("Title").ToString()) %>-v<%#Eval("Id")%>" title="<%# Eval("Title") %>"><h5><%# Eval("Title") %></h5></a>
                 <p><%# Eval("ShortContent") %></p>
             </div>
         </ItemTemplate>
