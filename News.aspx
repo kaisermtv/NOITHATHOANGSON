@@ -3,10 +3,6 @@
 
 <%@ Register Src="~/Controller/Paging.ascx" TagPrefix="uc1" TagName="Paging" %>
 <%@ Register Src="~/Controller/DanhMucTin.ascx" TagPrefix="uc1" TagName="DanhMucTin" %>
-<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" type="text/css" href="/css/front-end.css">
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
-</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container1">
         <div class="container-fluid">

@@ -9,8 +9,8 @@ using System.Web.UI.WebControls;
 public partial class Category : System.Web.UI.Page
 {
     #region declare 
-    private DataNews objNews = new DataNews();
-    private DataNewsGroup objGroup = new DataNewsGroup();
+    private DataProduct objProduct = new DataProduct();
+    private DataCategory objGroup = new DataCategory();
 
     public int groupNews = 9;
     public string title = "";
@@ -39,17 +39,17 @@ public partial class Category : System.Web.UI.Page
         }
         catch{}
 
-        int[] id;
+        int[] id = null;
 
         if(groupNews != 0)
         {
             id = new int[1] { groupNews };
 
-            maxItem = objNews.getDataCount(groupNews, false, "", true);
+            maxItem = objProduct.getDataCount(groupNews);
         }
         else
         {
-            id = new int[4] { 53, 50, 51, 52 };
+            //id = new int[4] { 53, 50, 51, 52 };
             maxPageItem = 3;
             maxItem = 3;
         }
@@ -76,7 +76,7 @@ public partial class Category : System.Web.UI.Page
     {
         try
         {
-            DataTable objData = objNews.getDataTop(maxPageItem, id, page, false, "", "DESC", true);
+            DataTable objData = objProduct.getDataTop(maxPageItem, id, page, false, "", "DESC");
 
 
             return objData;

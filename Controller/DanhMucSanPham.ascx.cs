@@ -6,10 +6,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Controller_Product : System.Web.UI.UserControl
+public partial class Controller_DanhMucSanPham : System.Web.UI.UserControl
 {
     #region declare
-    private DataProduct objProduct = new DataProduct(); 
+    public int itemId = 0;
+
     #endregion
 
     #region Even Page_Load
@@ -19,15 +20,15 @@ public partial class Controller_Product : System.Web.UI.UserControl
     }
     #endregion
 
-    #region Even Page_PreRender()
+    #region Page_PreRender
     public void Page_PreRender(object sender, EventArgs e)
     {
-        DataTable objData = objProduct.getDataTop(8);
+        DataCategory objCategory = new DataCategory();
 
-        dtlProduct.DataSource = objData.DefaultView;
-        dtlProduct.DataBind();
+        DataTable objData = objCategory.getList();
 
-        // index = 1;
+        dtlData.DataSource = objData.DefaultView;
+        dtlData.DataBind();
     }
     #endregion
 }

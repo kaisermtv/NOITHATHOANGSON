@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="ProductList.aspx.cs" Inherits="System_ProductList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="ProtectActiveList.aspx.cs" Inherits="System_ProtectActiveList" %>
+
 
 <%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -17,11 +18,6 @@
             <td>
                 <input type="text" id="txtSearch" placeholder="Nhập tên bài viết cần tìm kiếm" runat="server" class="form-control" />
             </td>
-            <td style="width:25%">
-                <asp:DropDownList ID="ddlGroup" runat="server" class="form-control">
-
-                </asp:DropDownList>
-            </td>
             <td style="width: 40px !important; text-align: center;">
                 <asp:ImageButton ID="btnSearch" ImageUrl="/images/Search.png" runat="server" Style="margin-bottom: -15px; margin-left: -15px;" OnClick="btnSearch_Click" />
             </td>
@@ -34,9 +30,9 @@
             <table class="DataListTable">
                 <tr class="DataListTableHeader">
                     <th class="DataListTableHeaderTdItemTT" style="width: 4%;">TT</th>
-                    <th class="DataListTableHeaderTdItemJustify">Tên sản phẩm</th>
-                    <th class="DataListTableHeaderTdItemJustify" style="width: 20%;">Nhóm sản phẩm</th>
-                    <th class="DataListTableHeaderTdItemJustify" style="width: 10%;">Trạng thái</th>
+                    <th class="DataListTableHeaderTdItemJustify">Tên dự án</th>
+                    <th class="DataListTableHeaderTdItemJustify" style="width: 20%;">Mã số</th>
+                    <th class="DataListTableHeaderTdItemJustify" style="width: 10%;">Thời gian</th>
                     <th class="DataListTableHeaderTdItemCenter" style="width: 3%;">Sửa</th>
                     <th class="DataListTableHeaderTdItemCenter" style="width: 3%;">Xóa</th>
                 </tr>
@@ -45,10 +41,10 @@
             <tr>
                 <td class="DataListTableTdItemTT"><%# this.index++ %></td>
                 <td class="DataListTableTdItemJustify"><%# Eval("NAME") %></td>
-                <td class="DataListTableTdItemJustify"><%# Eval("GroupName") %></td>
+                <td class="DataListTableTdItemJustify"><%# Eval("MA") %></td>
                 <td class="DataListTableTdItemJustify"><%# Eval("STATUS") %></td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="ProductEdit.aspx?id=<%# Eval("ID") %>">
+                    <a href="NewsEdit.aspx?id=<%# Eval("Id") %>">
                         <img src="/Images/Edit.png" alt="Chỉnh sửa thông tin">
                     </a>
                 &nbsp;&nbsp;</td>
@@ -70,7 +66,7 @@
     </cc1:CollectionPager>
 
     <br />
-    <a href="ProductEdit.aspx" class="btn btn-primary">Thêm sản phẩm</a>
+    <a href="ProtectActiveEdit.aspx" class="btn btn-primary">Thêm dự án</a>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -82,7 +78,7 @@
             <h4 class="modal-title">Xóa bài viết</h4>
           </div>
           <div class="modal-body">
-            <p>Bạn xác nhận xóa sản phẩm: <b id="ttk"></b></p>
+            <p>Bạn xác nhận xóa dự án: <b id="ttk"></b></p>
           </div>
           <div class="modal-footer">
             <asp:Button ID="btnDel" runat ="server" CssClass="btn btn-primary" Text="Xác nhận xóa" OnClick="btnDel_Click" />

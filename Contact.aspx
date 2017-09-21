@@ -49,21 +49,20 @@
             <div class="main contact-w">
                 <div class="col-xs-12 col-sm-12 ">
                     <div class="BodyTitle">
-                        LIÊN HỆ
-                   
+                        <%= this.getValue("Name") %>
                     </div>
                     <br />
-                    <p style="text-align: justify;">
+                    <%--<p style="text-align: justify;">
                         Các tổ chức, cá nhân cần liên hệ với <%= this.getValue("Name") %>, vui lòng liên hệ với chúng tôi theo các thông tin sau:
                    
-                    </p>
-                    <p style="font-weight: bold; font-size: 15px;"><%= this.getValue("Name") %></p>
+                    </p>--%>
+                    <%--<p style="font-weight: bold; font-size: 15px;"><%= this.getValue("Name") %></p>--%>
                     <p style="font-size: 13.5px;">Địa chỉ: <%= this.getValue("Address") %></p>
                     <p style="font-size: 13.5px;">Điện thoại: <%= this.getValue("Phone") %></p>
                     <p style="font-size: 13.5px;">Email: <%= this.getValue("Email") %></p>
                     <p style="font-size: 13.5px;">Hotline: <%= this.getValue("Hotline") %></p>
                     <br />
-                    <p style="margin-top: -5px;">
+                    <%--<p style="margin-top: -5px;">
                         Hoặc gửi thông tin liên hệ trực tiếp về cho chúng tôi theo mẫu sau đây: 
                    
                     </p>
@@ -81,7 +80,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div>--%>
                     <br />
                 </div>
             </div>

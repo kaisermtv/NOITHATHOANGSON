@@ -6,10 +6,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class System_ProductList : System.Web.UI.Page
+public partial class System_ProtectActiveList : System.Web.UI.Page
 {
     #region declare
-    private DataProduct objProduct = new DataProduct();
+    private DataProtectActive objProtect = new DataProtectActive();
 
     public int index = 1;
     #endregion
@@ -17,18 +17,7 @@ public partial class System_ProductList : System.Web.UI.Page
     #region method Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
-        Context.Items["strTitle"] = "DANH SÁCH SẢN PHẨM";
-
-        if (!Page.IsPostBack)
-        {
-            DataCategory objCategory = new DataCategory();
-            ddlGroup.DataSource = objCategory.getDataToCombobox("Tất cả");
-            ddlGroup.DataValueField = "ID";
-            ddlGroup.DataTextField = "NAME";
-            ddlGroup.DataBind();
-
-            ddlGroup.SelectedValue = "0";
-        }
+        Context.Items["strTitle"] = "DANH SÁCH DỰ ÁN ĐÃ TRUYỂN KHAI";
 
     }
     #endregion
@@ -36,7 +25,7 @@ public partial class System_ProductList : System.Web.UI.Page
     #region Page_PreRender
     public void Page_PreRender(object sender, EventArgs e)
     {
-        DataTable objData = objProduct.getList(int.Parse(ddlGroup.SelectedValue), txtSearch.Value.Trim());
+        DataTable objData = objProtect.getList(txtSearch.Value.Trim());
 
         //dtlAccount.DataSource = objData.DefaultView;
         //dtlAccount.DataBind();
@@ -69,7 +58,7 @@ public partial class System_ProductList : System.Web.UI.Page
 
         if (id != 0)
         {
-            objProduct.delData(id);
+            objProtect.delData(id);
 
             //getData();
         }

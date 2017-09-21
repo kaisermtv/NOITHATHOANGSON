@@ -93,19 +93,42 @@ nav {
         width: auto;
     }
 
+    nav button {
+        border: 1px solid black !important;
+    }
+
+    nav button span{
+        background-color:black !important;
+    }
+
     nav .nav {
-        padding-top: 10px;
+        padding-top: 20px;
     }
 
         nav .nav li {
-            font-size: 18px;
+            font-size: 17px;
             color: #e60404;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
             nav .nav li a {
                 color: #e60404;
+                padding:8px;
             }
+
+    nav .hr {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+        nav .hr hr {
+            width: 20%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 /* End: Nav tag */
 
 /* Begin: Cateloge tag */
@@ -220,6 +243,8 @@ nav {
 
     .product .pditem {
         margin-bottom: 60px;
+        min-height: 420px;
+        overflow: hidden;
     }
 
     .product h5 {
@@ -229,7 +254,7 @@ nav {
         margin-bottom: 15px;
         text-transform: uppercase;
         font-weight: bold;
-        height: 18px;
+        height: 20px;
         overflow: hidden;
         font-size: 14px;
         padding-top: 5px;

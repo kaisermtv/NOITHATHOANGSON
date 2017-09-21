@@ -1,14 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Product.ascx.cs" Inherits="Controller_Product" %>
 
 <section class="container1 product">
-    <div class="col-sm-3 pditem">
-        <img src="/Images/Protect/san pham 1.png" alt="Cổng nhôm đúc 001" />
-        <h5>Cổng nhôm đúc 001</h5>
-        <p>Thông tin mô tả sản phẩm, ngắn gọn</p>
-        <div class="price">50,000,000 đ</div>
-        <a class="btn btn-user3" href="#" title="more">Xem chi tiết ></a>
-    </div>
-
+    <asp:Repeater runat="server" ID="dtlProduct">
+        <ItemTemplate>
+            <div class="col-sm-3 pditem">
+                <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" />
+                <h5><%# Eval("NAME") %></h5>
+                <p><%# Eval("DESCRIBE") %></p>
+                <div class="price"><%# int.Parse(Eval("PRICE").ToString()).ToString("0,0") %> đ</div>
+                <a class="btn btn-user3" href="#" title="more">Xem chi tiết ></a>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
+    
+<%--
     <div class="col-sm-3 pditem">
         <img src="/Images/Protect/san pham 2.png" alt="Cổng nhôm đúc 001" />
         <h5>Cổng nhôm đúc 002</h5>
@@ -63,5 +68,5 @@
         <p>Thông tin mô tả sản phẩm, ngắn gọn</p>
         <div class="price">15,000,000 đ</div>
         <a class="btn btn-user3" href="#" title="more">Xem chi tiết ></a>
-    </div>
+    </div>--%>
 </section>

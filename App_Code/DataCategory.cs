@@ -56,6 +56,41 @@ public class DataCategory : DataClass
     }
     #endregion
 
+    #region method getNameById
+    public DataTable getNameById(int[] id)
+    {
+        try
+        {
+            SqlCommand Cmd = this.getSQLConnect();
+            Cmd.CommandText = "SELECT ID,NAME FROM tblCategory";
+
+            if(id != null)
+            {
+                Cmd.CommandText += " WHERE ID IN(";
+                for (int i = 0; i < id.Length; i++)
+                {
+                    if (i != 0) Cmd.CommandText += ",";
+                    Cmd.CommandText += id[i].ToString();
+                }
+
+                Cmd.CommandText += ")";
+            }
+            
+
+            DataTable ret = this.findAll(Cmd);
+
+            this.SQLClose();
+            return ret;
+        }
+        catch (Exception ex)
+        {
+            this.Message = ex.Message;
+            this.ErrorCode = ex.HResult;
+            return null;
+        }
+    }
+    #endregion
+
     #region method getList
     public DataTable getList(int state = -1)
     {

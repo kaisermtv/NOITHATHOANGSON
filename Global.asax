@@ -15,7 +15,10 @@
         routes.MapPageRoute("view3", "news/{name}-v{id}", "~/NewsView.aspx", false, null, routeValueDictionary);
         routes.MapPageRoute("view1", "{name}-v{id}", "~/NewsView.aspx", false, null, routeValueDictionary);
 
+        routes.MapPageRoute("category", "{name}-gp{id}", "~/Category.aspx", false, null, routeValueDictionary);
 
+        
+        routes.MapPageRoute("gioithieu", "gioi-thieu", "~/Contact.aspx");
         routes.MapPageRoute("lienhe", "lien-he", "~/Contact.aspx");
         routes.MapPageRoute("Contact", "contact", "~/Contact.aspx");
 
