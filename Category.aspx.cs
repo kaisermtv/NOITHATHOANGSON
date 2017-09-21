@@ -26,16 +26,16 @@ public partial class Category : System.Web.UI.Page
     {
         try
         {
-            groupNews = int.Parse(Request["id"].ToString());
+            groupNews = int.Parse(getParam("id"));
         }
-        catch
+        catch(Exception ex)
         {
             groupNews = 0;
         }
 
         try
         {
-            page = int.Parse(Request["page"].ToString());
+            page = int.Parse(getParam("page"));
         }
         catch{}
 
@@ -50,8 +50,8 @@ public partial class Category : System.Web.UI.Page
         else
         {
             //id = new int[4] { 53, 50, 51, 52 };
-            maxPageItem = 3;
-            maxItem = 3;
+            maxPageItem = 4;
+            maxItem = 4;
         }
 
         MaxPage = maxItem / maxPageItem;
@@ -85,6 +85,21 @@ public partial class Category : System.Web.UI.Page
         {
             return new DataTable();
         }
+    }
+    #endregion
+
+
+    #region Method getParam
+    private String getParam(String key)
+    {
+        try
+        {
+            if (RouteData.Values[key] != null) return RouteData.Values[key].ToString();
+            if (Request[key] != null) return Request[key].ToString();
+        }
+        catch { }
+
+        return null;
     }
     #endregion
 }
