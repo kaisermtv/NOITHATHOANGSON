@@ -22,10 +22,28 @@
 
     <div class="AdminItem">
         <div class="AdminLeftItem">
+            Mã số thuế:
+        </div>
+        <div class="AdminRightItem">
+            <asp:TextBox ID="txtMaSoThue" runat="server" class="AdminTextControl"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="AdminItem">
+        <div class="AdminLeftItem">
             Địa chỉ:
         </div>
         <div class="AdminRightItem">
             <asp:TextBox ID="txtAddress" runat="server" class="AdminTextControl"></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="AdminItem">
+        <div class="AdminLeftItem">
+            Địa chỉ showroom:
+        </div>
+        <div class="AdminRightItem">
+            <asp:TextBox ID="txtAddrenShowroom" runat="server" class="AdminTextControl"></asp:TextBox>
         </div>
     </div>
 
