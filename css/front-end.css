@@ -37,7 +37,7 @@ img { max-width: 100%; }
     .btn-process:hover { background-color: #45bfaf; }
 .btn-dangerous { background-color: #ec1c23; }
     .btn-dangerous:hover { background-color: #dd575b; }
-.btn-info { background-color: #ff8300; }
+/*.btn-info { background-color: #ff8300; }*/
     .btn-info:hover { background-color: #ef9739; }
 .btn-blue { background-color: #00aeef; }
     .btn-blue:hover { background-color: #68cef4; }

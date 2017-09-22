@@ -12,15 +12,15 @@
                     <th>Nhóm 5</th>
                 </tr>
             </thead>
-<%--            <tbody>
+            <tbody>
                 <tr>
-                    <td class ="CategoryItem"><a href ="TonGiao.aspx">Tôn giáo</a></td>
-                    <td class ="CategoryItem"><a href ="DanToc.aspx">Dân tộc</a></td>
+                    <td class="CategoryItem"><a href ="ProtectActiveList.aspx">Các dự án đã làm</a></td>
+<%--                    <td class ="CategoryItem"><a href ="DanToc.aspx">Dân tộc</a></td>
                     <td class ="CategoryItem"><a href ="ChucVu.aspx">Chức vụ</a></td>
                     <td class ="CategoryItem"><a href ="LinhVuc.aspx">Lĩnh vực</a></td>
-                    <td class ="CategoryItem"><a href ="HinhThucTuyenDung.aspx">Hình thức tuyển dụng</a></td>
+                    <td class ="CategoryItem"><a href ="HinhThucTuyenDung.aspx">Hình thức tuyển dụng</a></td>--%>
                 </tr>
-            </tbody>--%>
+            </tbody>
             <asp:Repeater ID="dtlData" runat="server" EnableViewState="False">
                 <HeaderTemplate>
                     <tbody>

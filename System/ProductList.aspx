@@ -70,7 +70,7 @@
     </cc1:CollectionPager>
 
     <br />
-    <a href="ProductEdit.aspx" class="btn btn-primary">Thêm sản phẩm</a>
+    <a href="ProductEdit.aspx<%= (ddlGroup.SelectedValue != "0"?"?group="+ddlGroup.SelectedValue:"") %>" class="btn btn-primary">Thêm sản phẩm</a>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">

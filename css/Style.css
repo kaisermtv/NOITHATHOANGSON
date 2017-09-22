@@ -152,7 +152,8 @@ nav {
         height: 30px;
         overflow: hidden;
         font-size: 18px;
-        padding-top:5px;
+        padding-top: 5px;
+        color: black;
     }
 
     .cateloge p {
@@ -258,6 +259,7 @@ nav {
         overflow: hidden;
         font-size: 14px;
         padding-top: 5px;
+        color:black;
     }
 
     .product p {
@@ -267,6 +269,16 @@ nav {
     }
 
     .product .price {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+.productview {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+    .productview .price {
         font-weight: bold;
         font-size: 20px;
         margin-bottom: 15px;

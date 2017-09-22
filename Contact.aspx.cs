@@ -41,22 +41,32 @@ public partial class Contact : System.Web.UI.Page
                     msg = "Bạn cần nhập nội dung";
                     return;
                 }
-                //SystemClass objSystem = new SystemClass();
-                DataContact objContact = new DataContact();
-                if (objContact.addData(Request.Form["name"], Request.Form["email"], Request.Form["title"], Request.Form["noidung"]) != 0)
+
+                DataSQL objSQL = new DataSQL("tblContact");
+                objSQL["FullName"] = Request.Form["txtHoVaTen"];
+                objSQL["Address"] = Request.Form["txtDiaChi"];
+                objSQL["Phone"] = Request.Form["txtPhone"];
+                objSQL["Question"] = Request.Form["txtContent"];
+
+                int id = (int)objSQL.setData();
+                if (id != 0)
                 {
-                    Response.Redirect("/");
-                }
-                else
+                    msg = "Cảm ơn bạn đã đóng góp ý kiến! chúng tổi sẽ liên lạc với bạn sau.";
+                } else
                 {
                     msg = "Có lỗi xảy ra! Xin thử lại.";
                 }
+
+                //SystemClass objSystem = new SystemClass();
             }
             catch { }
 
         }
-
-        this.Title = "LIÊN HỆ - YOLO, DÁM CHIA SẺ";
+        else
+        {
+            Response.Redirect("/");
+        }
+        
     }
     #endregion
 

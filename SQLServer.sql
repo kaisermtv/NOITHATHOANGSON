@@ -166,6 +166,8 @@ CREATE TABLE [dbo].[tblContact](
 	[Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[FullName] [nvarchar](250) NULL,
 	[Email] [nvarchar](250) NULL,
+	[Phone]	[nvarchar](12) null,
+	[Address] [nvarchar](550) NULL,
 	[Title] [nvarchar](250) NULL,
 	[Question] [nvarchar](500) NULL,
 	[Answer] [ntext] NULL,

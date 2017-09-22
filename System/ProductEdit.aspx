@@ -105,8 +105,8 @@
         </div>
         <div class="AdminRightItem">
             <asp:Button ID="btnSaver" runat ="server" CssClass="btn btn-primary" Text="Ghi Nhận" OnClick="btnSaver_Click" />
-            <a href="/System/ProductList.aspx" class="btn btn-default">Thoát</a>
-            <a style="float:right;" href="/System/ProductEdit.aspx" class="btn btn-danger">Thêm sản phẩm</a>
+            <a href="/System/ProductList.aspx<%= (group.ToString() == ddlGroup.SelectedValue)?"?group="+group:"" %>" class="btn btn-default">Thoát</a>
+            <a style="float:right;" href="/System/ProductEdit.aspx<%= (group.ToString() == ddlGroup.SelectedValue)?"?group="+group:"" %>" class="btn btn-danger">Thêm sản phẩm</a>
         </div>
     </div>
 

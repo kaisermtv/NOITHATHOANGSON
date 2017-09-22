@@ -27,7 +27,14 @@ public partial class System_ProductList : System.Web.UI.Page
             ddlGroup.DataTextField = "NAME";
             ddlGroup.DataBind();
 
-            ddlGroup.SelectedValue = "0";
+            try
+            {
+                ddlGroup.SelectedValue = int.Parse(Request["group"].ToString()).ToString();
+            }
+            catch
+            {
+                ddlGroup.SelectedValue = "0";
+            }
         }
 
     }

@@ -102,4 +102,13 @@ public partial class Category : System.Web.UI.Page
         return null;
     }
     #endregion
+
+    #region Method Price
+    public string Price(string price)
+    {
+        if (price == "0") return "Liên hệ";
+
+        return int.Parse(price).ToString("0,0") + " đ";
+    }
+    #endregion
 }

@@ -30,4 +30,13 @@ public partial class Controller_Product : System.Web.UI.UserControl
         // index = 1;
     }
     #endregion
+
+    #region Method Price
+    public string Price(string price)
+    {
+        if (price == "0") return "Liên hệ";
+
+        return int.Parse(price).ToString("0,0") + " đ";
+    }
+    #endregion
 }

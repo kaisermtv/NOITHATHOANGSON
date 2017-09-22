@@ -11,6 +11,7 @@ public partial class System_ProductEdit : System.Web.UI.Page
 {
     #region declare
     public int itemId = 0;
+    public int group = 0;
 
     private DataProduct objProduct = new DataProduct();
     private DataCategory objCategory = new DataCategory();
@@ -25,6 +26,11 @@ public partial class System_ProductEdit : System.Web.UI.Page
             this.itemId = int.Parse(Request["id"].ToString());
         }
         catch { }
+        try
+        {
+            this.group = int.Parse(Request["group"].ToString());
+        }
+        catch { }
 
         if (!Page.IsPostBack)
         {
@@ -32,6 +38,8 @@ public partial class System_ProductEdit : System.Web.UI.Page
             ddlGroup.DataTextField = "Name";
             ddlGroup.DataValueField = "ID";
             ddlGroup.DataBind();
+
+            ddlGroup.SelectedValue = group.ToString();
         }
 
         //if (!Page.IsPostBack && this.itemId == 0)
@@ -52,6 +60,7 @@ public partial class System_ProductEdit : System.Web.UI.Page
             txtName.Text = objData["NAME"].ToString();
             txtDescribe.Text = objData["DESCRIBE"].ToString();
             txtPrice.Text = objData["PRICE"].ToString();
+            ddlGroup.SelectedValue = objData["GROUPID"].ToString();
             //ddlTrangThai.SelectedValue = objData["NSTATUS"].ToString();
 
             htxtimg1.Value = objData["IMG"].ToString();
@@ -68,13 +77,20 @@ public partial class System_ProductEdit : System.Web.UI.Page
             objSystemClass.addMessage("Không được để trống tên nhóm");
             return;
         }
-
+        float price = 0;
         try
         {
-            int ret = 0;
+            price = float.Parse(txtPrice.Text.Trim());
+        }
+        catch { }
+
+        int ret = 0;
+        try
+        {
+            
             if (itemId == 0)
             {
-                ret = objProduct.addData(txtName.Text, int.Parse(ddlGroup.SelectedValue), float.Parse(txtPrice.Text), txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
+                ret = objProduct.addData(txtName.Text, int.Parse(ddlGroup.SelectedValue), price, txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
                 if (ret != 0)
                 {
                     objSystemClass.addMessage("Thêm sản phẩm thành công");
@@ -82,22 +98,27 @@ public partial class System_ProductEdit : System.Web.UI.Page
             }
             else
             {
-                ret = objProduct.UpdateData(itemId, txtName.Text, int.Parse(ddlGroup.SelectedValue), float.Parse(txtPrice.Text), txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
+                ret = objProduct.UpdateData(itemId, txtName.Text, int.Parse(ddlGroup.SelectedValue), price, txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
                 if (ret != 0)
                 {
                     objSystemClass.addMessage("Cập nhật sản phẩm thành công");
                 }
             }
-            if (ret != 0)
-            {
-                Response.Redirect("ProductEdit.aspx?id=" + ret);
-            }
+            
         }
         catch
         {
+            
+        }
+        if (ret != 0)
+        {
+            Response.Redirect("ProductEdit.aspx?id=" + ret);
+        }
+        else
+        {
+            objSystemClass.addMessage(price.ToString());
             objSystemClass.addMessage("Có lỗi xảy ra!");
         }
-       
     }
     #endregion
 

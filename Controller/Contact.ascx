@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Contact.ascx.cs" Inherits="Controller_Contact" %>
 
-<section class="container1 contact">
+<section class="container1 contact" id="contact"> 
     <h2>Liên hệ</h2>
     <div class="row">
         <div class="col-sm-4">
@@ -9,7 +9,7 @@
                     <img src="/Images/Dia diem.png" />
                 </div>
                 <div class="box-right">
-                    Địa chỉ: Khối 4 thị trấn Quán Hành, huyện Nghi Lộc, tỉnh Nghệ An
+                    Địa chỉ: <%= GetSetting("Address") %>
 	 <br />
                     Địa chỉ Showroom: Đại lộ Lê Nin, xóm 13 xã Nghi Phú, thành phố vinh, tỉnh Nghệ An
                 </div>
@@ -23,7 +23,7 @@
                 <div class="box-right">
                     <b>Địa chỉ Email</b>
                 <br />
-                    noingoaithathongson@gmail.com
+                    <%= GetSetting("Email") %>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 <div class="box-right">
                     <b>Số điện thoại</b>
                 <br />
-                    noingoaithathongson@gmail.com
+                    <%= GetSetting("Phone") %>
                 </div>
             </div>
         </div>
@@ -47,28 +47,30 @@
     <!--End Rows-->
 
     <div class="row box-contact">
+        <form method="post" action="/lien-he">
         <div class="col-sm-6">
             <ul>
                 <li>
-                    <input type="text" placeholder="* Họ và tên" width="100%" />
+                    <input type="text" name="txtHoVaTen" placeholder="* Họ và tên" width="100%" />
                 </li>
                 <li>
-                    <input type="text" placeholder="* Địa chỉ" width="100%" />
+                    <input type="text" name="txtDiaChi" placeholder="* Địa chỉ" width="100%" />
                 </li>
                 <li>
-                    <input type="text" placeholder="Số điện thoại" width="100%" />
+                    <input type="text" name="txtPhone" placeholder="Số điện thoại" width="100%" />
                 </li>
             </ul>
         </div>
         <div class="col-sm-6">
             <ul>
                 <li>
-                    <textarea placeholder="Nội dung" width="100%"> </textarea>
+                    <textarea name="txtContent" placeholder="Nội dung" width="100%"> </textarea>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-info">GỬI THÔNG TIN</button></li>
+                    <input type="submit" class="btn btn-info" value="GỬI THÔNG TIN" /></li>
             </ul>
         </div>
+            </form>
     </div>
     <!--End rows-->
 

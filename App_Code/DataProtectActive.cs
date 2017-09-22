@@ -11,13 +11,13 @@ using System.Web;
 public class DataProtectActive : DataClass
 {
     #region method getData
-    public DataRow getData(int id)
+    public DataRow getData(string id)
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
             Cmd.CommandText = "SELECT * FROM tblProtect WHERE MA = @ID";
-            Cmd.Parameters.Add("ID", SqlDbType.Int).Value = id;
+            Cmd.Parameters.Add("ID", SqlDbType.NVarChar).Value = id;
 
             DataRow ret = this.findFirst(Cmd);
 
@@ -64,28 +64,21 @@ public class DataProtectActive : DataClass
     #endregion
 
     #region Method addData
-    public int addData(String title, int catid, String shortcontent, String content, String img, String author, bool NoiBat = false, String tag = "")
+    public string addData(string ma, string name, string img, string address, string content)
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
-            Cmd.CommandText = "INSERT INTO [tblProtect]([MA],[NAME],[IMG],[ADDRESS],[DESCRIBE],[CreateDate]) OUTPUT INSERTED.ID";
-            Cmd.CommandText += " VALUES (@MA,@NAME,@IMG,@ADDRESS,@DESCRIBE,@CreateDate)";
+            Cmd.CommandText = "INSERT INTO [tblProtect]([MA],[NAME],[IMG],[ADDRESS],[DESCRIBE],[CreateDate]) OUTPUT INSERTED.MA";
+            Cmd.CommandText += " VALUES (@MA,@NAME,@IMG,@ADDRESS,@DESCRIBE,GETDATE())";
 
-            Cmd.Parameters.Add("TITLE", SqlDbType.NVarChar).Value = title;
-            Cmd.Parameters.Add("GROUP", SqlDbType.Int).Value = catid;
-            Cmd.Parameters.Add("SHORTCONTENT", SqlDbType.NVarChar).Value = shortcontent;
-            Cmd.Parameters.Add("CONTENT", SqlDbType.NText).Value = content;
+            Cmd.Parameters.Add("MA", SqlDbType.NVarChar).Value = ma;
+            Cmd.Parameters.Add("NAME", SqlDbType.NVarChar).Value = name;
             Cmd.Parameters.Add("IMG", SqlDbType.NVarChar).Value = img;
-            Cmd.Parameters.Add("AUTHOR", SqlDbType.NVarChar).Value = author;
-            Cmd.Parameters.Add("NoiBat", SqlDbType.Bit).Value = NoiBat;
-            Cmd.Parameters.Add("tag", SqlDbType.NVarChar).Value = tag;
+            Cmd.Parameters.Add("ADDRESS", SqlDbType.NText).Value = address;
+            Cmd.Parameters.Add("DESCRIBE", SqlDbType.NVarChar).Value = content;
 
-
-            SystemClass objSystemClass = new SystemClass();
-            Cmd.Parameters.Add("USERPOST", SqlDbType.Int).Value = objSystemClass.getIDAccount();
-
-            int ret = (int)Cmd.ExecuteScalar();
+            string ret = (string)Cmd.ExecuteScalar();
 
             this.SQLClose();
             return ret;
@@ -94,33 +87,26 @@ public class DataProtectActive : DataClass
         {
             this.Message = ex.Message;
             this.ErrorCode = ex.HResult;
-            return 0;
+            return "";
         }
     }
     #endregion
 
     #region Method UpdateData
-    public int UpdateData(int id, String title, int catid, String shortcontent, String content, String img, String author, bool NoiBat = false, String tag = "")
+    public string UpdateData(string ma, string name, string img, string address, string content)
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
-            Cmd.CommandText = "UPDATE tblNews SET Title = @TITLE, CatId = @GROUP,ShortContent = @SHORTCONTENT ,Content = @CONTENT, ImgUrl = @IMG,Author = @AUTHOR, [UserEdit] = @USEREDIT, [DayEdit] = GETDATE(),NoiBat = @NoiBat,tag = @tag OUTPUT INSERTED.Id WHERE Id = @ID";
+            Cmd.CommandText = "UPDATE tblProtect SET MA = @MA, NAME = @NAME,IMG = @IMG ,ADDRESS = @ADDRESS, DESCRIBE = @DESCRIBE OUTPUT INSERTED.MA WHERE MA = @MA";
 
-            Cmd.Parameters.Add("ID", SqlDbType.Int).Value = id;
-            Cmd.Parameters.Add("TITLE", SqlDbType.NVarChar).Value = title;
-            Cmd.Parameters.Add("GROUP", SqlDbType.Int).Value = catid;
-            Cmd.Parameters.Add("SHORTCONTENT", SqlDbType.NVarChar).Value = shortcontent;
-            Cmd.Parameters.Add("CONTENT", SqlDbType.NText).Value = content;
+            Cmd.Parameters.Add("MA", SqlDbType.NVarChar).Value = ma;
+            Cmd.Parameters.Add("NAME", SqlDbType.NVarChar).Value = name;
             Cmd.Parameters.Add("IMG", SqlDbType.NVarChar).Value = img;
-            Cmd.Parameters.Add("AUTHOR", SqlDbType.NVarChar).Value = author;
-            Cmd.Parameters.Add("NoiBat", SqlDbType.Bit).Value = NoiBat;
-            Cmd.Parameters.Add("tag", SqlDbType.NVarChar).Value = tag;
-
-            SystemClass objSystemClass = new SystemClass();
-            Cmd.Parameters.Add("USEREDIT", SqlDbType.Int).Value = objSystemClass.getIDAccount();
-
-            int ret = (int)Cmd.ExecuteScalar();
+            Cmd.Parameters.Add("ADDRESS", SqlDbType.NText).Value = address;
+            Cmd.Parameters.Add("DESCRIBE", SqlDbType.NVarChar).Value = content;
+            
+            string ret = (string)Cmd.ExecuteScalar();
 
             this.SQLClose();
             return ret;
@@ -129,7 +115,7 @@ public class DataProtectActive : DataClass
         {
             this.Message = ex.Message;
             this.ErrorCode = ex.HResult;
-            return 0;
+            return "";
         }
     }
     #endregion

@@ -10,10 +10,9 @@ using System.Web.UI.WebControls;
 public partial class System_ProtectActiveEdit : System.Web.UI.Page
 {
     #region declare
-    public int itemId = 0;
+    public string itemId = "";
 
-    private DataProduct objProduct = new DataProduct();
-    private DataCategory objCategory = new DataCategory();
+    private DataProtectActive objProtect = new DataProtectActive();
     private SystemClass objSystemClass = new SystemClass();
     #endregion
 
@@ -22,7 +21,7 @@ public partial class System_ProtectActiveEdit : System.Web.UI.Page
     {
         try
         {
-            this.itemId = int.Parse(Request["id"].ToString());
+            this.itemId = Request["id"].ToString();
         }
         catch { }
 
@@ -32,13 +31,13 @@ public partial class System_ProtectActiveEdit : System.Web.UI.Page
         //    ddlTrangThai.SelectedValue = "1";
         //}
 
-        if (!Page.IsPostBack && this.itemId != 0)
+        if (!Page.IsPostBack && this.itemId != "")
         {
-            DataRow objData = objProduct.getData(this.itemId);
+            DataRow objData = objProtect.getData(this.itemId);
             if (objData == null)
             {
                 objSystemClass.addMessage("Bạn cần chọn nhóm để sửa.");
-                Response.Redirect("ProductList.aspx");
+                Response.Redirect("ProtectActiveList.aspx");
                 return;
             }
             txtMA.Text = objData["MA"].ToString();
@@ -60,36 +59,41 @@ public partial class System_ProtectActiveEdit : System.Web.UI.Page
             objSystemClass.addMessage("Không được để trống tên nhóm");
             return;
         }
+        string ret = "";
 
-        //try
-        //{
-        //    int ret = 0;
-        //    if (itemId == 0)
-        //    {
-        //        ret = objProduct.addData(txtName.Text, int.Parse(ddlGroup.SelectedValue), float.Parse(txtPrice.Text), txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
-        //        if (ret != 0)
-        //        {
-        //            objSystemClass.addMessage("Thêm sản phẩm thành công");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        ret = objProduct.UpdateData(itemId, txtName.Text, int.Parse(ddlGroup.SelectedValue), float.Parse(txtPrice.Text), txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
-        //        if (ret != 0)
-        //        {
-        //            objSystemClass.addMessage("Cập nhật sản phẩm thành công");
-        //        }
-        //    }
-        //    if (ret != 0)
-        //    {
-        //        Response.Redirect("ProductEdit.aspx?id=" + ret);
-        //    }
-        //}
-        //catch
-        //{
-        //    objSystemClass.addMessage("Có lỗi xảy ra!");
-        //}
+        try
+        {
+            
+            if (itemId == "")
+            {
+                ret = objProtect.addData(txtMA.Text, txtName.Text, saveImage(FileUpload, htxtimg, htxtimg1), txtAddress.Text, txtContent.Text);
+                if (ret != "")
+                {
+                    objSystemClass.addMessage("Thêm sản dự án thành công");
+                }
+            }
+            else
+            {
+                ret = objProtect.UpdateData(txtMA.Text, txtName.Text, saveImage(FileUpload, htxtimg, htxtimg1), txtAddress.Text, txtContent.Text);
+                if (ret != "")
+                {
+                    objSystemClass.addMessage("Cập nhật dự án thành công");
+                }
+            }
+        }
+        catch
+        {
+            
+        }
 
+        if (ret != "")
+        {
+            Response.Redirect("ProtectActiveEdit.aspx?id=" + ret);
+        }
+        else
+        {
+            objSystemClass.addMessage("Có lỗi xảy ra!");
+        }
     }
     #endregion
 

@@ -124,7 +124,7 @@ public class DataProduct :DataClass
             Cmd.Parameters.Add("IMG", SqlDbType.NVarChar).Value = img;
             Cmd.Parameters.Add("AUTHOR", SqlDbType.NVarChar).Value = author;
             Cmd.Parameters.Add("NoiBat", SqlDbType.Bit).Value = NoiBat;
-            Cmd.Parameters.Add("PRICE", SqlDbType.NVarChar).Value = price;
+            Cmd.Parameters.Add("PRICE", SqlDbType.Float).Value = price;
 
             SystemClass objSystemClass = new SystemClass();
             Cmd.Parameters.Add("USEREDIT", SqlDbType.Int).Value = objSystemClass.getIDAccount();

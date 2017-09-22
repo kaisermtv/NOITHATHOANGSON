@@ -81,8 +81,8 @@
         </div>
         <div class="AdminRightItem">
             <asp:Button ID="btnSaver" runat ="server" CssClass="btn btn-primary" Text="Ghi Nhận" OnClick="btnSaver_Click" />
-            <a href="/System/ProductList.aspx" class="btn btn-default">Thoát</a>
-            <a style="float:right;" href="/System/ProductEdit.aspx" class="btn btn-danger">Thêm sản phẩm</a>
+            <a href="/System/ProtectActiveList.aspx" class="btn btn-default">Thoát</a>
+            <a style="float:right;" href="/System/ProtectActiveEdit.aspx" class="btn btn-danger">Thêm dự án</a>
         </div>
     </div>
 

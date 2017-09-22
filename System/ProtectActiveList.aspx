@@ -30,8 +30,8 @@
             <table class="DataListTable">
                 <tr class="DataListTableHeader">
                     <th class="DataListTableHeaderTdItemTT" style="width: 4%;">TT</th>
+                    <th class="DataListTableHeaderTdItemJustify" style="width: 15%;">Mã số</th>
                     <th class="DataListTableHeaderTdItemJustify">Tên dự án</th>
-                    <th class="DataListTableHeaderTdItemJustify" style="width: 20%;">Mã số</th>
                     <th class="DataListTableHeaderTdItemJustify" style="width: 10%;">Thời gian</th>
                     <th class="DataListTableHeaderTdItemCenter" style="width: 3%;">Sửa</th>
                     <th class="DataListTableHeaderTdItemCenter" style="width: 3%;">Xóa</th>
@@ -40,16 +40,16 @@
         <ItemTemplate>
             <tr>
                 <td class="DataListTableTdItemTT"><%# this.index++ %></td>
-                <td class="DataListTableTdItemJustify"><%# Eval("NAME") %></td>
                 <td class="DataListTableTdItemJustify"><%# Eval("MA") %></td>
-                <td class="DataListTableTdItemJustify"><%# Eval("STATUS") %></td>
+                <td class="DataListTableTdItemJustify"><%# Eval("NAME") %></td>
+                <td class="DataListTableTdItemJustify"><%# ((DateTime)Eval("CreateDate")).ToString("dd/MM/yyyy") %></td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="NewsEdit.aspx?id=<%# Eval("Id") %>">
+                    <a href="ProtectActiveEdit.aspx?id=<%# Eval("MA") %>">
                         <img src="/Images/Edit.png" alt="Chỉnh sửa thông tin">
                     </a>
                 &nbsp;&nbsp;</td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="#myModal" onclick="delmodal(<%# Eval("ID") %>,'<%# Eval("NAME") %>')">
+                    <a href="#myModal" onclick="delmodal(<%# Eval("MA") %>,'<%# Eval("NAME") %>')">
                         <img src="/Images/delete.png" alt="Xóa nhóm">
                     </a>
                 &nbsp;&nbsp;</td>
@@ -75,7 +75,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Xóa bài viết</h4>
+            <h4 class="modal-title">Xóa dự án</h4>
           </div>
           <div class="modal-body">
             <p>Bạn xác nhận xóa dự án: <b id="ttk"></b></p>

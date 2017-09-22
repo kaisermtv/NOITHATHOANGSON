@@ -4,11 +4,13 @@
     <asp:Repeater runat="server" ID="dtlProduct">
         <ItemTemplate>
             <div class="col-sm-3 pditem">
-                <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" />
-                <h5><%# Eval("NAME") %></h5>
+                <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
+                <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" /></a>
+                <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
+                    <h5><%# Eval("NAME") %></h5></a>
                 <p><%# Eval("DESCRIBE") %></p>
-                <div class="price"><%# int.Parse(Eval("PRICE").ToString()).ToString("0,0") %> đ</div>
-                <a class="btn btn-user3" href="#" title="more">Xem chi tiết ></a>
+                <div class="price"><%# Price(Eval("PRICE").ToString()) %></div>
+                <a class="btn btn-user3" href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>" title="more">Xem chi tiết ></a>
             </div>
         </ItemTemplate>
     </asp:Repeater>
