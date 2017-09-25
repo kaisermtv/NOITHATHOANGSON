@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/Site.master" CodeFile="ProjectView.aspx.cs" Inherits="ProductView" %>
-
 <%@ Register Src="~/Controller/Product.ascx" TagPrefix="ctl" TagName="Product" %>
+<%@ Register src="Controller/Project.ascx" tagname="Project" tagprefix="uc1" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <form id="form1" runat="server">
     <section class="container1 productview">
         <div style="display: table;width:100%">
             <div class="col-sm-4">
@@ -42,11 +43,9 @@
                                 </div>
                             </div>
     </section>
-
-
-    <ctl:Product ID="ctlSPLQ" runat="server" Title="Sản phẩm cùng loại" Limit="4" />
-
-    
+       
+    <uc1:Project ID="Project1" runat="server" />
+ 
     <script>(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -65,4 +64,6 @@
             saveAs(blob, filename + ".txt");
         });
     </script>
+    
+    </form>
 </asp:Content>
