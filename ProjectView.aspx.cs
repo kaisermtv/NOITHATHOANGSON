@@ -1,93 +1,60 @@
-﻿using Novacode;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class ProjectView : System.Web.UI.Page
+public partial class ProductView : System.Web.UI.Page
 {
-    #region declare  
+    #region declre
+    public string itemId = "";
     public DataRow objData;
-    public string itemId = "0";
-    public int group = 0;
-    public String groupname = "";
+
+    private DataProduct objProduct = new DataProduct();
     #endregion
 
-    #region Method Page_Load
+    #region Even Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
-
             itemId = RouteData.Values["Ma"].ToString();
             objData = new DataProtectActive().getData(itemId);
-
         }
-        catch 
+        catch {
+            Response.Redirect("tin-tuc");
+        }
+
+        //if (!Page.IsPostBack)
+        //{
+           
+        //}
+
+    }
+    #endregion
+
+    #region Method Price
+    public string Price(string price)
+    {
+        if (price == "0") return "Liên hệ";
+
+        return int.Parse(price).ToString("0,0") + " đ";
+    }
+    #endregion
+
+    #region Method getParam
+    private String getParam(String key)
+    {
+        try
         {
-            Response.Redirect("");
+            if (RouteData.Values[key] != null) return RouteData.Values[key].ToString();
+            if (Request[key] != null) return Request[key].ToString();
         }
+        catch { }
 
-    
-    }
-    #endregion
-
-    #region Method CreateDocument
-    public void CreateDocument(bool active = false)
-    {
-        if (active == false) return;
-
-        string fileName = (@"D:\\" + this.itemId + ".docx");
-        //   var doc = DocX.Create(fileName);
-        string headlineText = objData["ShortContent"].ToString() + " ";
-        string paraOne = "" + ((DateTime)objData["DayPost"]).ToString("dd/MM/yyyy h:mm:ss tt") + "\n" + "\n" +
-           StripHTML(objData["Content"].ToString(), true) + " "
-            ;
-        // Format tiêu đề 
-        var headLineFormat = new Formatting();
-        headLineFormat.FontFamily = new System.Drawing.FontFamily("Arial");
-        headLineFormat.Size = 18D;
-        headLineFormat.Position = 12;
-
-        // Format nội dung text
-        var paraFormat = new Formatting();
-        paraFormat.FontFamily = new System.Drawing.FontFamily("Arial");
-        paraFormat.Size = 10;
-        paraFormat.Spacing = 1;
-
-        // Tạo tệp tin 
-        var doc = DocX.Create(fileName);
-
-        // Đưa nội dung vào file
-        doc.InsertParagraph(headlineText, false, headLineFormat);
-        doc.InsertParagraph(paraOne, false, paraFormat);
-
-        // Save
-        doc.Save();
-
-        // Mở file
-        Process.Start("WINWORD.EXE", fileName);
-    }
-    #endregion
-
-    #region Method StripHTML
-    public static string StripHTML(string HTMLText, bool decode = true)
-    {
-        Regex reg = new Regex("<[^>]+>", RegexOptions.IgnoreCase);
-        var stripped = reg.Replace(HTMLText, "");
-        return decode ? HttpUtility.HtmlDecode(stripped) : stripped;
-    }
-    #endregion
-
-    #region Method btnDownload_Click
-    protected void btnDownload_Click(object sender, ImageClickEventArgs e)
-    {
-        CreateDocument(true);
+        return null;
     }
     #endregion
 }
