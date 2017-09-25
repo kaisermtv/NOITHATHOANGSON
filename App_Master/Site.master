@@ -11,6 +11,7 @@
     <link href="/css/reset.css" rel="stylesheet" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/front-end.css" rel="stylesheet" />
+    <link href="/css/font-awesome.css" rel="stylesheet" />
     <link href="/css/Style.css" rel="stylesheet" />
 
     <script src="/js/jquery-3.2.1.min.js"></script>

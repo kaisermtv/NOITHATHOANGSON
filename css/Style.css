@@ -283,6 +283,10 @@ nav {
         font-size: 20px;
         margin-bottom: 15px;
     }
+
+    .productview .info {
+        margin:30px 0px;
+    }
 /* End: Product tag */
 
 /* Begin: News tag */

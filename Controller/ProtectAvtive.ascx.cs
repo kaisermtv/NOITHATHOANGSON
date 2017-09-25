@@ -15,7 +15,7 @@ public partial class Controller_ProtectAvtive : System.Web.UI.UserControl
     public int page = 1;
     public bool viewpage = false;
     private int maxitem = 0;
-    private int maxPage = 1;
+    public int maxPage = 1;
     #endregion
 
     #region Even Page_Load

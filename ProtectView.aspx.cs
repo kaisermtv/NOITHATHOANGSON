@@ -6,13 +6,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class ProductView : System.Web.UI.Page
+public partial class ProtectView : System.Web.UI.Page
 {
     #region declre
-    public int itemId = 0;
+    public string itemId = 0;
     public DataRow objData;
 
-    private DataProduct objProduct = new DataProduct();
+    private DataProtectActive objProtect = new DataProtectActive();
     #endregion
 
     #region Even Page_Load
@@ -20,25 +20,15 @@ public partial class ProductView : System.Web.UI.Page
     {
         try
         {
-            this.itemId = int.Parse(getParam("id"));
+            this.itemId = getParam("id");
         }
         catch { }
 
         //if (!Page.IsPostBack)
         //{
-            objData = objProduct.getData(itemId);
-            ctlSPLQ.Group = (int)objData["GROUPID"];
+        objData = objProtect.getData(itemId);
         //}
 
-    }
-    #endregion
-
-    #region Method Price
-    public string Price(string price)
-    {
-        if (price == "0") return "Liên hệ";
-
-        return int.Parse(price).ToString("0,0") + " đ";
     }
     #endregion
 
