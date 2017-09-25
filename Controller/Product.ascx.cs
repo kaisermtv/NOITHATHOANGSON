@@ -9,7 +9,10 @@ using System.Web.UI.WebControls;
 public partial class Controller_Product : System.Web.UI.UserControl
 {
     #region declare
-    private DataProduct objProduct = new DataProduct(); 
+    private DataProduct objProduct = new DataProduct();
+    public string Title = "";
+    public int Limit = 8;
+    public int Group = 0;
     #endregion
 
     #region Even Page_Load
@@ -22,7 +25,7 @@ public partial class Controller_Product : System.Web.UI.UserControl
     #region Even Page_PreRender()
     public void Page_PreRender(object sender, EventArgs e)
     {
-        DataTable objData = objProduct.getDataTop(8);
+        DataTable objData = objProduct.getDataTop(Limit,Group);
 
         dtlProduct.DataSource = objData.DefaultView;
         dtlProduct.DataBind();

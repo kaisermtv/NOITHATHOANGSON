@@ -11,7 +11,7 @@
                 <div class="box-right">
                     Địa chỉ: <%= GetSetting("Address") %>
 	 <br />
-                    Địa chỉ Showroom: Đại lộ Lê Nin, xóm 13 xã Nghi Phú, thành phố vinh, tỉnh Nghệ An
+                    Địa chỉ Showroom: <%= GetSetting("AddressShowroom") %>
                 </div>
             </div>
         </div>

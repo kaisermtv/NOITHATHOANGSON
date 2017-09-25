@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/Site.master" CodeFile="ProductView.aspx.cs" Inherits="ProductView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="App_Master/Site.Master" CodeFile="ProtectView.aspx.cs" Inherits="ProtectView" %>
+
 
 <%@ Register Src="~/Controller/Product.ascx" TagPrefix="ctl" TagName="Product" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

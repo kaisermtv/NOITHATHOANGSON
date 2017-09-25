@@ -10,18 +10,18 @@
     
     
     <meta property="og:title" content="<%=objData["Title"] %>"/>
-    <meta property="og:image" content="http://113.164.227.242:4083<%= objData["ImgUrl"] %>" />
+    <meta property="og:image" content="http://www.noingoaithathoangson.com<%= objData["ImgUrl"] %>" />
     <meta property="og:description" content="<%=objData["ShortContent"] %>"/>
     <meta property="og:author" content="yolo"/>
     <meta property="og:keywords" content="<%=objData["Title"] %>"
-    <meta property="twitter:url" content="http://113.164.227.242:4083" />
+    <meta property="twitter:url" content="http://www.noingoaithathoangson.com" />
     <meta property="twitter:title"  content="<%=objData["Title"] %>" />
-    <meta property="twitter:image" content="http://113.164.227.242:4083<%= objData["ImgUrl"].ToString() %>" />
+    <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["ImgUrl"].ToString() %>" />
 
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="fb-root"></div>
-    <div class ="container">
+    <div class ="container1">
     <div class="container-fluid">
         <div class="main">
             <div class="row show-grid">
@@ -58,9 +58,9 @@
                             <div class="row" style="margin-top: 50px; margin-bottom: 50px;" id="ShareToolNewsView">
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <a href="https://www.facebook.com/sharer.php?&u=http://113.164.227.242:4083<%=Request.RawUrl %>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                                    <a href="https://twitter.com/intent/tweet?&url=http://113.164.227.242:4083<%=Request.RawUrl %>"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                                    <a href="https://plus.google.com?&url=http://113.164.227.242:4083<%=Request.RawUrl %>"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                                    <a href="https://www.facebook.com/sharer.php?&u=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                                    <a href="https://twitter.com/intent/tweet?&url=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                                    <a href="https://plus.google.com?url=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                                     <a href="javascript:;" id="btn-save" style="position: static !important" title="Download">
                                         <img src="/images/word-download.png" style="height: 35px;width:auto;" /></a>
                                     <hr />
@@ -133,6 +133,23 @@
     </div>
     </div>
     
+    <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=<%= FacebookAPI.App_id %>";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
+    <script type="text/javascript">
+
+        $("#btn-save").click(function () {
+            var text = document.getElementById('article_new').textContent + '\n'
+                + document.getElementById('article_new_content').textContent;
+            var filename = 'yolo'
+            var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, filename + ".txt");
+        });
+    </script>
 
 </asp:Content>

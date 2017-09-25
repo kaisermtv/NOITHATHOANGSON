@@ -16,8 +16,9 @@
       <asp:Repeater runat="server" ID="dtlSlider">
           <HeaderTemplate><% index = 0; %></HeaderTemplate>
           <ItemTemplate>
-              <div class="item<%= index++ ==0?" active":"" %>">
+              <div style="vertical-align:central;text-align:center;" class="item<%= index++ ==0?" active":"" %>">
                   <img src="<%# Eval("IMG") %>" alt="<%# Eval("TITLE") %>">
+                  <h2 style="position:absolute;top:auto;z-index:100;"><%# Eval("TITLE") %></h2>
               </div>
           </ItemTemplate>
       </asp:Repeater>

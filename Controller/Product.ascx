@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Product.ascx.cs" Inherits="Controller_Product" %>
 
 <section class="container1 product">
+    <% if (Title != ""){ %>
+    <h2><%= Title %></h2>
+    <% } %>
     <asp:Repeater runat="server" ID="dtlProduct">
         <ItemTemplate>
             <div class="col-sm-3 pditem">

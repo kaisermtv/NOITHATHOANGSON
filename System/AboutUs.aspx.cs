@@ -17,7 +17,9 @@ public partial class System_AboutUs : System.Web.UI.Page
         {
             this.textDomain.Text = objSetting.getValue("Domain");
             this.txtName.Text = objSetting.getValue("Name");
+            this.txtMaSoThue.Text = objSetting.getValue("MaSoThue");
             this.txtAddress.Text = objSetting.getValue("Address");
+            this.txtAddrenShowroom.Text = objSetting.getValue("AddressShowroom");
             this.txtPhone.Text = objSetting.getValue("Phone");
             this.txtEmail.Text = objSetting.getValue("Email");
             this.txtHotline.Text = objSetting.getValue("Hotline");
@@ -28,7 +30,9 @@ public partial class System_AboutUs : System.Web.UI.Page
         {
             objSetting.setValue("Domain", this.textDomain.Text);
             objSetting.setValue("Name", this.txtName.Text);
+            objSetting.setValue("MaSoThue", this.txtMaSoThue.Text);
             objSetting.setValue("Address", this.txtAddress.Text);
+            objSetting.setValue("AddressShowroom", this.txtAddrenShowroom.Text);
             objSetting.setValue("Phone", this.txtPhone.Text);
             objSetting.setValue("Email", this.txtEmail.Text);
             objSetting.setValue("Hotline", this.txtHotline.Text);

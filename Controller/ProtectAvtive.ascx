@@ -18,9 +18,9 @@
         </asp:Repeater>
     </div>
 
-    <% if (viewpage) { %>
+    <% if (viewpage) { if (maxPage > 1){ %>
     <uc1:Paging ID="pageId" runat="server" />
-    <% } else { %>
+    <% }} else { %>
     <div class="divcenter">
         <a class="btn btn-user1" href="/du-an-da-trien-khai" title="Xem tất cả các dự án">Xem tất cả dự án</a>
     </div>
