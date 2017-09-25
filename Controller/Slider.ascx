@@ -18,7 +18,10 @@
           <ItemTemplate>
               <div style="vertical-align:central;text-align:center;" class="item<%= index++ ==0?" active":"" %>">
                   <img src="<%# Eval("IMG") %>" alt="<%# Eval("TITLE") %>">
-                  <h2 style="position:absolute;top:auto;z-index:100;"><%# Eval("TITLE") %></h2>
+                  <div style="width:100%;height:100%;z-index:1000;color:white;text-align:center;vertical-align:central;position:absolute;top:0px;text-shadow: -1px 0 black, 0 1px black,1px 0 black, 0 -1px black">
+                      <h2><%# Eval("TITLE") %></h2>
+                  </div>
+                  
               </div>
           </ItemTemplate>
       </asp:Repeater>

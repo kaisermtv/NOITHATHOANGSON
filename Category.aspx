@@ -39,7 +39,7 @@
                     <br />
                 </div>
                 <div class="projects_holder clearfix v3 standard product">
-                    <asp:Repeater runat="server" DataSource='<%# getItemData((int)Eval("ID")).DefaultView %>'>
+                    <asp:Repeater runat="server" DataSource='<%# getItemData((int)Eval("ID"),page).DefaultView %>'>
                         <ItemTemplate>
                             <div class="col-sm-3 pditem">
                                 <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">

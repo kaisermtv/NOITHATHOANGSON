@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="AboutUs.aspx.cs" Inherits="System_AboutUs" %>
 
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
    
     <div class="AdminItem">
@@ -74,32 +75,15 @@
         </div>
     </div>
 
-    <div class="AdminItem">
+    <div class="AdminItem" style="display:table">
         <div class="AdminLeftItem">
-            Lời chào:
+            Giới thiệu:
         </div>
-        <div class="AdminRightItem">
-            <asp:TextBox ID="txtGreeting" runat="server" Text="" class="AdminTextControl"></asp:TextBox>
+        <div class="AdminRightItem" style="display:table">
+            <CKEditor:CKEditorControl ID="txtGioiThieu" CssClass="editor1" runat="server" Height="210" Width="100%" BasePath="~/ckeditor"></CKEditor:CKEditorControl>
         </div>
     </div>
 
-    <div class="AdminItem">
-        <div class="AdminLeftItem">
-            Câu hướng dẫn:
-        </div>
-        <div class="AdminRightItem">
-            <asp:TextBox ID="txtGreeting1" runat="server" Text="" class="AdminTextControl"></asp:TextBox>
-        </div>
-    </div>
-
-    <div class="AdminItem">
-        <div class="AdminLeftItem">
-            &nbsp;&nbsp;
-        </div>
-        <div class="AdminRightItem">
-            <asp:Label ID="lblMsg" runat="server" Text="" CssClass="AdminMsg"></asp:Label>
-        </div>
-    </div>
 
     <div class="AdminItem">
         <div class="AdminLeftItem">

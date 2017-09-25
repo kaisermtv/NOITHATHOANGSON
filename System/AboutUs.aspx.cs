@@ -23,8 +23,7 @@ public partial class System_AboutUs : System.Web.UI.Page
             this.txtPhone.Text = objSetting.getValue("Phone");
             this.txtEmail.Text = objSetting.getValue("Email");
             this.txtHotline.Text = objSetting.getValue("Hotline");
-            this.txtGreeting.Text = objSetting.getValue("Greeting");
-            this.txtGreeting1.Text = objSetting.getValue("Greeting1");
+            this.txtGioiThieu.Text = objSetting.getValue("GioiThieu");
         }
         else
         {
@@ -36,8 +35,7 @@ public partial class System_AboutUs : System.Web.UI.Page
             objSetting.setValue("Phone", this.txtPhone.Text);
             objSetting.setValue("Email", this.txtEmail.Text);
             objSetting.setValue("Hotline", this.txtHotline.Text);
-            objSetting.setValue("Greeting", this.txtGreeting.Text);
-            objSetting.setValue("Greeting1", this.txtGreeting1.Text);
+            objSetting.setValue("GioiThieu", this.txtGioiThieu.Text);
 
             SystemClass objSystemClass = new SystemClass();
             objSystemClass.addMessage("Lưu thông tin thành công!");

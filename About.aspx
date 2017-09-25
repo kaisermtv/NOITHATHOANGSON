@@ -63,6 +63,9 @@
                     <p style="font-size: 13.5px;">Email: <%= this.getValue("Email") %></p>
                     <p style="font-size: 13.5px;">Hotline: <%= this.getValue("Hotline") %></p>
                     <br />
+                    <div>
+                        <%= this.getValue("GioiThieu") %>
+                    </div>
                     <%--<p style="margin-top: -5px;">
                         Hoặc gửi thông tin liên hệ trực tiếp về cho chúng tôi theo mẫu sau đây: 
                    
