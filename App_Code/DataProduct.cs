@@ -270,5 +270,56 @@ public class DataProduct :DataClass
 
     }
     #endregion
-    
+
+    #region Method getDataTop()
+    public DataTable getLienQuan(int id ,int limit = 0, int group = 0, bool NoiBat = false)
+    {
+        try
+        {
+            String top = "";
+
+            SqlCommand Cmd = this.getSQLConnect();
+
+
+            if (limit != 0)
+            {
+                top = " TOP " + limit + " ";
+            }
+
+            Cmd.CommandText += "SELECT " + top + " P.ID,P.NAME,P.PRICE,P.[DESCRIBE],P.IMG,G.NAME AS GroupName,P.DayPost FROM tblProduct AS P";
+            Cmd.CommandText += " LEFT JOIN tblCategory AS G ON P.GROUPID = G.ID";
+            Cmd.CommandText += " WHERE P.NSTATUS != 2 AND G.NSTATUS = 1 AND P.ID != @ID";
+
+            Cmd.Parameters.Add("ID", SqlDbType.Int).Value = id;
+
+            if (group != 0)
+            {
+                Cmd.CommandText += " AND P.GROUPID = @GROUP";
+                Cmd.Parameters.Add("GROUP", SqlDbType.Int).Value = group;
+            }
+
+            if (NoiBat)
+            {
+                Cmd.CommandText += " AND P.NoiBat = 1";
+            }
+            
+            Cmd.CommandText += " ORDER BY NEWID()";
+
+
+
+            DataTable ret = this.findAll(Cmd);
+
+            this.SQLClose();
+            return ret;
+        }
+        catch (Exception ex)
+        {
+            this.Message = ex.Message;
+            this.ErrorCode = ex.HResult;
+            return null;
+        }
+
+    }
+    #endregion
+
 }
