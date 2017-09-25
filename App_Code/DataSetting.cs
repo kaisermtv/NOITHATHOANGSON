@@ -15,7 +15,6 @@ public class DataSetting :DataClass
     private static Hashtable cache = new Hashtable();
     #endregion
 
-
     #region getValue(String key)
     public String getValue(String key)
     {

@@ -11,6 +11,27 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+        <form method="post" style="margin: 20px auto;" id="searchFrom">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                <input name="Search" class="form-control" value="<%= Search %>" placeholder="Tìm kiếm" />
+            </div>
+            <div class="col-sm-3">
+                <select class="form-control" name="Group" onchange="SubmitForm('searchFrom')">
+                    <option value="0">Tất cả</option>
+                    <asp:Repeater ID="dtlGroup" runat="server">
+                        <ItemTemplate>
+                            <option value="<%# Eval("ID") %>" <%# (Eval("ID").ToString() == group.ToString())?"selected=\"selected\"":"" %>><%# Eval("NAME") %></option>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-info">
+                    <span class="glyphicon glyphicon-search"></span>Search
+                </button>
+            </div>
+        </form>
         <asp:Repeater ID="dtlCat" runat="server" EnableViewState="False">
             <ItemTemplate>
                 <div class="row col-md-12">

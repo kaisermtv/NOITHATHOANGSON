@@ -6,6 +6,7 @@ body {
 
 img {
     width: 100%;
+    max-width:100%;
 }
 
 .container1 {
@@ -398,6 +399,7 @@ footer {
     margin: 0px;
     padding: 10px;
     color: white;
+    margin-top:20px;
 }
 
     footer p {
