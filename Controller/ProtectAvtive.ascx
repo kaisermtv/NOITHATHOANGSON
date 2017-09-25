@@ -7,11 +7,16 @@
         <asp:Repeater runat="server" ID="dtlProduct">
             <ItemTemplate>
                 <div class="col-sm-4 paitem">
+                    <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>/<%#Eval("Ma")%>" title="<%# Eval("NAME") %>">
                     <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" />
+                    </a>
                     <div class="pacontai">
                         <div class="span">Mã số: <%# Eval("MA") %>   |   <%# ((DateTime)Eval("CreateDate")).ToString("dd-MM-yyyy") %></div>
-                        <h5><%# Eval("NAME") %></h5>
-                        <small><%# Eval("ADDRESS") %></small>
+                    <a style=" color:black" href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>/<%#Eval("Ma")%>" title="<%# Eval("NAME") %>">
+                 
+                    <h5><%# Eval("NAME") %></h5>
+                    </a>
+                    <small><%# Eval("ADDRESS") %></small>
                     </div>
                 </div>
             </ItemTemplate>
