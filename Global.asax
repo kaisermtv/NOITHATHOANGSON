@@ -18,7 +18,8 @@
         routes.MapPageRoute("sanpham", "{name}-p{id}", "~/ProductView.aspx", false, null, routeValueDictionary);
 
         routes.MapPageRoute("category", "{name}-gp{id}", "~/Category.aspx", false, null, routeValueDictionary);
-
+        
+        routes.MapPageRoute("danhmuc", "danh-muc", "~/Category.aspx");
         
         routes.MapPageRoute("du-an", "du-an-da-trien-khai", "~/Protect.aspx");
 

@@ -410,5 +410,13 @@ public class SystemClass
 
     #endregion
 
+    #region getValue(String key)
+    public static String getSetting(String key)
+    {
+        DataSetting objSetting = new DataSetting();
+
+        return objSetting.getValue(key);
+    }
+    #endregion
 
 }
