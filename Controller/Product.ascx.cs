@@ -13,6 +13,7 @@ public partial class Controller_Product : System.Web.UI.UserControl
     public string Title = "";
     public int Limit = 8;
     public int Group = 0;
+    public int LienQuan = 0;
     #endregion
 
     #region Even Page_Load
@@ -25,7 +26,17 @@ public partial class Controller_Product : System.Web.UI.UserControl
     #region Even Page_PreRender()
     public void Page_PreRender(object sender, EventArgs e)
     {
-        DataTable objData = objProduct.getDataTop(Limit,Group);
+        DataTable objData;
+
+        if(LienQuan != 0)
+        {
+            objData = objProduct.getLienQuan(LienQuan, Limit, Group);
+        }
+        else
+        {
+            objData = objProduct.getDataTop(Limit, Group);
+        }
+            
 
         dtlProduct.DataSource = objData.DefaultView;
         dtlProduct.DataBind();

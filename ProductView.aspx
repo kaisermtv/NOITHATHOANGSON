@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div class="row" style="margin-top: 50px; margin-bottom: 50px;" id="ShareToolNewsView">
+        <div style="margin-top: 50px; margin-bottom: 50px;" id="ShareToolNewsView">
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <a href="https://www.facebook.com/sharer.php?&u=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
@@ -35,9 +35,8 @@
                                     <a href="https://plus.google.com?url=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
 
                                     <h3 class="tieu-de" id="BinhLuanNewsView">Bình luận </h3>
-                                    <fb:comments data-id="570235299813675" data-width="100%"></fb:comments>
 
-                                    <%--<div class="fb-comments" data-href="http://113.164.227.242:4083<%=Request.RawUrl %>" data-width="750"></div>--%>
+                                    <div class="fb-comments" data-href="http://www.noingoaithathoangson.com<%=Request.RawUrl %>" data-width="100%"></div>
                                 </div>
                             </div>
     </section>
@@ -54,14 +53,4 @@
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-    <script type="text/javascript">
-
-        $("#btn-save").click(function () {
-            var text = document.getElementById('article_new').textContent + '\n'
-                + document.getElementById('article_new_content').textContent;
-            var filename = 'yolo'
-            var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-            saveAs(blob, filename + ".txt");
-        });
-    </script>
 </asp:Content>
