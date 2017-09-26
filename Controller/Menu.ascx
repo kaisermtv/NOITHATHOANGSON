@@ -15,7 +15,19 @@
                 <asp:Repeater ID="dtlMenu" runat="server">
                     <HeaderTemplate><% index = 0; %></HeaderTemplate>
                     <ItemTemplate>
-                        <li<%= index++ == 0?" class=\"active\"":"" %>><a href="<%# Eval("LINK") %>"><%# Eval("NAME") %></a>
+                        <li>
+                            <a <%# Eval("COUNTCHILD").ToString() != "0"?"data-toggle=\"dropdown\"":"" %> href="<%# Eval("LINK") %>"><%# Eval("NAME").ToString().ToUpper() %></a>
+                                <asp:Repeater runat="server" DataSource='<%# getSubMenu((int) Eval("ID") ) %>' >
+                                    <HeaderTemplate>
+                                        <ul class="dropdown-menu">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <li><a href="<%# Eval("LINK") %>"><%# Eval("NAME").ToString().ToUpper() %></a></li>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </ul>
+                                    </FooterTemplate>
+                                </asp:Repeater>
                         </li>
                     </ItemTemplate>
                 </asp:Repeater>

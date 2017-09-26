@@ -82,6 +82,25 @@ header {
 
 /* End: Header tag */
 
+/* Begin: Slider tag */
+.SliderHead {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    color: white;
+    text-align: center;
+    vertical-align: central;
+    position: absolute;
+    top: 0px;
+    text-shadow: -1px 0 black, 0 1px black,1px 0 black, 0 -1px black
+}
+
+    .SliderHead h2 {
+        margin-top:15%;
+    }
+
+/* End: Header tag */
+
 /* Begin: Menu tag */
 nav {
     background-color: #fef9c7;
