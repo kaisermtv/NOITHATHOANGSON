@@ -79,6 +79,16 @@ header {
         text-transform: uppercase;
         font-weight: 600;
     }
+    
+        header h3 {
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #e60404;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
 
 /* End: Header tag */
 

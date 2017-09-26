@@ -2,7 +2,6 @@
 <%@ Import Namespace="System.Web.Routing" %>
 
 <script runat="server">
-
     public static void RegisterRoutes(RouteCollection routes)
     {
         routes.MapPageRoute("trangchu", "trang-chu", "~/Default.aspx");
