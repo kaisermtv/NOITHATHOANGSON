@@ -39,5 +39,6 @@
         
     </asp:ContentPlaceHolder>
     <ctl:Footer runat="server" />
+    <script src="https://uhchat.net/code.php?f=dee08c"></script>
 </body>
 </html>
