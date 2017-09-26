@@ -10,7 +10,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container1">
         <form method="post" style="margin: 20px auto;" id="searchFrom">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">

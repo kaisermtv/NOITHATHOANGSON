@@ -49,8 +49,9 @@
         catch { }
         if(SystemClass.OnlineNowDay == "")
         {
-            SystemClass.OnlineDay = 0;
             SystemClass.OnlineNowDay = DateTime.Now.ToString("dd/MM/yyyy");
+            SystemClass.OnlineDay = 0;
+            objSetting.setValue("OnlineNowDay",SystemClass.OnlineNowDay);
         }
 
         try
@@ -61,8 +62,9 @@
         catch { }
         if(SystemClass.OnlineNowMonth == "")
         {
-            SystemClass.OnlineMonth = 0;
             SystemClass.OnlineNowMonth = DateTime.Now.ToString("MM/yyyy");
+            SystemClass.OnlineMonth = 0;
+            objSetting.setValue("OnlineNowMonth",SystemClass.OnlineNowMonth);
         }
 
         try

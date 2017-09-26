@@ -22,9 +22,33 @@
         }
 
     </script>
+
+    <script>
+        var roxyFileman = '/fileman/index.html';
+        $(function () {
+            CKEDITOR.replace('MainContent_txtContent', {
+                filebrowserBrowseUrl: roxyFileman,
+                filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+                removeDialogTabs: 'link:upload;image:upload'
+            });
+        });
+
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'DD/MM/YYYY'
+            });
+        });
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
-    
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Thông tin chung</a></li>
+        <li><a data-toggle="tab" href="#menu1">Thông tin chi tiết</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
     <div class="AdminItem">
         <div class="AdminLeftItem">
             Mã dự án:
@@ -65,14 +89,10 @@
                 </label>
         </div>
     </div>
+            </div>
 
-    <div class="AdminItem" style="display:table">
-        <div class="AdminLeftItem">
-            Mô tả dự án:
-        </div>
-        <div class="AdminRightItem" style="display:table">
+    <div id="menu1" class="tab-pane fade">
             <CKEditor:CKEditorControl ID="txtContent" CssClass="editor1" runat="server" Height="210" Width="100%" BasePath="~/ckeditor"></CKEditor:CKEditorControl>
-        </div>
     </div>
 
     <div class="AdminItem">

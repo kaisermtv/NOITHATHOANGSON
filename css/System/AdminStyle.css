@@ -322,6 +322,14 @@ a {
 	border-top:none;
 	/*margin-bottom:-2px;*/
 }
+
+    .DataListTable tr td {
+        padding-top: 3px;
+        padding-bottom:3px;
+        border-bottom: solid 1px #dde8ec;
+    }
+
+
 .DataListTableTdItemTT {
 	text-align: center;
 	vertical-align: middle;

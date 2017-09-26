@@ -5,9 +5,12 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head runat="server" lang="vi">
     <title><%= ((Page.Title != null && Page.Title != "")?Page.Title + " - ":"") + GetSetting("Name") %></title>
     <link href="/logo.png" rel="shortcut icon" type="image/x-icon" />
+    <meta charset="UTF-8"/>
+
+    <meta name="google-site-verification" content="1enoSsnbwpkab77WT8nR0wkYE8sx50mcQK_yiTdXa6Q" />
     
     <link href="/css/reset.css" rel="stylesheet" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
@@ -29,6 +32,7 @@
             }
         }
     </script>
+
     <asp:ContentPlaceHolder id="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>

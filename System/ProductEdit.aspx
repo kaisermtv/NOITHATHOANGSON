@@ -22,68 +22,87 @@
         }
 
     </script>
+
+    <script>
+        var roxyFileman = '/fileman/index.html';
+        $(function () {
+            CKEDITOR.replace('MainContent_txtContent', {
+                filebrowserBrowseUrl: roxyFileman,
+                filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+                removeDialogTabs: 'link:upload;image:upload'
+            });
+        });
+
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'DD/MM/YYYY'
+            });
+        });
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
-    
-    <div class="AdminItem">
-        <div class="AdminLeftItem">
-            Tên sản phẩm:
-        </div>
-        <div class="AdminRightItem">
-            <asp:TextBox ID="txtName" runat="server" class="AdminTextControl"></asp:TextBox>
-        </div>
-    </div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Thông tin chung</a></li>
+        <li><a data-toggle="tab" href="#menu1">Thông tin chi tiết</a></li>
+    </ul>
 
-    <div class="AdminItem">
-        <div class="AdminLeftItem">
-            Nhóm sản phẩm:
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+        <div class="AdminItem">
+            <div class="AdminLeftItem">
+                Tên sản phẩm:
+            </div>
+            <div class="AdminRightItem">
+                <asp:TextBox ID="txtName" runat="server" class="AdminTextControl"></asp:TextBox>
+            </div>
         </div>
-        <div class="AdminRightItem">
-            <asp:DropDownList ID="ddlGroup" runat="server" class="AdminTextControl"></asp:DropDownList>
-        </div>
-    </div>
 
-    <div class="AdminItem">
-        <div class="AdminLeftItem">
-            Giá sản phẩm:
+        <div class="AdminItem">
+            <div class="AdminLeftItem">
+                Nhóm sản phẩm:
+            </div>
+            <div class="AdminRightItem">
+                <asp:DropDownList ID="ddlGroup" runat="server" class="AdminTextControl"></asp:DropDownList>
+            </div>
         </div>
-        <div class="AdminRightItem">
-            <asp:TextBox ID="txtPrice" runat="server" class="AdminTextControl"></asp:TextBox>
-        </div>
-    </div>
 
-    <div class="AdminItem" style="display:table">
-        <div class="AdminLeftItem">
-            Hình đại diện
+        <div class="AdminItem">
+            <div class="AdminLeftItem">
+                Giá sản phẩm:
+            </div>
+            <div class="AdminRightItem">
+                <asp:TextBox ID="txtPrice" runat="server" class="AdminTextControl"></asp:TextBox>
+            </div>
         </div>
-        <div class="AdminRightItem" style="display:table">
-            <img id="preview" src="<%=htxtimg.Value %>" style="max-width: 100%;max-height:200px" alt="Hình đại diện" /> <br />
-                <label class="file-upload" style="margin-top: 1px;">
-                    <input type="hidden" id="htxtimg" runat="server"/>
-                    <input type="hidden" id="htxtimg1" runat="server"/>
-                    <asp:FileUpload ID="FileUpload" onchange="LoadImgSrc(this,'#preview','htxtimg');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg" CssClass="FileUploadImage" Height="22px" />
-                </label>
-        </div>
-    </div>
 
-    <div class="AdminItem" style="display:table">
-        <div class="AdminLeftItem">
-            Mô tả:
+        <div class="AdminItem" style="display:table">
+            <div class="AdminLeftItem">
+                Hình đại diện
+            </div>
+            <div class="AdminRightItem" style="display:table">
+                <img id="preview" src="<%=htxtimg.Value %>" style="max-width: 100%;max-height:200px" alt="Hình đại diện" /> <br />
+                    <label class="file-upload" style="margin-top: 1px;">
+                        <input type="hidden" id="htxtimg" runat="server"/>
+                        <input type="hidden" id="htxtimg1" runat="server"/>
+                        <asp:FileUpload ID="FileUpload" onchange="LoadImgSrc(this,'#preview','htxtimg');" runat="server" Width="100%" accept="image/x-png, image/gif, image/jpeg"  Height="22px" />
+                    </label>
+            </div>
         </div>
-        <div class="AdminRightItem" style="display:table">
-            <asp:TextBox ID="txtDescribe"  runat="server" class="AdminTextControl" TextMode="MultiLine" style="resize:vertical"></asp:TextBox>
-        </div>
-    </div>
 
-    <div class="AdminItem" style="display:table">
-        <div class="AdminLeftItem">
-            Thông tin sản phẩm:
+        <div class="AdminItem" style="display:table">
+            <div class="AdminLeftItem">
+                Mô tả:
+            </div>
+            <div class="AdminRightItem" style="display:table">
+                <asp:TextBox ID="txtDescribe"  runat="server" class="AdminTextControl" TextMode="MultiLine" style="resize:vertical"></asp:TextBox>
+            </div>
         </div>
-        <div class="AdminRightItem" style="display:table">
+        </div>
+        <div id="menu1" class="tab-pane fade">
             <CKEditor:CKEditorControl ID="txtContent" CssClass="editor1" runat="server" Height="210" Width="100%" BasePath="~/ckeditor"></CKEditor:CKEditorControl>
         </div>
     </div>
-
     <%--<div class="AdminItem">
         <div class="AdminLeftItem">
             Trạng thái:
@@ -109,6 +128,7 @@
             <a style="float:right;" href="/System/ProductEdit.aspx<%= (group.ToString() == ddlGroup.SelectedValue)?"?group="+group:"" %>" class="btn btn-danger">Thêm sản phẩm</a>
         </div>
     </div>
+    
 
 </asp:Content>
 
