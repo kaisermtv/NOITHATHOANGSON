@@ -54,6 +54,7 @@
     void Session_Start(object sender, EventArgs e)
     {
         SystemClass.Online++;
+        SystemClass.OnlineDay++;
     }
 
     void Session_End(object sender, EventArgs e)
