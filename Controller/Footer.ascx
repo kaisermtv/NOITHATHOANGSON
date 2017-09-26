@@ -13,6 +13,6 @@
         </div>
     </div>
     <div class="ftstatus">
-        Online:0 Trong ngày: 200 Trong tháng: 550 Tổng lượt truy cập: 123 900 
+        Online:<%= SystemClass.Online %> Trong ngày: 200 Trong tháng: 550 Tổng lượt truy cập: 123 900 
     </div>
 </footer>

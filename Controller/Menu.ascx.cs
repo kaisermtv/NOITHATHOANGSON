@@ -17,11 +17,18 @@ public partial class Controller_Menu : System.Web.UI.UserControl
     #region Even Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
-        DataTable objData = objMenu.getList();
+        DataTable objData = objMenu.getList(0, 1, true);
 
         dtlMenu.DataSource = objData.DefaultView;
         dtlMenu.DataBind();
 
+    }
+    #endregion
+
+    #region Method getSubMenu
+    public DataTable getSubMenu(int id)
+    {
+        return objMenu.getList(id);
     }
     #endregion
 }

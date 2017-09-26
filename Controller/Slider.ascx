@@ -18,7 +18,7 @@
           <ItemTemplate>
               <div style="vertical-align:central;text-align:center;" class="item<%= index++ ==0?" active":"" %>">
                   <img src="<%# Eval("IMG") %>" alt="<%# Eval("TITLE") %>">
-                  <div style="width:100%;height:100%;z-index:1000;color:white;text-align:center;vertical-align:central;position:absolute;top:0px;text-shadow: -1px 0 black, 0 1px black,1px 0 black, 0 -1px black">
+                  <div class="SliderHead">
                       <h2><%# Eval("TITLE") %></h2>
                   </div>
                   

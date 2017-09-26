@@ -26,6 +26,7 @@ public class SystemClass
 
     public String Message = "";
 
+    public static int Online = 0;
     #endregion
 
     #region contractor
