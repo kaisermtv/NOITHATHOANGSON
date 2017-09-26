@@ -40,7 +40,36 @@
         RegisterRoutes(System.Web.Routing.RouteTable.Routes);
 
         //ChatSever.RunChatSever();
+        DataSetting objSetting = new DataSetting();
+        try
+        {
+            SystemClass.OnlineDay = int.Parse(objSetting.getValue("OnlineDay"));
+            SystemClass.OnlineNowDay = objSetting.getValue("OnlineNowDay");
+        }
+        catch { }
+        if(SystemClass.OnlineNowDay == "")
+        {
+            SystemClass.OnlineDay = 0;
+            SystemClass.OnlineNowDay = DateTime.Now.ToString("dd/MM/yyyy");
+        }
 
+        try
+        {
+            SystemClass.OnlineMonth = int.Parse(objSetting.getValue("OnlineMonth"));
+            SystemClass.OnlineNowMonth = objSetting.getValue("OnlineNowMonth");
+        }
+        catch { }
+        if(SystemClass.OnlineNowMonth == "")
+        {
+            SystemClass.OnlineMonth = 0;
+            SystemClass.OnlineNowMonth = DateTime.Now.ToString("MM/yyyy");
+        }
+
+        try
+        {
+            SystemClass.OnlineAll = int.Parse(objSetting.getValue("OnlineAll"));
+        }
+        catch { }
     }
 
     void Application_End(object sender, EventArgs e)
@@ -53,8 +82,33 @@
 
     void Session_Start(object sender, EventArgs e)
     {
+        DataSetting objSetting = new DataSetting();
+
+        string buf = DateTime.Now.ToString("dd/MM/yyyy");
+        if(buf != SystemClass.OnlineNowDay )
+        {
+            SystemClass.OnlineNowDay = buf;
+            SystemClass.OnlineDay = 0;
+
+            objSetting.setValue("OnlineNowDay",buf);
+        }
+
+        buf = buf.Substring(3);
+        if(buf != SystemClass.OnlineNowMonth )
+        {
+            SystemClass.OnlineNowMonth = buf;
+            SystemClass.OnlineMonth = 0;
+            objSetting.setValue("OnlineNowMonth",buf);
+        }
+
         SystemClass.Online++;
         SystemClass.OnlineDay++;
+        SystemClass.OnlineMonth++;
+        SystemClass.OnlineAll++;
+        
+        objSetting.setValue("OnlineDay",SystemClass.OnlineDay);
+        objSetting.setValue("OnlineMonth",SystemClass.OnlineMonth);
+        objSetting.setValue("OnlineAll",SystemClass.OnlineAll);
     }
 
     void Session_End(object sender, EventArgs e)

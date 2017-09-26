@@ -28,6 +28,12 @@ public class SystemClass
 
     public static int Online = 0;
     public static int OnlineDay = 0;
+    public static int OnlineMonth = 0;
+    public static int OnlineAll = 0;
+
+    public static string OnlineNowDay = "";
+    public static string OnlineNowMonth = "";
+
     #endregion
 
     #region contractor
