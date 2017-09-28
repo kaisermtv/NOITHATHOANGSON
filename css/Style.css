@@ -9,6 +9,9 @@ img {
     max-width:100%;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
 .container1 {
     display: table;
     width: 95%;
@@ -69,6 +72,7 @@ header {
     margin: 0px;
     padding: 10px;
     border-bottom: 1px solid blueviolet;
+    background-image: url("/images/pimgpsh_fullsize_distr.png");
 }
 
     header h1 {
@@ -79,6 +83,7 @@ header {
         color: #e60404;
         text-transform: uppercase;
         font-weight: 600;
+        text-shadow: -1px 0 white, 0 1px white,1px 0 white, 0 -1px white
     }
     header p {
         margin-bottom:3px;
@@ -156,6 +161,11 @@ nav {
             nav .nav li a:hover {
                 color: blueviolet;
             }
+    nav .dropdown-menu {
+        background-color: red;
+    }
+    nav .dropdown-menu li {
+    }
 
     nav .hr {
         position: absolute;
@@ -280,11 +290,14 @@ nav {
 
     .product img {
         margin-bottom: 15px;
+        width:auto;
+        height:200px;
+        max-width:unset;
     }
 
     .product .pditem {
         margin-bottom: 60px;
-        min-height: 420px;
+        /*min-height: 420px;*/
         overflow: hidden;
     }
 
