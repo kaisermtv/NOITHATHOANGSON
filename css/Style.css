@@ -477,19 +477,18 @@ footer {
 /*Code the linh fix slogan 28/9/2017*/
 .cssload-slogan 
 {
-    
 	text-align:center;
 	margin: 30px auto;
 	/*color: rgb(0,0,0);*/
 	/*font-size: 2em;*/
-	font-family: "Montserrat", sans-serif;
-    animation-delay: 5s;
-    -webkit-animation-delay: 5s;
+	font-family: "Montserrat", sans-serif;  
 	animation: cssload-breathe 8.05s ease infinite;
 		-o-animation: cssload-breathe 8.05s ease infinite;
 		-ms-animation: cssload-breathe 8.05s ease infinite;
 		-webkit-animation: cssload-breathe 8.05s ease infinite;
 		-moz-animation: cssload-breathe 8.05s ease infinite;
+		  -webkit-animation-delay: 3s; /* Safari 4.0 - 8.0 */
+    animation-delay:3s;
 }
 
 @keyframes cssload-breathe {
