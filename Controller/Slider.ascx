@@ -19,7 +19,8 @@
               <div style="vertical-align:central;text-align:center;" class="item<%= index++ ==0?" active":"" %>">
                   <img src="<%# Eval("IMG") %>" alt="<%# Eval("TITLE") %>">
                   <div class="SliderHead">
-                      <h2><%# Eval("TITLE") %></h2>
+                <%--      <h2><%# Eval("TITLE") %></h2>--%>
+                  <h2 class="cssload-slogan" style="font-family: 'Pacifico', cursive; font-size:60px;">Giá trị không gian sống !</h2>
                   </div>
                   
               </div>
