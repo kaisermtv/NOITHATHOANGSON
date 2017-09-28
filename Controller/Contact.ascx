@@ -2,7 +2,7 @@
 
 <section class="container1 contact" id="contact"> 
     <h2>Liên hệ</h2>
-    <div class="row">
+    <div style="width:100%;display:table;">
         <div class="col-sm-4">
             <div class="box">
                 <div class="box-left">
@@ -46,7 +46,7 @@
     </div>
     <!--End Rows-->
 
-    <div class="row box-contact">
+    <div style="width:100%;display:table;" class="box-contact">
         <form method="post" action="/lien-he">
         <div class="col-sm-6">
             <ul>

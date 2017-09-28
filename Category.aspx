@@ -10,7 +10,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container1">
         <form method="post" style="margin: 20px auto;" id="searchFrom">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
@@ -34,8 +34,8 @@
         </form>
         <asp:Repeater ID="dtlCat" runat="server" EnableViewState="False">
             <ItemTemplate>
-                <div class="row col-md-12">
-                    <h2 class="H2TraiNghiem"><%# Eval("NAME").ToString().ToUpper() %></h2>
+                <div class="col-md-12" >
+                    <h2 class="H2TraiNghiem" style="font-weight:bold;"><%# Eval("NAME").ToString().ToUpper() %></h2>
                     <br />
                 </div>
                 <div class="projects_holder clearfix v3 standard product">

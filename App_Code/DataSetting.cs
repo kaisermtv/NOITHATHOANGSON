@@ -49,6 +49,12 @@ public class DataSetting :DataClass
     #endregion
 
     #region setValue(String key,String value)
+
+    public bool setValue(String key, int value)
+    {
+        return setValue(key, value.ToString());
+    }
+
     public bool setValue(String key,String value)
     {
         try

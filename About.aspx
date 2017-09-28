@@ -41,11 +41,13 @@
             font-family: Arial;
             font-size: 20px;
             font-weight: bold;
+            
+            text-transform: uppercase;
         }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container1">
         <div class="row">
             <div class="main contact-w">
                 <div class="col-xs-12 col-sm-12 ">
@@ -58,6 +60,7 @@
                    
                     </p>--%>
                     <%--<p style="font-weight: bold; font-size: 15px;"><%= this.getValue("Name") %></p>--%>
+                    <p style="font-size: 13.5px;">Mã số thuế: <%= this.getValue("MaSoThue") %></p>
                     <p style="font-size: 13.5px;">Địa chỉ: <%= this.getValue("Address") %></p>
                     <p style="font-size: 13.5px;">Điện thoại: <%= this.getValue("Phone") %></p>
                     <p style="font-size: 13.5px;">Email: <%= this.getValue("Email") %></p>

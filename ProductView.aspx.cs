@@ -29,6 +29,7 @@ public partial class ProductView : System.Web.UI.Page
             objData = objProduct.getData(itemId);
             ctlSPLQ.Group = (int)objData["GROUPID"];
             ctlSPLQ.LienQuan = itemId;
+            Page.Title = objData["NAME"].ToString();
         //}
 
     }

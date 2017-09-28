@@ -1,0 +1,9 @@
+﻿User-agent: *
+Disallow: /system/
+Disallow: /js/
+Disallow: /css/
+Disallow: /ckeditor/
+Disallow: /ckfinder/
+Disallow: /Temp/
+Disallow: /WordForm/
+Disallow: /fonts/

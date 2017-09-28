@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="MenuEdit.aspx.cs" Inherits="System_MenuEdit" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="MenuEdit.aspx.cs" Inherits="System_MenuEdit" %>
 
 <%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">

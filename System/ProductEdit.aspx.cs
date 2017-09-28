@@ -62,6 +62,7 @@ public partial class System_ProductEdit : System.Web.UI.Page
             txtPrice.Text = objData["PRICE"].ToString();
             ddlGroup.SelectedValue = objData["GROUPID"].ToString();
             //ddlTrangThai.SelectedValue = objData["NSTATUS"].ToString();
+            txtContent.Text = objData["CONTENT"].ToString();
 
             htxtimg1.Value = objData["IMG"].ToString();
             htxtimg.Value = objData["IMG"].ToString();

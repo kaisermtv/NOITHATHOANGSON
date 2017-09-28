@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="ProductGroupEdit.aspx.cs" Inherits="System_ProductGroupEdit" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="ProductGroupEdit.aspx.cs" Inherits="System_ProductGroupEdit" %>
 
 
 <%@ Register TagPrefix="cc1" Namespace="SiteUtils" Assembly="CollectionPager" %>
