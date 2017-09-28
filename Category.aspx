@@ -8,16 +8,19 @@
             width: auto;
         }
     </style>
+    
+    <meta name="description" content="Nội ngoại thất hoàng sơn. Bán các loại đèn trang trí, sàn gỗ, cổng nhôm đúc" />
+    <link rel="canonical" href="<%= getUrlCanonical() %>" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container1">
         <form method="post" style="margin: 20px auto;" id="searchFrom">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
-                <input name="Search" class="form-control" value="<%= Search %>" placeholder="Tìm kiếm" />
+                <input name="Search" style="margin-bottom:10px;" class="form-control" value="<%= Search %>" placeholder="Tìm kiếm" />
             </div>
             <div class="col-sm-3">
-                <select class="form-control" name="Group" onchange="SubmitForm('searchFrom')">
+                <select class="form-control" style="margin-bottom:10px;" name="Group" onchange="SubmitForm('searchFrom')">
                     <option value="0">Tất cả</option>
                     <asp:Repeater ID="dtlGroup" runat="server">
                         <ItemTemplate>

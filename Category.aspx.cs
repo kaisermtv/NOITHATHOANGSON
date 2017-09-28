@@ -166,4 +166,22 @@ public partial class Category : System.Web.UI.Page
         return int.Parse(price).ToString("0,0") + " đ";
     }
     #endregion
+
+    #region getUrlCanonical
+    public string getUrlCanonical()
+    {
+        string url = SystemClass.http + SystemClass.getSetting("Domain") + "/";
+        if(group != 0)
+        {
+            url += SystemClass.convertToUnSign2(Page.Title) + "-gp" + group;
+        }
+        else
+        {
+            url += "danh-muc";
+        }
+
+
+        return url;
+    }
+    #endregion
 }
