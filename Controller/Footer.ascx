@@ -2,7 +2,7 @@
 <footer>
     <div class="container1 ftcontainer">
         <div class="ftlogo">
-            <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+            <a href="/"><img src="/images/logoFooter.png" alt="Logo"></a>
         </div>
         <div class="ftinfo">
             <h3><%= GetSetting("Name") %></h3>
@@ -14,6 +14,6 @@
         </div>
     </div>
     <div class="ftstatus">
-        Online: <%= SystemClass.Online %> Trong ngày: <%= SystemClass.OnlineDay %> Trong tháng: <%= SystemClass.OnlineMonth %> Tổng lượt truy cập: <%= SystemClass.OnlineAll %>
+        Online: <%= SystemClass.Online %>   .:.   Trong ngày: <%= SystemClass.OnlineDay %>   .:.   Trong tháng: <%= SystemClass.OnlineMonth %>   .:.   Tổng lượt truy cập: <%= SystemClass.OnlineAll %>
     </div>
 </footer>
