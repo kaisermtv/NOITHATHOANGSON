@@ -50,18 +50,18 @@ public partial class Category : System.Web.UI.Page
 
             Response.Redirect(url);
         }
-
-        dtlGroup.DataSource = objGroup.getDataToCombobox("");
-        dtlGroup.DataBind();
-
+        
         try
         {
             group = int.Parse(getParam("id"));
         }
-        catch(Exception ex)
+        catch //(Exception ex)
         {
             group = 0;
         }
+
+        dtlGroup.DataSource = objGroup.getDataToCombobox("");
+        dtlGroup.DataBind();
 
         try
         {
@@ -102,6 +102,11 @@ public partial class Category : System.Web.UI.Page
         {
             dtlCat.DataSource = objData.DefaultView;
             dtlCat.DataBind();
+
+            if (group != 0)
+            {
+                Page.Title = objData.Rows[0]["NAME"].ToString();
+            }
         }
 
     }

@@ -10,6 +10,7 @@
             <p>Địa chỉ: <%= GetSetting("Address") %></p>
             <p>Địa chỉ showroom: <%= GetSetting("AddressShowroom") %></p>
             <p>Hotline: <%= GetSetting("Hotline") %></p>
+            <p>Số điện thoại: <%= GetSetting("Phone") %></p>
         </div>
     </div>
     <div class="ftstatus">

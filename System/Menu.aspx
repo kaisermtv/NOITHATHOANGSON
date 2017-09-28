@@ -26,12 +26,12 @@
                     </asp:Repeater>
                 </select>
             </td>
-            <td style="width:15%">
+            <%--<td style="width:15%">
                 <select name="type" onchange="SubmitForm('seachform');" class="form-control">
                     <option value="1" <%= type==1?"selected=\"selected\"":"" %>>Menu ngang</option>
                     <option value="2" <%= type==2?"selected=\"selected\"":"" %>>Footer menu</option>
                 </select>
-            </td>
+            </td>--%>
             <td style="width: 40px !important; text-align: center;">
                 <input type="image" src="/images/Search.png" style="margin-bottom: -15px; margin-left: -15px;" />
             </td>

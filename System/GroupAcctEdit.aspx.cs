@@ -53,15 +53,17 @@ public partial class System_GroupAcctEdit : System.Web.UI.Page
 
         try
         {
+            DataSQL objSql = new DataSQL("tblAcctGroup");
+
             if (this.itemId != -1)
             {
-                objGroupAcct["ID"] = itemId;
+                objSql["ID"] = itemId;
             }
 
-            objGroupAcct["NAME"] = txtName.Text.Trim();
-            objGroupAcct["DESCRIBE"] = txtDescribe.Text.Trim();
+            objSql["NAME"] = txtName.Text.Trim();
+            objSql["DESCRIBE"] = txtDescribe.Text.Trim();
 
-            int ret = (int)objGroupAcct.setData();
+            int ret = (int)objSql.setData();
             if (this.itemId == -1)
             {
                 objSystemClass.addMessage("Thêm mới thành công!");

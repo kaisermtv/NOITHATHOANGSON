@@ -48,6 +48,8 @@ public partial class News : System.Web.UI.Page
             groupname = "Tin Tức";
         }
 
+        Page.Title = groupname;
+
         Context.Items["strTitle"] = groupname;
 
         SystemClass.setMenuActive("news", itemId.ToString());

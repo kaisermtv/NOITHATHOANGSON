@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="DanhMucEdit.aspx.cs" Inherits="System_DanhMucEdit" %>
+﻿<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" MasterPageFile="~/App_Master/System.master" CodeFile="DanhMucEdit.aspx.cs" Inherits="System_DanhMucEdit" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">

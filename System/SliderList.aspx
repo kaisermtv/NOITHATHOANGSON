@@ -12,7 +12,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
-    <form method="get" action="SliderList.aspx" id="seachform">
+    <%--<form method="get" action="SliderList.aspx" id="seachform">
     <table class="table" border ="0" style ="margin-top:-20px;">
         <tr>
             <td>
@@ -26,7 +26,7 @@
             </td>
         </tr>
     </table>
-    </form>
+    </form>--%>
 
     <asp:Repeater ID="dtlData" runat="server" EnableViewState="False">
         <HeaderTemplate>
