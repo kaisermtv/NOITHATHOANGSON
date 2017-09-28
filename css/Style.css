@@ -161,6 +161,11 @@ nav {
             nav .nav li a:hover {
                 color: blueviolet;
             }
+    nav .dropdown-menu {
+        background-color: red;
+    }
+    nav .dropdown-menu li {
+    }
 
     nav .hr {
         position: absolute;
