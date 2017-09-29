@@ -137,7 +137,7 @@ public class DataCategory : DataClass
             SqlCommand Cmd = this.getSQLConnect();
             Cmd.CommandText = "SELECT ID,NAME FROM tblCategory WHERE NSTATUS != 2";
 
-            if (id != 0)
+            if (id > 0)
             {
                 Cmd.CommandText += " AND PID = @PID";
                 Cmd.Parameters.Add("PID", SqlDbType.Int).Value = id;

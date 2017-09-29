@@ -120,7 +120,7 @@ public partial class System_MenuEdit : System.Web.UI.Page
             else if (type == 5)
             {
                 DataCategory objCategory = new DataCategory();
-                ddlDanhMuc.DataSource = objCategory.getDataToCombobox(null);
+                ddlDanhMuc.DataSource = objCategory.getDataToCombobox(null,-1);
                 ddlDanhMuc.DataValueField = "ID";
                 ddlDanhMuc.DataTextField = "NAME";
                 ddlDanhMuc.DataBind();

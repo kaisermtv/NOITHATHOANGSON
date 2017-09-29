@@ -60,7 +60,7 @@ public partial class Category : System.Web.UI.Page
             group = 0;
         }
 
-        dtlGroup.DataSource = objGroup.getDataToCombobox("");
+        dtlGroup.DataSource = objGroup.getDataToCombobox("",-1);
         dtlGroup.DataBind();
 
         try
