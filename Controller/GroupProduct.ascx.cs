@@ -15,7 +15,7 @@ public partial class Controller_GroupProduct : System.Web.UI.UserControl
     #region Even Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
-        DataTable objData = objCategory.getList(1);
+        DataTable objData = objCategory.getList(0,1);
 
         dtlCateloge.DataSource = objData.DefaultView;
         dtlCateloge.DataBind();

@@ -27,7 +27,14 @@
         <ItemTemplate>
             <tr>
                 <td class="DataListTableTdItemTT"><%# this.index++ %></td>
-                <td class="DataListTableTdItemJustify"><%# Eval("NAME") %></td>
+                
+                <td class="DataListTableTdItemJustify">
+                    <% if(itemId != 0){ %>
+                    <%# Eval("NAME") %>
+                    <% } else { %>
+                    <a href="ProductGroupList.aspx?id=<%# Eval("ID") %>"><%# Eval("NAME") %></a>
+                    <% } %>
+                </td>
                 <td class="DataListTableTdItemJustify"><%# Eval("DESCRIBE") %></td>
                 <td class="DataListTableTdItemJustify"><%# Eval("STATUS") %></td>
                 <td class="DataListTableTdItemCenter">
@@ -53,8 +60,10 @@
     </cc1:CollectionPager>
 
     <br />
-    <a href="ProductGroupEdit.aspx" class="btn btn-primary">Tạo nhóm mới</a>
-
+    <a href="ProductGroupEdit.aspx<%= (itemId != 0)?"?group=" +itemId:""  %>" class="btn btn-primary">Tạo nhóm mới</a>
+    <% if(itemId != 0){ %>
+    <a href="ProductGroupList.aspx" class="btn btn-danger">Trở về</a>
+    <% } %>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">

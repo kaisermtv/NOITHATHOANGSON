@@ -34,12 +34,14 @@ public partial class System_ProductEdit : System.Web.UI.Page
 
         if (!Page.IsPostBack)
         {
-            ddlGroup.DataSource = objCategory.getDataToCombobox();
+            ddlGroup.DataSource = objCategory.getDataToCombobox(null);
             ddlGroup.DataTextField = "Name";
             ddlGroup.DataValueField = "ID";
             ddlGroup.DataBind();
 
             ddlGroup.SelectedValue = group.ToString();
+
+            
         }
 
         //if (!Page.IsPostBack && this.itemId == 0)
@@ -56,16 +58,24 @@ public partial class System_ProductEdit : System.Web.UI.Page
                 Response.Redirect("ProductList.aspx");
                 return;
             }
+            
 
             txtName.Text = objData["NAME"].ToString();
             txtDescribe.Text = objData["DESCRIBE"].ToString();
             txtPrice.Text = objData["PRICE"].ToString();
             ddlGroup.SelectedValue = objData["GROUPID"].ToString();
+            LoadGroupChid();
+            if (objData["PID"].ToString() != "") ddlGroupChid.SelectedValue = objData["PID"].ToString();
+            else ddlGroupChid.SelectedValue = "0";
+
             //ddlTrangThai.SelectedValue = objData["NSTATUS"].ToString();
             txtContent.Text = objData["CONTENT"].ToString();
 
             htxtimg1.Value = objData["IMG"].ToString();
             htxtimg.Value = objData["IMG"].ToString();
+        } else
+        {
+            LoadGroupChid();
         }
     }
     #endregion
@@ -88,36 +98,40 @@ public partial class System_ProductEdit : System.Web.UI.Page
         int ret = 0;
         try
         {
-            
+            DataSQL objSQL = new DataSQL("tblProduct");
             if (itemId == 0)
             {
-                ret = objProduct.addData(txtName.Text, int.Parse(ddlGroup.SelectedValue), price, txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
-                if (ret != 0)
-                {
-                    objSystemClass.addMessage("Thêm sản phẩm thành công");
-                }
+                objSQL["ID"] = itemId;
+            }
+            objSQL["GROUPID"] = int.Parse(ddlGroup.SelectedValue);
+            objSQL["PID"] = int.Parse(ddlGroupChid.SelectedValue);
+            
+            objSQL["NAME"] = txtName.Text;
+            objSQL["DESCRIBE"] = txtDescribe.Text;
+            objSQL["CONTENT"] = txtContent.Text;
+            objSQL["IMG"] = saveImage(FileUpload, htxtimg, htxtimg1);
+            objSQL["UserPost"] = objSystemClass.getIDAccount();
+            objSQL["PRICE"] = price;
+
+            ret = (int)objSQL.setData();
+            
+        }
+        catch{}
+
+        if (ret != 0)
+        {
+            if(itemId == 0)
+            {
+                objSystemClass.addMessage("Thêm sản phẩm thành công");
             }
             else
             {
-                ret = objProduct.UpdateData(itemId, txtName.Text, int.Parse(ddlGroup.SelectedValue), price, txtDescribe.Text, txtContent.Text, saveImage(FileUpload, htxtimg, htxtimg1));
-                if (ret != 0)
-                {
-                    objSystemClass.addMessage("Cập nhật sản phẩm thành công");
-                }
+                objSystemClass.addMessage("Cập nhật sản phẩm thành công");
             }
-            
-        }
-        catch
-        {
-            
-        }
-        if (ret != 0)
-        {
             Response.Redirect("ProductEdit.aspx?id=" + ret);
         }
         else
         {
-            objSystemClass.addMessage(price.ToString());
             objSystemClass.addMessage("Có lỗi xảy ra!");
         }
     }
@@ -134,6 +148,29 @@ public partial class System_ProductEdit : System.Web.UI.Page
         inputc1.Value = img;
 
         return img;
+    }
+    #endregion
+
+    #region Method LoadGroupChid
+    private void LoadGroupChid()
+    {
+        int group = int.Parse(ddlGroup.SelectedValue);
+        if(group != 0)
+        {
+            ddlGroupChid.DataSource = objCategory.getDataToCombobox("Không chọn", group);
+            ddlGroupChid.DataTextField = "Name";
+            ddlGroupChid.DataValueField = "ID";
+            ddlGroupChid.DataBind();
+        }
+    }
+    #endregion
+
+    #region Even ddlGroup_SelectedIndexChanged
+    protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        LoadGroupChid();
+
+        ddlGroupChid.SelectedValue = "0";
     }
     #endregion
 }

@@ -92,19 +92,28 @@ public class DataCategory : DataClass
     #endregion
 
     #region method getList
-    public DataTable getList(int state = -1)
+    public DataTable getList(int id = 0,int state = -1)
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
-            Cmd.CommandText = "SELECT P.ID,P.NAME,P.IMG,P.[DESCRIBE],PL.NAME AS STATUS FROM tblCategory AS P LEFT JOIN tblStatus AS PL ON P.NSTATUS = PL.ID";
+            Cmd.CommandText = "SELECT P.ID,P.NAME,P.IMG,P.[DESCRIBE],PL.NAME AS STATUS FROM tblCategory AS P LEFT JOIN tblStatus AS PL ON P.NSTATUS = PL.ID WHERE 1=1";
 
             if(state != -1)
             {
-                Cmd.CommandText += " WHERE P.NSTATUS = @NSTATUS";
+                Cmd.CommandText += " AND P.NSTATUS = @NSTATUS";
                 Cmd.Parameters.Add("NSTATUS", SqlDbType.Int).Value = state;
             }
 
+            if(id != 0)
+            {
+                Cmd.CommandText += " AND P.PID = @PID";
+                Cmd.Parameters.Add("PID", SqlDbType.Int).Value = id;
+            }
+            else if(id == 0)
+            {
+                Cmd.CommandText += " AND P.PID IS NULL";
+            }
 
             DataTable ret = this.findAll(Cmd);
 
@@ -121,12 +130,22 @@ public class DataCategory : DataClass
     #endregion
 
     #region Method getDataToCombobox
-    public DataTable getDataToCombobox(String kcstr = "Không chọn")
+    public DataTable getDataToCombobox(String kcstr = "Không chọn",int id = 0)
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
             Cmd.CommandText = "SELECT ID,NAME FROM tblCategory WHERE NSTATUS != 2";
+
+            if (id != 0)
+            {
+                Cmd.CommandText += " AND PID = @PID";
+                Cmd.Parameters.Add("PID", SqlDbType.Int).Value = id;
+            }
+            else if (id == 0)
+            {
+                Cmd.CommandText += " AND PID IS NULL";
+            }
 
             DataTable ret = this.findAll(Cmd);
 
@@ -146,7 +165,7 @@ public class DataCategory : DataClass
     #endregion
 
     #region method setData
-    public int setData(int id,string img, String Name, String Describe,int trangthai)
+    public int setData(int id,string img, String Name, String Describe,int trangthai,int group = 0)
     {
         try
         {

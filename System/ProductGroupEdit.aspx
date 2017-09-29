@@ -77,7 +77,7 @@
         </div>
         <div class="AdminRightItem">
             <asp:Button ID="btnSaver" runat ="server" CssClass="btn btn-primary" Text="Ghi Nhận" OnClick="btnSaver_Click" />
-            <a href="/System/ProductGroupList.aspx" class="btn btn-default">Thoát</a>
+            <a href="/System/ProductGroupList.aspx<%= (group != 0)?"?id=" + group:"" %>" class="btn btn-default">Thoát</a>
         </div>
     </div>
 

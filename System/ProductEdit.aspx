@@ -63,7 +63,16 @@
                 Nhóm sản phẩm:
             </div>
             <div class="AdminRightItem">
-                <asp:DropDownList ID="ddlGroup" runat="server" class="AdminTextControl"></asp:DropDownList>
+                <asp:DropDownList ID="ddlGroup" runat="server" class="AdminTextControl" OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+            </div>
+        </div>
+
+        <div class="AdminItem">
+            <div class="AdminLeftItem">
+                Nhóm con:
+            </div>
+            <div class="AdminRightItem">
+                <asp:DropDownList ID="ddlGroupChid" runat="server" class="AdminTextControl"></asp:DropDownList>
             </div>
         </div>
 

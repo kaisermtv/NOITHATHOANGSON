@@ -12,12 +12,19 @@ public partial class System_ProductGroupList : System.Web.UI.Page
     private DataCategory objNewsGroup = new DataCategory();
 
     public int index = 0;
+    public int itemId = 0;
     #endregion
 
     #region method Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
         Context.Items["strTitle"] = "DANH SÁCH NHÓM SẢN PHẨM";
+
+        try
+        {
+            this.itemId = int.Parse(Request["id"].ToString());
+        }
+        catch { }
 
         if (!Page.IsPostBack)
         {
@@ -29,7 +36,7 @@ public partial class System_ProductGroupList : System.Web.UI.Page
     #region method getData()
     private void getData()
     {
-        DataTable objData = objNewsGroup.getList();
+        DataTable objData = objNewsGroup.getList(itemId);
 
         //dtlAccount.DataSource = objData.DefaultView;
         //dtlAccount.DataBind();
