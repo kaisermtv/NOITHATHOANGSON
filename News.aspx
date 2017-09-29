@@ -4,7 +4,6 @@
 <%@ Register Src="~/Controller/Paging.ascx" TagPrefix="uc1" TagName="Paging" %>
 <%@ Register Src="~/Controller/DanhMucTin.ascx" TagPrefix="uc1" TagName="DanhMucTin" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <meta name="description" content="Nội ngoại thất hoàng sơn. Bán các loại đèn trang trí, sàn gỗ" />
     <link rel="canonical" href="<%= getUrlCanonical() %>" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">

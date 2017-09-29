@@ -71,7 +71,7 @@ header {
     background-color: white;
     margin: 0px;
     padding: 10px;
-    border-bottom: 1px solid blueviolet;
+    /*border-bottom: 1px solid blueviolet;*/
     background-image: url("/images/pimgpsh_fullsize_distr.png");
 }
 
@@ -129,6 +129,7 @@ nav {
     padding: 0px;
     min-height: 0px !important;
     border-radius:0px !important;
+    height:45px;
 }
 
     nav img {
@@ -144,7 +145,7 @@ nav {
     }
 
     nav .nav {
-        
+        margin-top:4px; 
     }
 
         nav .nav li {
@@ -159,7 +160,9 @@ nav {
             }
 
             nav .nav li a:hover {
-                color: blueviolet;
+                color: white;
+                border-radius:8px;
+                background-color:#da251c;
             }
     nav .dropdown-menu {
         background-color: red;
@@ -453,6 +456,10 @@ footer {
     color: white;
     margin-top:20px;
 }
+
+    footer h3 {
+        text-transform: uppercase;
+    }
 
     footer p {
         margin: 3px 0px;

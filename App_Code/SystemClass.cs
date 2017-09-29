@@ -385,7 +385,7 @@ public class SystemClass
                 SystemClass objSystemClass = new SystemClass();
 
                 string sFileName = objSystemClass.getIDAccount() + DateTime.Now.ToString("-dd-MM-yyy--hh-mm-ss-fffffff-");
-                string strEx = System.IO.Path.GetFileName(PostedFile.FileName);
+                string strEx = SystemClass.convertToUnSign2(System.IO.Path.GetFileName(PostedFile.FileName));
                 //strEx = strEx.Substring(strEx.LastIndexOf("."), strEx.Length - strEx.LastIndexOf("."));
                 strBaseLoactionImg += sFileName + strEx;
                 strBaseLoactionImg = strBaseLoactionImg.Replace("/", "\\");

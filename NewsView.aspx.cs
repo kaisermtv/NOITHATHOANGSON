@@ -69,7 +69,7 @@ public partial class NewsView : System.Web.UI.Page
             dtlTinCu.DataBind();
         }
 
-        this.Title = Context.Items["strTitle"] + " - YOLO, DÁM CHIA SẺ";
+        this.Title = Context.Items["strTitle"].ToString();
     }
     #endregion
 

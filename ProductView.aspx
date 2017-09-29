@@ -2,11 +2,21 @@
 
 <%@ Register Src="~/Controller/Product.ascx" TagPrefix="ctl" TagName="Product" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <meta name="description" content="<%=objData["DESCRIBE"]  %>" />
+    <meta property="og:title" content="<%=objData["NAME"] %>"/>
+    <meta property="og:type" content="Product" />
+    <meta property="og:image" content="http://www.noingoaithathoangson.com<%= objData["IMG"] %>" />
+    <meta property="og:url" content="<%= getUrlCanonical() %>" />
+    <meta property="og:description" content="<%=objData["DESCRIBE"] %>"/>
+    <meta property="og:author" content="hoangson"/>
+    <meta property="og:keywords" content="<%=objData["NAME"] %>" />
+    <meta property="twitter:url" content="http://www.noingoaithathoangson.com" />
+    <meta property="twitter:title"  content="<%=objData["NAME"] %>" />
+    <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["IMG"].ToString() %>" />
+
     <link rel="canonical" href="<%= getUrlCanonical() %>" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <section class="container1 productview">
+    <section class="container1 productview" >
         <div style="display: table;width:100%">
             <div class="col-sm-4">
                 <img src="<%= objData["IMG"] %>" alt="<%=objData["NAME"] %>" />
