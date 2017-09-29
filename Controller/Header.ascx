@@ -9,9 +9,9 @@
             </div>
         <div style="width:100%;">
         <h1><%= GetSetting("Name") %></h1>
-        <p>Địa chỉ: <%=GetSetting("Address") %></p>
-        <p>Địa chỉ Showroom: <%=GetSetting("AddressShowroom") %></p>
-        <p>Số điện thoại: <%=GetSetting("Phone") %></p>
+        <p><img src="/images/diachi.jpg" style=" width:20px; height:auto;" /> Địa chỉ: <%=GetSetting("Address") %></p>
+        <p><img src="/images/diachi.jpg" style=" width:20px; height:auto;"/> Địa chỉ Showroom: <%=GetSetting("AddressShowroom") %></p>
+        <p><img src="/images/DienThoai.png" style=" width:20px; height:auto;"/> Số điện thoại: <%=GetSetting("Phone") %></p>
             </div>
     </div>
     <div class="col-sm-3" style="text-align:right;">
