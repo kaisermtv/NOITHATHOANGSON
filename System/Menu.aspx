@@ -70,7 +70,7 @@
                         </a></center>
                 </td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="MenuEdit.aspx?id=<%# Eval("ID") %>">
+                    <a href="MenuEdit.aspx?id=<%# Eval("ID") %>&type=<%# Eval("MenuID") %>">
                         <img src="/Images/Edit.png" alt="">
                     </a>
                 </td>

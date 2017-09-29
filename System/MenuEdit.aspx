@@ -22,7 +22,6 @@
                 </div>
             </div>
 
-        <% if (type == 1){ %>
             <div class="AdminItem">
                 <div class="AdminLeftItem">
                     Tên menu:
@@ -31,7 +30,7 @@
                     <asp:TextBox ID="txtName" runat="server" class="AdminTextControl"></asp:TextBox>
                 </div>
             </div>
-
+            
             <div class="AdminItem" style="display: table">
                 <div class="AdminLeftItem">
                     Mô tả:
@@ -40,6 +39,8 @@
                     <asp:TextBox ID="txtDescribe" runat="server" class="AdminTextControl" TextMode="MultiLine" Style="resize: vertical"></asp:TextBox>
                 </div>
             </div>
+
+        <% if (type == 1){ %>
 
             <div class="AdminItem" style="display: table">
                 <div class="AdminLeftItem">
@@ -50,7 +51,22 @@
                 </div>
             </div>
         <% }else if(type == 2){ %>
+            
 
+            <div class="AdminItem">
+                <div class="AdminLeftItem">
+                    Trang hiển thị:
+                </div>
+                <div class="AdminRightItem">
+                    <asp:DropDownList ID="dtlMenuName" runat="server" class="AdminTextControl">
+                        <asp:ListItem Value="0" Text="Trang chủ" />
+                        <asp:ListItem Value="1" Text="Giới thiệu" />
+                        <asp:ListItem Value="2" Text="Danh mục" />
+                        <asp:ListItem Value="3" Text="Tin tức" />
+                        <asp:ListItem Value="4" Text="Dự án" />
+                    </asp:DropDownList>
+                </div>
+            </div>
         <% }else if(type == 3){ %>
 
         <% }else if(type == 4){ %>

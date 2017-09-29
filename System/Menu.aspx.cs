@@ -83,4 +83,12 @@ public partial class System_Menu : System.Web.UI.Page
     }
     #endregion
 
+    #region getLinkMenuEdit
+    public string getLinkMenuEdit(int id,int type)
+    {
+        return "MenuEdit.aspx?id=" + id + "&" + type;
+    }
+
+    #endregion
+
 }

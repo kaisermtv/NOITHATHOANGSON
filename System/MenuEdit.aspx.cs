@@ -58,11 +58,11 @@ public partial class System_MenuEdit : System.Web.UI.Page
                 ddlGroup.SelectedValue = "0";
             }
 
+            txtName.Text = objData["NAME"].ToString();
             menuid = (int)objData["MenuID"];
 
             if (type == 1)
             {
-                txtName.Text = objData["NAME"].ToString();
                 txtDescribe.Text = objData["DESCRIBE"].ToString();
                 txtLink.Text = objData["LINK"].ToString();
             }
