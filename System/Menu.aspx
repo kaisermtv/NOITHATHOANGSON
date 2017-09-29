@@ -46,6 +46,7 @@
                     <tr class="DataListTableHeader">
                         <th class="DataListTableHeaderTdItemTT" style="width: 4%;">TT</th>
                         <th class="DataListTableHeaderTdItemJustify" style="width: 20%;">Tên Menu</th>
+                        <th class="DataListTableHeaderTdItemJustify" style="width: 10%;">Kiểu</th>
                         <th class="DataListTableHeaderTdItemJustify">Link</th>
                         <th class="DataListTableHeaderTdItemCenter" style="width: 3%;">Up</th>
                         <th class="DataListTableHeaderTdItemCenter" style="width: 3%;">Down</th>
@@ -57,7 +58,8 @@
             <tr>
                 <td class="DataListTableTdItemTT"><%# this.index++ %></td>
                 <td class="DataListTableTdItemJustify"><a href="Menu.aspx?id=<%# Eval("ID") %>"><%# Eval("NAME") %></a></td>
-                <td class="DataListTableTdItemJustify"><%# Eval("LINK") %></td>
+                <td class="DataListTableTdItemJustify"><%# Eval("NTYPE") %></td>
+                <td class="DataListTableTdItemJustify"><%# SystemClass.getLinkMenu((int)Eval("NTYPE") ,(string)Eval("LINK")) %></td>
                 <td class="DataListTableTdItemCenter">
                     <center>
                         <a href="MenuMove.aspx?id=<%# Eval("ID") %>&vt=<%# this.index-2 %>">
@@ -70,7 +72,7 @@
                         </a></center>
                 </td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="MenuEdit.aspx?id=<%# Eval("ID") %>&type=<%# Eval("MenuID") %>">
+                    <a href="MenuEdit.aspx?id=<%# Eval("ID") %>&type=<%# Eval("NTYPE") %>">
                         <img src="/Images/Edit.png" alt="">
                     </a>
                 </td>
@@ -87,7 +89,7 @@
         </FooterTemplate>
     </asp:Repeater>
     <br />
-    <a href="MenuEdit.aspx?pid=<%= itemId %>&type=<%= type %>" class="btn btn-primary">Thêm menu</a>
+    <a href="MenuEdit.aspx?pid=<%= itemId %>&mid=<%= type %>" class="btn btn-primary">Thêm menu</a>
     <% if(objData != null){ %>
     <a href="Menu.aspx?type=<%= type %><%= (objData["PID"].ToString() != "")?"&pid="+objData["PID"].ToString():""  %>" class="btn btn-danger">Trở lại</a>
     <% } %>

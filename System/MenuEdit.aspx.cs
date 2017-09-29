@@ -13,10 +13,11 @@ public partial class System_MenuEdit : System.Web.UI.Page
     private SystemClass objSystemClass = new SystemClass();
 
     public int itemId = 0;
-    public int menuid = 1;
     public int mid = 1;
 
     public int type = 1;
+    public int ntype = 1;
+
     public int pid = 0;
     #endregion
 
@@ -79,27 +80,28 @@ public partial class System_MenuEdit : System.Web.UI.Page
                 }
 
                 txtName.Text = objData["NAME"].ToString();
-                menuid = (int)objData["MenuID"];
+                mid = (int)objData["MenuID"];
                 txtDescribe.Text = objData["DESCRIBE"].ToString();
+                ntype = (int)objData["NTYPE"];
             }
             else
             {
                 ddlGroup.SelectedValue = pid.ToString();
-                menuid = 1;
+                ntype = 1;
             }
             
 
-            if (mid == 1)
+            if (type == 1)
             {
-                if(menuid == 1 && objData != null)
+                if(ntype == 1 && objData != null)
                     txtLink.Text = objData["LINK"].ToString();
             }
-            else if (mid == 2)
+            else if (type == 2)
             {
-                if (menuid == 2 && objData != null)
+                if (ntype == 2 && objData != null)
                     dtlMenuName.SelectedValue = objData["LINK"].ToString();
             }
-            else if (mid == 3)
+            else if (type == 3)
             {
                 DataNewsGroup objGroupNew = new DataNewsGroup();
                 ddlGroupNews.DataSource = objGroupNew.getDataToCombobox(null);
@@ -107,15 +109,15 @@ public partial class System_MenuEdit : System.Web.UI.Page
                 ddlGroupNews.DataTextField = "NAME";
                 ddlGroupNews.DataBind();
 
-                if (menuid == 3 && objData != null)
+                if (ntype == 3 && objData != null)
                     ddlGroupNews.SelectedValue = objData["LINK"].ToString();
             }
-            else if (mid == 4)
+            else if (type == 4)
             {
-                if (menuid == 4 && objData != null)
+                if (ntype == 4 && objData != null)
                     txNewsID.Text = objData["LINK"].ToString();
             }
-            else if (mid == 5)
+            else if (type == 5)
             {
                 DataCategory objCategory = new DataCategory();
                 ddlDanhMuc.DataSource = objCategory.getDataToCombobox(null);
@@ -123,12 +125,12 @@ public partial class System_MenuEdit : System.Web.UI.Page
                 ddlDanhMuc.DataTextField = "NAME";
                 ddlDanhMuc.DataBind();
 
-                if (menuid == 5 && objData != null)
+                if (ntype == 5 && objData != null)
                     ddlDanhMuc.SelectedValue = objData["LINK"].ToString();
             }
-            else if (mid == 6)
+            else if (type == 6)
             {
-                if (menuid == 6 && objData != null)
+                if (ntype == 6 && objData != null)
                     txtProductID.Text = objData["LINK"].ToString();
             }
             
@@ -156,42 +158,45 @@ public partial class System_MenuEdit : System.Web.UI.Page
             }
             else
             {
-                objSQL["NTYPE"] = type;
+                objSQL["MenuID"] = mid;
             }
 
-            objSQL["MenuID"] = type;
-            objSQL["PID"] = int.Parse(ddlGroup.SelectedValue);
+            objSQL["NTYPE"] = type;
+
+            int group = int.Parse(ddlGroup.SelectedValue);
+            if(group != 0) objSQL["PID"] = group;
+
             objSQL["NAME"] = txtName.Text;
             objSQL["DESCRIBE"] = txtDescribe.Text;
 
-            if (mid == 1)
+            if (type == 1)
             {
                 objSQL["LINK"] = txtLink.Text;
             }
-            else if (mid == 2)
+            else if (type == 2)
             {
                 objSQL["LINK"] = dtlMenuName.SelectedValue;
             }
-            else if (mid == 3)
+            else if (type == 3)
             {
                 objSQL["LINK"] = ddlGroupNews.SelectedValue;
             }
-            else if (mid == 4)
+            else if (type == 4)
             {
                 objSQL["LINK"] = txNewsID.Text;
             }
-            else if (mid == 5)
+            else if (type == 5)
             {
                 objSQL["LINK"] = ddlDanhMuc.SelectedValue;
             }
-            else if (mid == 6)
+            else if (type == 6)
             {
                 objSQL["LINK"] = txtProductID.Text;
             }
 
             ret = (int)objSQL.setData();
         }
-        catch
+        catch (Exception ex)
         {
             
         }
@@ -199,7 +204,7 @@ public partial class System_MenuEdit : System.Web.UI.Page
         if(ret != 0)
         {
             objSystemClass.addMessage("Cập nhật menu thành công");
-            Response.Redirect("MenuEdit.aspx?id=" + ret);
+            Response.Redirect("MenuEdit.aspx?id=" + ret + "&type=" + type);
         }
         else
         {

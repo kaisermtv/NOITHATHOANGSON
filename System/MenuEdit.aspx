@@ -5,12 +5,12 @@
 
 
     <ul class="nav nav-tabs">
-        <li <%= (type == 1)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&mid=1">Tự tạo liên kết</a></li>
-        <li <%= (type == 2)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&mid=2">Các mục sẵn có</a></li>
-        <li <%= (type == 3)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&mid=3">Thêm nhóm tin</a></li>
-        <li <%= (type == 4)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&mid=4">Thêm bài viết</a></li>
-        <li <%= (type == 5)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&mid=5">Thêm danh mục</a></li>
-        <li <%= (type == 6)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&mid=6">Thêm sản phẩm</a></li>
+        <li <%= (type == 1)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=1">Tự tạo liên kết</a></li>
+        <li <%= (type == 2)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=2">Các mục sẵn có</a></li>
+        <li <%= (type == 3)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=3">Thêm nhóm tin</a></li>
+        <li <%= (type == 4)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=4">Thêm bài viết</a></li>
+        <li <%= (type == 5)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=5">Thêm danh mục</a></li>
+        <li <%= (type == 6)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=6">Thêm sản phẩm</a></li>
     </ul>
     <div class="tab-content">
             <div class="AdminItem">
@@ -113,8 +113,8 @@
         </div>
         <div class="AdminRightItem">
             <asp:Button ID="btnSaver" runat="server" CssClass="btn btn-primary" Text="Ghi Nhận" OnClick="btnSaver_Click" />
-            <a href="/System/Menu.aspx?id=<%= ddlGroup.SelectedValue  %>&type=<%=type %>" class="btn btn-default">Thoát</a>
-            <a href="/System/MenuNew.aspx?pid=<%= ddlGroup.SelectedValue %>&type=<%=type %>" class="btn btn-danger" style="float: right">Thêm mới</a>
+            <a href="/System/Menu.aspx?id=<%= ddlGroup.SelectedValue  %>&type=<%=mid %>" class="btn btn-default">Thoát</a>
+            <a href="/System/MenuEdit.aspx?pid=<%= ddlGroup.SelectedValue %>&type=<%=type %>&mid=<%= mid %>" class="btn btn-danger" style="float: right">Thêm mới</a>
         </div>
     </div>
 
