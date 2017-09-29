@@ -61,7 +61,9 @@
     <ctl:Footer runat="server" />
     <script src="https://uhchat.net/code.php?f=dee08c"></script>
     <div class="hostline">
-    <img src="/images/hotline.gif" alt="hotline" style="width:200px;" />
+    <a href="tel:0979080555">
+    <img src="/images/hotline2.png" alt="hotline" style="width:150px;" />
+    </a>
     </div>
 </body>
 </html>

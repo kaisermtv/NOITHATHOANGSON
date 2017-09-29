@@ -502,7 +502,7 @@ footer {
 .cssload-slogan { font-size:16px;}
 
 .box {
-    width: 320px;
+    width: 100%;
     overflow:hidden;
 }
 
@@ -516,7 +516,7 @@ footer {
 .box-right {
     padding-top: 10px;
     float: left;
-    width: 200px;
+    width: 95%;
 }
 }
 
@@ -530,8 +530,8 @@ padding: 0;
 }
 .hostline 
 {
-    width:210px;
-    height:60px;
+    width:150px;
+    height:70px;
     display: block;  
     padding-top: 45px;
     position: fixed;
