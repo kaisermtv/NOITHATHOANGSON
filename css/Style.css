@@ -528,8 +528,8 @@ padding: 0;
 }
 .hostline 
 {
-    width:210px;
-    height:60px;
+    width:150px;
+    height:70px;
     display: block;  
     padding-top: 45px;
     position: fixed;
