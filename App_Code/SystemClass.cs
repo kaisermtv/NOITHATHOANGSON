@@ -385,15 +385,20 @@ public class SystemClass
                 SystemClass objSystemClass = new SystemClass();
 
                 string sFileName = objSystemClass.getIDAccount() + DateTime.Now.ToString("-dd-MM-yyy--hh-mm-ss-fffffff-");
-                string strEx = SystemClass.convertToUnSign2(System.IO.Path.GetFileName(PostedFile.FileName));
-                //strEx = strEx.Substring(strEx.LastIndexOf("."), strEx.Length - strEx.LastIndexOf("."));
-                strBaseLoactionImg += sFileName + strEx;
+                string strFileName = System.IO.Path.GetFileName(PostedFile.FileName);
+
+                int lastIndex = strFileName.LastIndexOf(".");
+                
+                string fileName = SystemClass.convertToUnSign2( strFileName.Substring(0,lastIndex));
+                string strEx = strFileName.Substring(lastIndex);
+
+                strBaseLoactionImg += sFileName + fileName + strEx;
                 strBaseLoactionImg = strBaseLoactionImg.Replace("/", "\\");
                 PostedFile.SaveAs(strBaseLoactionImg);
 
                 if (defau != "") DeleteFile(defau);
 
-                return cfgFolder + sFileName + strEx;
+                return cfgFolder + sFileName + fileName + strEx;
             }
         }
         catch //(Exception ex)
@@ -425,6 +430,60 @@ public class SystemClass
         DataSetting objSetting = new DataSetting();
 
         return objSetting.getValue(key);
+    }
+    #endregion
+
+    #region getLinkMenu
+    public static string getLinkMenu(int ntype,string link)
+    {
+        if (ntype == 1)
+        {
+            return link;
+        }
+        else if (ntype == 2)
+        {
+            switch(link)
+            {
+                case "0":
+                    return "/";
+                case "1":
+                    return "/Gioi-Thieu";
+                case "2":
+                    return "/Danh-Muc";
+                case "3":
+                    return "/Tin-Tuc";
+                case "4":
+                    return "/du-an-da-trien-khai";
+                default:
+                    return "/";
+            }
+        }
+        else if (ntype == 3)
+        {
+            DataNewsGroup objGroupNews = new DataNewsGroup();
+
+            return "/" + convertToUnSign2(objGroupNews.getNameById(int.Parse(link))) + "-cat" + link;
+        }
+        else if (ntype == 4)
+        {
+            DataNews objNews = new DataNews();
+
+            return "/" + convertToUnSign2(objNews.getNameById(int.Parse(link))) + "-v" + link;
+        }
+        else if (ntype == 5)
+        {
+            DataCategory objCategory = new DataCategory();
+
+            return "/" + convertToUnSign2(objCategory.getNameById(int.Parse(link))) + "-gp" + link;
+        }
+        else if (ntype == 6)
+        {
+            DataProduct objProduct = new DataProduct();
+
+            return "/" + convertToUnSign2(objProduct.getNameById(int.Parse(link))) + "-p" + link;
+        }
+
+        return "/";
     }
     #endregion
 

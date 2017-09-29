@@ -83,4 +83,36 @@ public partial class System_Menu : System.Web.UI.Page
     }
     #endregion
 
+    #region getLinkMenuEdit
+    public string getLinkMenuEdit(int id,int type)
+    {
+        return "MenuEdit.aspx?id=" + id + "&" + type;
+    }
+
+    #endregion
+
+    #region getNameNtype
+    public string getNameNtype(int ntype)
+    {
+        switch(ntype)
+        {
+            case 1:
+                return "Link";
+            case 2:
+                return "Page";
+            case 3:
+                return "Group News";
+            case 4:
+                return "News";
+            case 5:
+                return "Caterogy";
+            case 6:
+                return "Product";
+        }
+
+
+        return "";
+    }
+    #endregion
+
 }

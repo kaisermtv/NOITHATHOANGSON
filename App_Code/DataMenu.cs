@@ -159,7 +159,7 @@ public class DataMenu : DataClass
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
-            Cmd.CommandText = "SELECT P.ID,P.NAME,P.LINK,P.IORDER" + (countchild ? ",(SELECT COUNT(*) FROM tblMenu WHERE PID = P.ID) AS COUNTCHILD" : "") + " FROM tblMenu AS P WHERE 1=1 ";
+            Cmd.CommandText = "SELECT P.ID,P.NTYPE,P.MenuID,P.NAME,P.LINK,P.IORDER" + (countchild ? ",(SELECT COUNT(*) FROM tblMenu WHERE PID = P.ID) AS COUNTCHILD" : "") + " FROM tblMenu AS P WHERE 1=1 ";
 
             if (id == 0)
             {
