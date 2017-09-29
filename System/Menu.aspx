@@ -87,7 +87,7 @@
         </FooterTemplate>
     </asp:Repeater>
     <br />
-    <a href="MenuNew.aspx?pid=<%= itemId %>&type=<%= type %>" class="btn btn-primary">Thêm menu</a>
+    <a href="MenuEdit.aspx?pid=<%= itemId %>&type=<%= type %>" class="btn btn-primary">Thêm menu</a>
     <% if(objData != null){ %>
     <a href="Menu.aspx?type=<%= type %><%= (objData["PID"].ToString() != "")?"&pid="+objData["PID"].ToString():""  %>" class="btn btn-danger">Trở lại</a>
     <% } %>

@@ -385,15 +385,20 @@ public class SystemClass
                 SystemClass objSystemClass = new SystemClass();
 
                 string sFileName = objSystemClass.getIDAccount() + DateTime.Now.ToString("-dd-MM-yyy--hh-mm-ss-fffffff-");
-                string strEx = SystemClass.convertToUnSign2(System.IO.Path.GetFileName(PostedFile.FileName));
-                //strEx = strEx.Substring(strEx.LastIndexOf("."), strEx.Length - strEx.LastIndexOf("."));
-                strBaseLoactionImg += sFileName + strEx;
+                string strFileName = System.IO.Path.GetFileName(PostedFile.FileName);
+
+                int lastIndex = strFileName.LastIndexOf(".");
+                
+                string fileName = SystemClass.convertToUnSign2( strFileName.Substring(0,lastIndex));
+                string strEx = strFileName.Substring(lastIndex);
+
+                strBaseLoactionImg += sFileName + fileName + strEx;
                 strBaseLoactionImg = strBaseLoactionImg.Replace("/", "\\");
                 PostedFile.SaveAs(strBaseLoactionImg);
 
                 if (defau != "") DeleteFile(defau);
 
-                return cfgFolder + sFileName + strEx;
+                return cfgFolder + sFileName + fileName + strEx;
             }
         }
         catch //(Exception ex)
