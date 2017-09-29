@@ -20,7 +20,7 @@
                   <img src="<%# Eval("IMG") %>" alt="<%# Eval("TITLE") %>">
                   <div class="SliderHead">
                 <%--      <h2><%# Eval("TITLE") %></h2>--%>
-                  <h2 class="cssload-slogan" style="font-family: 'Pacifico', cursive; font-size:50px;">Giá trị không gian sống !</h2>
+                  <h2 class="cssload-slogan" style="font-family: 'Pacifico', cursive;">Giá trị không gian sống !</h2>
                   </div>
                   
               </div>

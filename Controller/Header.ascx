@@ -16,7 +16,6 @@
     </div>
     <div class="col-sm-3" style="text-align:right;">
         <img src="/images/hotline.gif" alt="hotline" style="width:200px;" />
-    </div>
-    
+    </div>    
     </div>
 </header>
