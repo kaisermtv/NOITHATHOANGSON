@@ -495,6 +495,10 @@ footer {
 
 /* End: Footer tag */
 /*Code the linh fix slogan 28/9/2017*/
+.cssload-slogan { font-size:50px;}
+@media screen and (max-width: 600px){
+.cssload-slogan { font-size:16px;}
+}
 .cssload-slogan 
 {
 	text-align:center;
