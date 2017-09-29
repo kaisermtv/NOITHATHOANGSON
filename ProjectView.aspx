@@ -2,7 +2,6 @@
 <%@ Register Src="~/Controller/Product.ascx" TagPrefix="ctl" TagName="Product" %>
 <%@ Register src="Controller/Project.ascx" tagname="Project" tagprefix="uc1" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <meta name="description" content="<%=objData["DESCRIBE"]  %>" />
     <link rel="canonical" href="<%= getUrlCanonical() %>" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

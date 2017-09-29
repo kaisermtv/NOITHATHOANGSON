@@ -1,4 +1,6 @@
-﻿User-agent: *
+﻿Sitemap: http://noingoaithathoangson.com/sitemap.xml
+
+User-agent: *
 Disallow: /system/
 Disallow: /js/
 Disallow: /css/

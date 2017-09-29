@@ -7,7 +7,6 @@
 <%@ Register Src="~/Controller/TinTuc.ascx" TagPrefix="ctl" TagName="TinTuc" %>
 <%@ Register Src="~/Controller/Contact.ascx" TagPrefix="ctl" TagName="Contact" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <meta name="description" content="Nội ngoại thất hoàng sơn. Bán các loại đèn trang trí, sàn gỗ, cổng nhôm đúc" />
     <link rel="canonical" href="<%= SystemClass.http + SystemClass.getSetting("Domain") %>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

@@ -14,6 +14,7 @@ public partial class System_MenuEdit : System.Web.UI.Page
 
     public int itemId = 0;
     public int menuid = 1;
+    public int type = 1;
     #endregion
 
     #region method Page_Load
@@ -22,6 +23,12 @@ public partial class System_MenuEdit : System.Web.UI.Page
         try
         {
             this.itemId = int.Parse(Request["id"].ToString());
+        }
+        catch { }
+
+        try
+        {
+            this.type = int.Parse(Request["type"].ToString());
         }
         catch { }
 
@@ -37,12 +44,6 @@ public partial class System_MenuEdit : System.Web.UI.Page
                 return;
             }
 
-            txtName.Text = objData["NAME"].ToString();
-            txtDescribe.Text = objData["DESCRIBE"].ToString();
-            txtLink.Text = objData["LINK"].ToString();
-
-            menuid = (int)objData["MenuID"];
-
             ddlGroup.DataSource = objMenu.getDataToCombobox("-- Thư mục gốc --");
             ddlGroup.DataValueField = "ID";
             ddlGroup.DataTextField = "NAME";
@@ -57,6 +58,37 @@ public partial class System_MenuEdit : System.Web.UI.Page
                 ddlGroup.SelectedValue = "0";
             }
 
+            menuid = (int)objData["MenuID"];
+
+            if (type == 1)
+            {
+                txtName.Text = objData["NAME"].ToString();
+                txtDescribe.Text = objData["DESCRIBE"].ToString();
+                txtLink.Text = objData["LINK"].ToString();
+            }
+            else if (type == 2)
+            {
+
+            }
+            else if (type == 3)
+            {
+
+            }
+            else if (type == 4)
+            {
+
+            }
+            else if (type == 5)
+            {
+
+
+
+            }
+
+            
+
+            
+
         }
     }
     #endregion
@@ -64,23 +96,37 @@ public partial class System_MenuEdit : System.Web.UI.Page
     #region method btnSaver_Click
     protected void btnSaver_Click(object sender, EventArgs e)
     {
-        if (txtName.Text.Trim() == "")
+        if(type == 1)
         {
-            objSystemClass.addMessage("Không được để trông tên menu");
-            return;
-        }
+            if (txtName.Text.Trim() == "")
+            {
+                objSystemClass.addMessage("Không được để trông tên menu");
+                return;
+            }
 
-        int ret = objMenu.UpdateData(itemId,int.Parse(ddlGroup.SelectedValue),txtName.Text, txtDescribe.Text, txtLink.Text);
+            int ret = objMenu.UpdateData(itemId, int.Parse(ddlGroup.SelectedValue), txtName.Text, txtDescribe.Text, txtLink.Text);
 
-        if (ret != 0)
-        {
-            objSystemClass.addMessage("Cập nhật menu thành công");
-            Response.Redirect("MenuEdit.aspx?id=" + ret);
+            if (ret != 0)
+            {
+                objSystemClass.addMessage("Cập nhật menu thành công");
+                Response.Redirect("MenuEdit.aspx?id=" + ret);
+            }
+            else
+            {
+                objSystemClass.addMessage("Có lỗi xảy ra! (" + objMenu.Message + ")");
+            }
+        } else if(type == 2){
+
+        } else if(type == 3){
+
+        } else if(type == 4){
+
+        } else if(type == 5){
+
+
+
         }
-        else
-        {
-            objSystemClass.addMessage("Có lỗi xảy ra! (" + objMenu.Message + ")");
-        }
+        
     }
     #endregion
 }

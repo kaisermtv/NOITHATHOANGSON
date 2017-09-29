@@ -14,7 +14,6 @@
     <meta property="twitter:title"  content="<%=objData["Title"] %>" />
     <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["ImgUrl"].ToString() %>" />
 
-    <meta name="description" content="<%=objData["ShortContent"]  %>" />
     <link rel="canonical" href="<%= getUrlCanonical() %>" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
