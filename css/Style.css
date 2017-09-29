@@ -169,11 +169,18 @@ nav {
     }
   
     nav .dropdown-menu li {
-    }
-   li:hover .dropdown-menu
+    }   
+    
+    @media screen and (min-width: 767px)
     {
-     display:block;
+        nav li:hover .dropdown-menu
+        {
+         display:block;
+        }
     }
+    
+     
+  
     nav .hr {
         position: absolute;
         bottom: 10px;
@@ -498,9 +505,8 @@ footer {
 /* End: Footer tag */
 /*Code the linh fix slogan 28/9/2017*/
 .cssload-slogan { font-size:50px;}
-@media screen and (max-width: 600px){
+@media screen and (max-width: 767px){
 .cssload-slogan { font-size:16px;}
-
 .box {
     width: 100%;
     overflow:hidden;
