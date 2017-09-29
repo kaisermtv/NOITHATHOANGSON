@@ -140,4 +140,11 @@ public partial class NewsView : System.Web.UI.Page
         CreateDocument(true);
     }
     #endregion
+
+    #region getUrlCanonical
+    public string getUrlCanonical()
+    {
+        return SystemClass.http + SystemClass.getSetting("Domain") + "/" + SystemClass.convertToUnSign2(objData["Title"].ToString()) + "-v" + itemId;
+    }
+    #endregion
 }

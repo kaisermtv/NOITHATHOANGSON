@@ -57,4 +57,11 @@ public partial class ProductView : System.Web.UI.Page
         return null;
     }
     #endregion
+
+    #region getUrlCanonical
+    public string getUrlCanonical()
+    {
+        return SystemClass.http + SystemClass.getSetting("Domain") + "/" + SystemClass.convertToUnSign2(objData["NAME"].ToString()) + "-p" + itemId;
+    }
+    #endregion
 }

@@ -45,6 +45,9 @@
             text-transform: uppercase;
         }
     </style>
+    <meta name="description" content="Nội ngoại thất hoàng sơn. Bán các loại đèn trang trí, sàn gỗ" />
+    
+    <link rel="canonical" href="<%= SystemClass.http + SystemClass.getSetting("Domain") + "/Gioi-Thieu" %>" />
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container1">

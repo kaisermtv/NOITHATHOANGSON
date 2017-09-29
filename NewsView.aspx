@@ -2,22 +2,20 @@
 
 <%@ Register Src="~/Controller/DanhMucTin.ascx" TagPrefix="uc1" TagName="DanhMucTin" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" type="text/css" href="/css/front-end.css">
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
 
-    <%--<meta property="fb:app_id" content="<%= FacebookAPI.App_id %>" />--%>
-    <%--<meta property="fb:admins" content="570235299813675"/>--%>
-    
-    
     <meta property="og:title" content="<%=objData["Title"] %>"/>
+    <meta property="og:type" content="News" />
     <meta property="og:image" content="http://www.noingoaithathoangson.com<%= objData["ImgUrl"] %>" />
+    <meta property="og:url" content="<%= getUrlCanonical() %>" />
     <meta property="og:description" content="<%=objData["ShortContent"] %>"/>
-    <meta property="og:author" content="yolo"/>
-    <meta property="og:keywords" content="<%=objData["Title"] %>"
+    <meta property="og:author" content="hoangson"/>
+    <meta property="og:keywords" content="<%=objData["Title"] %>" />
     <meta property="twitter:url" content="http://www.noingoaithathoangson.com" />
     <meta property="twitter:title"  content="<%=objData["Title"] %>" />
     <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["ImgUrl"].ToString() %>" />
 
+    <meta name="description" content="<%=objData["ShortContent"]  %>" />
+    <link rel="canonical" href="<%= getUrlCanonical() %>" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="fb-root"></div>

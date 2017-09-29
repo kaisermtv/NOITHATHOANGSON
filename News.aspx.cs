@@ -153,4 +153,22 @@ public partial class News : System.Web.UI.Page
         return null;
     }
     #endregion
+
+    #region getUrlCanonical
+    public string getUrlCanonical()
+    {
+        string url = SystemClass.http + SystemClass.getSetting("Domain") + "/";
+        if (itemId != 0)
+        {
+            url += SystemClass.convertToUnSign2(groupname) + "-cat" + itemId;
+        }
+        else
+        {
+            url += "Tin-Tuc";
+        }
+
+
+        return url;
+    }
+    #endregion
 }

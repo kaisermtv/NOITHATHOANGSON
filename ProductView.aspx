@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/Site.master" CodeFile="ProductView.aspx.cs" Inherits="ProductView" %>
 
 <%@ Register Src="~/Controller/Product.ascx" TagPrefix="ctl" TagName="Product" %>
+<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
+    <meta name="description" content="<%=objData["DESCRIBE"]  %>" />
+    <link rel="canonical" href="<%= getUrlCanonical() %>" />
+</asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <section class="container1 productview">
         <div style="display: table;width:100%">

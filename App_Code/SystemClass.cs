@@ -26,6 +26,7 @@ public class SystemClass
 
     public String Message = "";
 
+    public static string http = "http://";
     public static int Online = 0;
     public static int OnlineDay = 0;
     public static int OnlineMonth = 0;
