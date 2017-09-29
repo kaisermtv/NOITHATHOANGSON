@@ -114,7 +114,6 @@ header {
     top: 0px;
     text-shadow: -1px 0 black, 0 1px black,1px 0 black, 0 -1px black
 }
-
     .SliderHead h2 {
         margin-top: 15%;
         /*font-family:*/ 
@@ -131,7 +130,6 @@ nav {
     border-radius:0px !important;
     height:45px;
 }
-
     nav img {
         width: auto;
     }
@@ -167,16 +165,19 @@ nav {
     nav .dropdown-menu {
         background-color: red;
     }
+  
     nav .dropdown-menu li {
     }
-
+   li:hover .dropdown-menu
+    {
+     display:block;
+    }
     nav .hr {
         position: absolute;
         bottom: 10px;
         width: 100%;
         text-align: center;
     }
-
         nav .hr hr {
             width: 20%;
             margin-top: 10px;
@@ -189,7 +190,6 @@ nav {
     margin-bottom: 60px;
     margin-top: 30px;
 }
-
     .cateloge img {
         margin-bottom: 25px;
     }

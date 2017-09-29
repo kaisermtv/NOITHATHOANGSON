@@ -28,7 +28,10 @@ public partial class Controller_Menu : System.Web.UI.UserControl
     #region Method getSubMenu
     public DataTable getSubMenu(int id)
     {
-        return objMenu.getList(id);
+        DataTable objData = objMenu.getList(id);
+        if (objData.Rows.Count > 0)
+            return objData;
+        return null;
     }
     #endregion
 }

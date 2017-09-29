@@ -15,7 +15,7 @@
                     <HeaderTemplate><% index = 0; %></HeaderTemplate>
                     <ItemTemplate>
                         <li>
-                            <a <%# Eval("COUNTCHILD").ToString() != "0"?"data-toggle=\"dropdown\"":"" %> href="<%# Eval("LINK") %>"><%# Eval("NAME").ToString().ToUpper() %></a>
+                            <a href="<%# Eval("LINK") %>"><%# Eval("NAME").ToString().ToUpper() %></a>
                                 <asp:Repeater runat="server" DataSource='<%# getSubMenu((int) Eval("ID") ) %>' >
                                     <HeaderTemplate>
                                         <ul class="dropdown-menu">
