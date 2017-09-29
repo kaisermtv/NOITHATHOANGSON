@@ -58,7 +58,7 @@
             <tr>
                 <td class="DataListTableTdItemTT"><%# this.index++ %></td>
                 <td class="DataListTableTdItemJustify"><a href="Menu.aspx?id=<%# Eval("ID") %>"><%# Eval("NAME") %></a></td>
-                <td class="DataListTableTdItemJustify"><%# Eval("NTYPE") %></td>
+                <td class="DataListTableTdItemJustify"><%# getNameNtype((int)Eval("NTYPE")) %></td>
                 <td class="DataListTableTdItemJustify"><%# SystemClass.getLinkMenu((int)Eval("NTYPE") ,(string)Eval("LINK")) %></td>
                 <td class="DataListTableTdItemCenter">
                     <center>

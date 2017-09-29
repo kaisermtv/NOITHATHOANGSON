@@ -6,11 +6,11 @@
 
     <ul class="nav nav-tabs">
         <li <%= (type == 1)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=1">Tự tạo liên kết</a></li>
-        <li <%= (type == 2)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=2">Các mục sẵn có</a></li>
-        <li <%= (type == 3)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=3">Thêm nhóm tin</a></li>
-        <li <%= (type == 4)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=4">Thêm bài viết</a></li>
-        <li <%= (type == 5)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=5">Thêm danh mục</a></li>
-        <li <%= (type == 6)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=6">Thêm sản phẩm</a></li>
+        <li <%= (type == 2)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=2">Các trang sẵn có</a></li>
+        <li <%= (type == 3)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=3">Theo nhóm tin</a></li>
+        <li <%= (type == 4)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=4">Theo bài viết</a></li>
+        <li <%= (type == 5)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=5">Theo danh mục</a></li>
+        <li <%= (type == 6)?"class=\"active\"":"" %>><a href="/System/MenuEdit.aspx?id=<%= itemId  %>&type=6">Theo sản phẩm</a></li>
     </ul>
     <div class="tab-content">
             <div class="AdminItem">
