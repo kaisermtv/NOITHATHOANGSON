@@ -197,7 +197,7 @@ public class DataProduct :DataClass
 
             if (group != 0)
             {
-                Cmd.CommandText += " AND P.GROUPID = @GROUP";
+                Cmd.CommandText += " AND (P.GROUPID = @GROUP OR P.PID = @GROUP)";
                 Cmd.Parameters.Add("GROUP", SqlDbType.Int).Value = group;
             }
 
@@ -255,7 +255,7 @@ public class DataProduct :DataClass
 
             if (group != 0)
             {
-                Cmd.CommandText += " AND P.GROUPID = @GROUP";
+                Cmd.CommandText += " AND (P.GROUPID = @GROUP OR P.PID = @GROUP)";
                 Cmd.Parameters.Add("GROUP", SqlDbType.Int).Value = group;
             }
 

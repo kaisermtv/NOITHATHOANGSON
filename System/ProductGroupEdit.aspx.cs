@@ -11,6 +11,7 @@ public partial class System_ProductGroupEdit : System.Web.UI.Page
 {
     #region declare
     public int itemId = 0;
+    public int group = 0;
 
     private DataCategory objCategory = new DataCategory();
     private SystemClass objSystemClass = new SystemClass();
@@ -24,6 +25,13 @@ public partial class System_ProductGroupEdit : System.Web.UI.Page
             this.itemId = int.Parse(Request["id"].ToString());
         }
         catch { }
+
+        try
+        {
+            this.group = int.Parse(Request["group"].ToString());
+        }
+        catch { }
+
 
         if (!Page.IsPostBack && this.itemId == 0)
         {
@@ -40,6 +48,12 @@ public partial class System_ProductGroupEdit : System.Web.UI.Page
                 return;
             }
 
+            try
+            {
+                group = (int)objData["PID"];
+            }
+            catch { }
+            
             txtName.Text = objData["NAME"].ToString();
             txtDescribe.Text = objData["DESCRIBE"].ToString();
             ddlTrangThai.SelectedValue = objData["NSTATUS"].ToString();
@@ -59,8 +73,31 @@ public partial class System_ProductGroupEdit : System.Web.UI.Page
             return;
         }
 
+        int ret = 0;
+        try
+        {
+            DataSQL objSQL = new DataSQL("tblCategory");
 
-        int ret = objCategory.setData(this.itemId, saveImage(FileUpload, htxtimg, htxtimg1), txtName.Text, txtDescribe.Text, int.Parse(ddlTrangThai.SelectedValue));
+            if(itemId != 0)
+            {
+                objSQL["ID"] = itemId;
+            }
+
+            if(group != 0)
+            {
+                objSQL["PID"] = group;
+            }
+
+            objSQL["NAME"] = txtName.Text;
+            objSQL["IMG"] = saveImage(FileUpload, htxtimg, htxtimg1);
+            objSQL["DESCRIBE"] = txtDescribe.Text;
+            objSQL["NSTATUS"] = int.Parse(ddlTrangThai.SelectedValue);
+
+            ret = (int)objSQL.setData();
+        }
+        catch { }
+        
+        //int ret = objCategory.setData(this.itemId, saveImage(FileUpload, htxtimg, htxtimg1), txtName.Text, txtDescribe.Text, int.Parse(ddlTrangThai.SelectedValue));
 
         if (ret != 0)
         {
