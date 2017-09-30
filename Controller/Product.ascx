@@ -8,7 +8,9 @@
         <ItemTemplate>
             <div class="col-sm-3 pditem">
                 <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
+                <div class="wrapper-image">
                 <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" /></a>
+                </div>
                 <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
                     <h5><%# Eval("NAME") %></h5></a>
                 <p><%# Eval("DESCRIBE") %></p>

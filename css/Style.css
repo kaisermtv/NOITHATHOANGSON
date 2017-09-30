@@ -302,11 +302,17 @@ nav {
 
     .product img {
         margin-bottom: 15px;
-        width:auto;
-        height:200px;
-        max-width:unset;
+        max-width:270px;
+        height:auto;  
     }
-
+   .wrapper-images
+{
+        border: solid 1px #c0c0c0;
+        height:204px;
+        width:272px;
+        padding:1px;
+        overflow:hidden; 
+}
     .product .pditem {
         margin-bottom: 60px;
         /*min-height: 420px;*/
