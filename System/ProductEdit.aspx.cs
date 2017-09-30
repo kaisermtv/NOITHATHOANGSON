@@ -99,7 +99,7 @@ public partial class System_ProductEdit : System.Web.UI.Page
         try
         {
             DataSQL objSQL = new DataSQL("tblProduct");
-            if (itemId == 0)
+            if (itemId != 0)
             {
                 objSQL["ID"] = itemId;
             }
@@ -116,7 +116,7 @@ public partial class System_ProductEdit : System.Web.UI.Page
             ret = (int)objSQL.setData();
             
         }
-        catch{}
+        catch(Exception ex){}
 
         if (ret != 0)
         {
