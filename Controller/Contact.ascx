@@ -42,7 +42,7 @@
     </div>
 
     <div  style="margin-top: 25px; overflow: auto; width:100%;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15108.540178406187!2d105.65878408573835!3d18.79213411671467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1505373680861" width="100%" height="315" frameborder="0" style="border: 0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d2922.968731935112!2d105.68201756972732!3d18.70383790322222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d18.7046272!2d105.681545!5e0!3m2!1sen!2sin!4v1506741588603" width="100%" height="315px" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     <!--End Rows-->
 
