@@ -43,16 +43,17 @@
                 <div class="projects_holder clearfix v3 standard product">
                     <asp:Repeater runat="server" DataSource='<%# getItemData((int)Eval("ID"),page).DefaultView %>'>
                         <ItemTemplate>
-                            <div class="col-sm-3 pditem">
-                                <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
-                                    <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" /></a>
-                                <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
-                                    <h5><%# Eval("NAME") %></h5>
-                                </a>
-                                <p><%# Eval("DESCRIBE") %></p>
-                                <div class="price"><%# Price(Eval("PRICE").ToString()) %></div>
-                                <a class="btn btn-user3" href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>" title="more">Xem chi tiết ></a>
-                            </div>
+                           <div class="col-sm-3 pditem">
+                <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
+                <div class="wrapper-images">
+                <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" /></a>
+                </div>
+                <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>">
+                    <h5><%# Eval("NAME") %></h5></a>
+                <p><%# Eval("DESCRIBE") %></p>
+                <div class="price"><%# Price(Eval("PRICE").ToString()) %></div>
+                <a class="btn btn-user3" href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>-p<%#Eval("ID")%>" title="<%# Eval("NAME") %>" title="more">Xem chi tiết ></a>
+            </div>
                             </article>
                         </ItemTemplate>
                     </asp:Repeater>
