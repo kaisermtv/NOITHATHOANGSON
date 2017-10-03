@@ -44,7 +44,7 @@ public partial class System_ContactList : System.Web.UI.Page
     #region Event Page_PreRender()
     public void Page_PreRender(object sender, EventArgs e)
     {
-        DataTable objData = objContact.getList();
+        DataTable objData = objContact.getList(int.Parse(ddlTrangThai.SelectedValue));
 
         //dtlAccount.DataSource = objData.DefaultView;
         //dtlAccount.DataBind();
@@ -117,12 +117,13 @@ public partial class System_ContactList : System.Web.UI.Page
             rq += "Seach=" + HttpUtility.UrlEncode(txtSearch.Value.Trim());
         }
 
-        if (int.Parse(ddlTrangThai.SelectedValue) != -1)
+        if (int.Parse(ddlTrangThai.SelectedValue) != 0)
         {
             if (rq != "?") rq += "&";
             rq += "tt=" + ddlTrangThai.SelectedValue;
         }
 
+        if (rq == "?") rq = "";
         Response.Redirect("ContactList.aspx" + rq);
     }
     #endregion

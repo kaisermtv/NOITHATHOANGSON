@@ -5,7 +5,7 @@ Disallow: /system/
 Disallow: /js/
 Disallow: /css/
 Disallow: /ckeditor/
-Disallow: /ckfinder/
+Disallow: /fileman/
 Disallow: /Temp/
 Disallow: /WordForm/
 Disallow: /fonts/

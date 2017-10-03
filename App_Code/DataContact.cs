@@ -34,12 +34,19 @@ public class DataContact : DataClass
     #endregion
 
     #region method getList
-    public DataTable getList()
+    public DataTable getList(int trangthai = -1)
     {
         try
         {
             SqlCommand Cmd = this.getSQLConnect();
-            Cmd.CommandText = "SELECT P.[Id],P.[Title],P.DayPost,PL.NAME AS STATUS FROM tblContact AS P LEFT JOIN tblStatus AS PL ON P.NSTATUS = PL.ID";
+            Cmd.CommandText = "SELECT P.[Id],P.[FullName],P.Email,P.Phone,P.DayPost,PL.NAME AS STATUS FROM tblContact AS P LEFT JOIN tblStatus AS PL ON P.NSTATUS = PL.ID";
+
+            if(trangthai >= 0)
+            {
+                Cmd.CommandText += " WHERE P.NSTATUS = @NSTATUS";
+                Cmd.Parameters.Add("NSTATUS", SqlDbType.Int).Value = trangthai;
+            }
+
 
             DataTable ret = this.findAll(Cmd);
 

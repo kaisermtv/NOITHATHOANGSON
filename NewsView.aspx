@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/Site.master" CodeFile="NewsView.aspx.cs" Inherits="NewsView" %>
 
 <%@ Register Src="~/Controller/DanhMucTin.ascx" TagPrefix="uc1" TagName="DanhMucTin" %>
+<%@ Register Src="~/Controller/IMGModal.ascx" TagPrefix="ctl" TagName="IMGModal" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
 
     <meta property="og:title" content="<%=objData["Title"] %>"/>
@@ -15,6 +16,12 @@
     <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["ImgUrl"].ToString() %>" />
 
     <link rel="canonical" href="<%= getUrlCanonical() %>" />
+
+    <style>
+        #newsmain img:hover {
+            opacity: 0.7;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="fb-root"></div>
@@ -37,7 +44,7 @@
                         <div class="cleft col-xs-12 col-sm-12 col-md-8 col-lg-8 ">
 
                             <div class="row">
-                                <div id="" class="col-xs-12 col-sm-12 col-md-12">
+                                <div id="newsmain" class="col-xs-12 col-sm-12 col-md-12">
                                     <h3 class="tieu-de" style="margin-top: 10px; margin-bottom: 10px; font-size: 24px;"><%= objData["Title"] %></h3>
                                   
                                     <label class="time">Ngày đăng: <%= ((DateTime)objData["DayPost"]).ToString("dd/MM/yyyy h:mm:ss tt") %> </label>
@@ -52,6 +59,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <ctl:IMGModal runat="server" />
+                            <script>
+                                $("#newsmain img").click(function () {
+                                    showimg($(this).attr('src'), $(this).attr('alt'));
+                                })
+                            </script>
                             <div class="row" style="margin-top: 50px; margin-bottom: 50px;" id="ShareToolNewsView">
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

@@ -20,8 +20,9 @@
             </td>
             <td style="width:25%">
                 <asp:DropDownList ID="ddlTrangThai" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlTrangThai_SelectedIndexChanged">
-                       <asp:ListItem Value="0">Chờ xử lý</asp:ListItem>
-                       <asp:ListItem Value="2">Lưu trữ</asp:ListItem>
+                    <asp:ListItem Value="0">Chờ xử lý</asp:ListItem>
+                    <asp:ListItem Value="2">Lưu trữ</asp:ListItem>
+                    <asp:ListItem Value="-1">Tất cả</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td style="width: 40px !important; text-align: center;">
@@ -36,7 +37,9 @@
                 <table class="DataListTable" <%--style="min-width:1500px"--%>>
                     <tr class="DataListTableHeader">
                         <th class="DataListTableHeaderTdItemTT" style="width: 4%;">TT</th>
-                        <th class="DataListTableHeaderTdItemJustify" >Tiêu đề</th>
+                        <th class="DataListTableHeaderTdItemJustify" >Họ tên</th>
+                        <th class="DataListTableHeaderTdItemJustify" style="width: 20%;">Email</th>
+                        <th class="DataListTableHeaderTdItemJustify" style="width: 20%;">Phone</th>
                         <th class="DataListTableHeaderTdItemJustify" style="width: 20%;">Ngày đăng</th>
                         <th class="DataListTableHeaderTdItemJustify" style="width: 10%;">Trạng thái</th>
                         <th class="DataListTableHeaderTdItemCenter" style="width: 3%;">Sửa</th>
@@ -46,7 +49,9 @@
         <ItemTemplate>
                 <tr>
                     <td class="DataListTableTdItemTT"><%# this.index++ %></td>
-                    <td class="DataListTableTdItemJustify"><%# Eval("Title") %></td>
+                    <td class="DataListTableTdItemJustify"><%# Eval("FullName") %></td>
+                    <td class="DataListTableTdItemJustify"><%# Eval("Email") %></td>
+                    <td class="DataListTableTdItemJustify"><%# Eval("Phone") %></td>
                     <td class="DataListTableTdItemJustify"><%# Eval("DayPost") %></td>
                     <td class="DataListTableTdItemJustify"><%# Eval("STATUS") %></td>
                     <td class="DataListTableTdItemCenter">
@@ -55,7 +60,7 @@
                         </a>
                     </td>
                     <td class="DataListTableTdItemCenter">
-                        <a href="#myModal" onclick="delmodal(<%# Eval("Id") %>,'<%# Eval("Title") %>')">
+                        <a href="#myModal" onclick="delmodal(<%# Eval("Id") %>,'<%# Eval("FullName") %>')">
                             <img src="/Images/delete.png" alt="">
                         </a>
                     </td>
