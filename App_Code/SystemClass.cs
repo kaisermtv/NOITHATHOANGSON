@@ -475,7 +475,6 @@ public class SystemClass
             else if (ntype == 5)
             {
                 DataCategory objCategory = new DataCategory();
-
                 return "/" + convertToUnSign2(objCategory.getNameById(int.Parse(link))) + "-gp" + link;
             }
             else if (ntype == 6)
