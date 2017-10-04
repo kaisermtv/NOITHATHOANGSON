@@ -69,7 +69,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <a href="https://www.facebook.com/sharer.php?&u=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                                     <a href="https://twitter.com/intent/tweet?&url=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                                    <a href="https://plus.google.com?url=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                                    <a href="https://plus.google.com/share?url=http://www.noingoaithathoangson.com<%=Request.RawUrl %>"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                                     <div class="fb-like" data-href="http://www.noingoaithathoangson.com<%=Request.RawUrl %>" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
                                     <h3 class="tieu-de" id="BinhLuanNewsView">Bình luận </h3>                                                                 
                                     <div class="fb-comments" data-href="http://www.noingoaithathoangson.com<%=Request.RawUrl %>" data-width="100%"></div>

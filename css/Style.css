@@ -171,13 +171,13 @@ nav {
     nav .dropdown-menu li {
     }   
     
-    @media screen and (min-width: 767px)
+    /*@media screen and (min-width: 767px)
     {
         nav li:hover .dropdown-menu
         {
          display:block;
         }
-    }
+    }*/
     
      
   

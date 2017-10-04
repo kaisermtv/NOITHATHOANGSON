@@ -21,7 +21,23 @@
                                         <ul class="dropdown-menu">
                                     </HeaderTemplate>
                                     <ItemTemplate>
-                                        <li><a href="<%# SystemClass.getLinkMenu((int)Eval("NTYPE"),Eval("LINK").ToString())  %>"><%# Eval("NAME").ToString().ToUpper() %></a></li>
+                                        <li>
+                                            <a <%# Eval("COUNTCHILD").ToString() != "0"?"data-toggle=\"dropdown\"":"" %> href="<%# SystemClass.getLinkMenu((int)Eval("NTYPE"),Eval("LINK").ToString())  %>"><%# Eval("NAME").ToString().ToUpper() %></a>
+                                            <asp:Repeater runat="server" DataSource='<%# getSubMenu((int) Eval("ID") ) %>' >
+                                                <HeaderTemplate>
+                                                    <ul class="dropdown-menu">
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <li>
+                                                        <a href="<%# SystemClass.getLinkMenu((int)Eval("NTYPE"),Eval("LINK").ToString())  %>"><%# Eval("NAME").ToString().ToUpper() %></a>
+
+                                                    </li>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    </ul>
+                                                </FooterTemplate>
+                                            </asp:Repeater>
+                                        </li>
                                     </ItemTemplate>
                                     <FooterTemplate>
                                         </ul>
