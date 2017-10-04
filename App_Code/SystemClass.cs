@@ -458,31 +458,42 @@ public class SystemClass
                     return "/";
             }
         }
-        else if (ntype == 3)
+        else
         {
-            DataNewsGroup objGroupNews = new DataNewsGroup();
+            int id = 0;
+            try
+            {
+                id = int.Parse(link);
+            }
+            catch {
+                return "/";
+            }
 
-            return "/" + convertToUnSign2(objGroupNews.getNameById(int.Parse(link))) + "-cat" + link;
+            if (ntype == 3)
+            {
+                DataNewsGroup objGroupNews = new DataNewsGroup();
+
+                return "/" + convertToUnSign2(objGroupNews.getNameById(id)) + "-cat" + link;
+            }
+            else if (ntype == 4)
+            {
+                DataNews objNews = new DataNews();
+
+                return "/" + convertToUnSign2(objNews.getNameById(id)) + "-v" + link;
+            }
+            else if (ntype == 5)
+            {
+                DataCategory objCategory = new DataCategory();
+
+                return "/" + convertToUnSign2(objCategory.getNameById(id)) + "-gp" + link;
+            }
+            else if (ntype == 6)
+            {
+                DataProduct objProduct = new DataProduct();
+
+                return "/" + convertToUnSign2(objProduct.getNameById(id)) + "-p" + link;
+            }
         }
-        else if (ntype == 4)
-        {
-            DataNews objNews = new DataNews();
-
-            return "/" + convertToUnSign2(objNews.getNameById(int.Parse(link))) + "-v" + link;
-        }
-        else if (ntype == 5)
-        {
-            DataCategory objCategory = new DataCategory();
-
-            return "/" + convertToUnSign2(objCategory.getNameById(int.Parse(link))) + "-gp" + link;
-        }
-        else if (ntype == 6)
-        {
-            DataProduct objProduct = new DataProduct();
-
-            return "/" + convertToUnSign2(objProduct.getNameById(int.Parse(link))) + "-p" + link;
-        }
-
         return "/";
     }
     #endregion
