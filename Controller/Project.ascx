@@ -6,7 +6,9 @@
         <ItemTemplate>
             <div class="col-sm-3 pditem">
                 <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>/<%#Eval("Ma")%>" title="<%# Eval("NAME") %>">
+                <div class="wrapper-imgproject">
                 <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" /></a>
+                </div>
                 <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>/<%#Eval("Ma")%>" title="<%# Eval("NAME") %>">
                     <h5><%# Eval("NAME") %></h5></a>               
                 <a class="btn btn-user3" href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>/<%#Eval("Ma")%>" title="<%# Eval("NAME") %>" title="more">Xem chi tiết ></a>

@@ -489,7 +489,6 @@ public class SystemClass
             else if (ntype == 6)
             {
                 DataProduct objProduct = new DataProduct();
-
                 return "/" + convertToUnSign2(objProduct.getNameById(id)) + "-p" + link;
             }
         }

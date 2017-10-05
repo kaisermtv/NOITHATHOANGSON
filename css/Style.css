@@ -180,7 +180,6 @@ nav {
         .dropdown-submenu {
       position: relative;
 }
-
 .dropdown-submenu>.dropdown-menu {
     top: 0;
     left: 100%;
@@ -222,7 +221,7 @@ nav {
     } 
     
     
-    .open .dropdown-menu
+ .open.dropdown-menu
  {
     display:block;
  }       
@@ -359,10 +358,17 @@ nav {
         padding:1px;
         overflow:hidden; 
 }
-    .product .pditem {
-        margin-bottom: 60px;
-        /*min-height: 420px;*/
-        overflow: hidden;
+ .wrapper-imgproject
+ {
+     border: solid 1px #c0c0c0;
+        height:251;
+        width:397;
+        padding:1px;
+        overflow:hidden;   
+ }
+ .wrapper-imgproject img {       
+    max-width: 396px;
+    height: auto;
     }
 
     .product h5 {
