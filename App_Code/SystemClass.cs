@@ -436,56 +436,62 @@ public class SystemClass
     #region getLinkMenu
     public static string getLinkMenu(int ntype,string link)
     {
-        try
+        if (ntype == 1)
         {
-            if (ntype == 1)
+            return link;
+        }
+        else if (ntype == 2)
+        {
+            switch(link)
             {
-                return link;
+                case "0":
+                    return "/";
+                case "1":
+                    return "/Gioi-Thieu";
+                case "2":
+                    return "/Danh-Muc";
+                case "3":
+                    return "/Tin-Tuc";
+                case "4":
+                    return "/du-an-da-trien-khai";
+                default:
+                    return "/";
             }
-            else if (ntype == 2)
+        }
+        else
+        {
+            int id = 0;
+            try
             {
-                switch (link)
-                {
-                    case "0":
-                        return "/";
-                    case "1":
-                        return "/Gioi-Thieu";
-                    case "2":
-                        return "/Danh-Muc";
-                    case "3":
-                        return "/Tin-Tuc";
-                    case "4":
-                        return "/du-an-da-trien-khai";
-                    default:
-                        return "/";
-                }
+                id = int.Parse(link);
             }
-            else if (ntype == 3)
+            catch {
+                return "/";
+            }
+
+            if (ntype == 3)
             {
                 DataNewsGroup objGroupNews = new DataNewsGroup();
 
-                return "/" + convertToUnSign2(objGroupNews.getNameById(int.Parse(link))) + "-cat" + link;
+                return "/" + convertToUnSign2(objGroupNews.getNameById(id)) + "-cat" + link;
             }
             else if (ntype == 4)
             {
                 DataNews objNews = new DataNews();
 
-                return "/" + convertToUnSign2(objNews.getNameById(int.Parse(link))) + "-v" + link;
+                return "/" + convertToUnSign2(objNews.getNameById(id)) + "-v" + link;
             }
             else if (ntype == 5)
             {
                 DataCategory objCategory = new DataCategory();
-                return "/" + convertToUnSign2(objCategory.getNameById(int.Parse(link))) + "-gp" + link;
+                return "/" + convertToUnSign2(objCategory.getNameById(id)) + "-gp" + link;
             }
             else if (ntype == 6)
             {
                 DataProduct objProduct = new DataProduct();
-
-                return "/" + convertToUnSign2(objProduct.getNameById(int.Parse(link))) + "-p" + link;
+                return "/" + convertToUnSign2(objProduct.getNameById(id)) + "-p" + link;
             }
         }
-        catch { }
-
         return "/";
     }
     #endregion
