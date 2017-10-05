@@ -282,11 +282,7 @@ nav {
         font-weight: bold;
         font-size: 22px;
         margin-bottom: 60px;
-    }
-
-    .protectactive img {
-        /*margin-bottom: 25px;*/
-    }
+    } 
 
     .protectactive .padata {
         display: table;
@@ -358,19 +354,27 @@ nav {
         padding:1px;
         overflow:hidden; 
 }
- .wrapper-imgproject
- {
-     border: solid 1px #c0c0c0;
-        height:251;
-        width:397;
-        padding:1px;
-        overflow:hidden;   
- }
- .wrapper-imgproject img {       
-    max-width: 396px;
-    height: auto;
-    }
+   .protectactive img {
+        /*margin-bottom: 25px;*/
 
+      max-width: 396px;
+      height: auto;
+        
+    }
+    .product .pditem {
+        margin-bottom: 60px;
+        /*min-height: 420px;*/
+        overflow: hidden;
+    }
+.wrapper-imgproject
+ {
+        border: solid 1px #c0c0c0;
+        height:250px;
+        width:397px;
+        padding:1px;
+        overflow:hidden; 
+ }
+ 
     .product h5 {
         width: 100%;
         text-align: center;
