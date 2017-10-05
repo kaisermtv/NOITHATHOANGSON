@@ -11,14 +11,14 @@
 
     <meta property="og:title" content="<%= Page.Title %>"/>
     <meta property="og:type" content="Home" />
-    <meta property="og:image" content="http://www.noingoaithathoangson.com/images/logo.png" />
+    <meta property="og:image" content="http://www.noingoaithathoangson.com/images/LogoFooter.png" />
     <meta property="og:url" content="http://www.noingoaithathoangson.com" />
     <meta property="og:description" content="Nội ngoại thất HOÀNG SƠN. Bán các loại đèn trang trí, sàn gỗ, sàn nhựa, cổng nhôm đúc"/>
     <meta property="og:author" content="hoangson"/>
     <meta property="og:keywords" content="<%= Page.Title %>" />
     <meta property="twitter:url" content="http://www.noingoaithathoangson.com" />
     <meta property="twitter:title"  content="<%= Page.Title %>" />
-    <meta property="twitter:image" content="http://www.noingoaithathoangson.com/images/logo.png" />
+    <meta property="twitter:image" content="http://www.noingoaithathoangson.com/images/LogoFooter.png" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <ctl:Slider runat="server" />
