@@ -1,15 +1,35 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App_Master/Site.master" CodeFile="ProjectView.aspx.cs" Inherits="ProductView" %>
 <%@ Register Src="~/Controller/Product.ascx" TagPrefix="ctl" TagName="Product" %>
 <%@ Register src="Controller/Project.ascx" tagname="Project" tagprefix="uc1" %>
+<%@ Register Src="~/Controller/IMGModal.ascx" TagPrefix="ctl" TagName="IMGModal" %>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="canonical" href="<%= getUrlCanonical() %>" />
+    <meta property="og:title" content="<%=objData["NAME"] %>"/>
+    <meta property="og:type" content="Product" />
+    <meta property="og:image" content="http://www.noingoaithathoangson.com<%= objData["IMG"] %>" />
+    <meta property="og:url" content="<%= getUrlCanonical() %>" />
+    <meta property="og:description" content="<%=objData["ADDRESS"] %>"/>
+    <meta property="og:author" content="hoangson"/>
+    <meta property="og:keywords" content="<%=objData["NAME"] %>" />
+    <meta property="twitter:url" content="<%= getUrlCanonical() %>" />
+    <meta property="twitter:title"  content="<%=objData["NAME"] %>" />
+    <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["IMG"].ToString() %>" />
+
+    <style>
+        .panel-body img:hover {
+            opacity: 0.7;
+        }
+        #myImg:hover {
+            opacity: 0.7;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
     <section class="container1 productview">
         <div style="display: table;width:100%">
             <div class="col-sm-4">
-                <img src="<%= objData["IMG"] %>" alt="<%=objData["NAME"] %>" />
+                <img id="myImg" src="<%= objData["IMG"] %>" alt="<%=objData["NAME"] %>" />
             </div>
             <div class="col-sm-6">
                 <h2>Tên dự án: <%=objData["NAME"] %></h2>
@@ -31,6 +51,17 @@
                 </div>
             </div>
         </div>
+
+        <ctl:IMGModal runat="server" />
+        <script>
+            $(".panel-body img").click(function () {
+                showimg($(this).attr('src'), $(this).attr('alt'));
+            })
+
+            $("#myImg").click(function () {
+                showimg($(this).attr('src'), $(this).attr('alt'));
+            })
+        </script>
 
         <div  style="margin-top: 50px; margin-bottom: 50px;" id="ShareToolNewsView">
 

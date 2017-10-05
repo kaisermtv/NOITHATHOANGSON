@@ -10,7 +10,7 @@
     <meta property="og:description" content="<%=objData["DESCRIBE"] %>"/>
     <meta property="og:author" content="hoangson"/>
     <meta property="og:keywords" content="<%=objData["NAME"] %>" />
-    <meta property="twitter:url" content="http://www.noingoaithathoangson.com" />
+    <meta property="twitter:url" content="<%= getUrlCanonical() %>" />
     <meta property="twitter:title"  content="<%=objData["NAME"] %>" />
     <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["IMG"].ToString() %>" />
 

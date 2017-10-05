@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 public partial class System_ProtectActiveEdit : System.Web.UI.Page
 {
     #region declare
-    public string itemId = "";
+    public int itemId = 0;
 
     private DataProtectActive objProtect = new DataProtectActive();
     private SystemClass objSystemClass = new SystemClass();
@@ -21,7 +21,7 @@ public partial class System_ProtectActiveEdit : System.Web.UI.Page
     {
         try
         {
-            this.itemId = Request["id"].ToString();
+            this.itemId = int.Parse(Request["id"].ToString());
         }
         catch { }
 
@@ -31,7 +31,7 @@ public partial class System_ProtectActiveEdit : System.Web.UI.Page
         //    ddlTrangThai.SelectedValue = "1";
         //}
 
-        if (!Page.IsPostBack && this.itemId != "")
+        if (!Page.IsPostBack && this.itemId != 0)
         {
             DataRow objData = objProtect.getData(this.itemId);
             if (objData == null)
@@ -59,23 +59,23 @@ public partial class System_ProtectActiveEdit : System.Web.UI.Page
             objSystemClass.addMessage("Không được để trống tên nhóm");
             return;
         }
-        string ret = "";
+        int ret = 0;
 
         try
         {
             
-            if (itemId == "")
+            if (itemId == 0)
             {
                 ret = objProtect.addData(txtMA.Text, txtName.Text, saveImage(FileUpload, htxtimg, htxtimg1), txtAddress.Text, txtContent.Text);
-                if (ret != "")
+                if (ret != 0)
                 {
                     objSystemClass.addMessage("Thêm sản dự án thành công");
                 }
             }
             else
             {
-                ret = objProtect.UpdateData(txtMA.Text, txtName.Text, saveImage(FileUpload, htxtimg, htxtimg1), txtAddress.Text, txtContent.Text);
-                if (ret != "")
+                ret = objProtect.UpdateData(itemId,txtMA.Text, txtName.Text, saveImage(FileUpload, htxtimg, htxtimg1), txtAddress.Text, txtContent.Text);
+                if (ret != 0)
                 {
                     objSystemClass.addMessage("Cập nhật dự án thành công");
                 }
@@ -86,7 +86,7 @@ public partial class System_ProtectActiveEdit : System.Web.UI.Page
             
         }
 
-        if (ret != "")
+        if (ret != 0)
         {
             Response.Redirect("ProtectActiveEdit.aspx?id=" + ret);
         }
