@@ -38,8 +38,7 @@
     void Application_Start(object sender, EventArgs e)
     {
         RegisterRoutes(System.Web.Routing.RouteTable.Routes);
-
-        //ChatSever.RunChatSever();
+        
         DataSetting objSetting = new DataSetting();
         try
         {

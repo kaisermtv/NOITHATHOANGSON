@@ -13,7 +13,7 @@
 
     <meta name="keywords" content="<%= GetSetting("Name") %>, sàn gỗ, cổng nhôm đúc, đèn trang trí" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Nội ngoại thất hoàng sơn. Bán các loại đèn trang trí, sàn gỗ, cổng nhôm đúc" />
+    <meta name="description" content="Nội ngoại thất HOÀNG SƠN. Bán các loại đèn trang trí, sàn nhựa, sàn gỗ, cổng nhôm đúc" />
 
     <link href="/css/reset.css" rel="stylesheet" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" />

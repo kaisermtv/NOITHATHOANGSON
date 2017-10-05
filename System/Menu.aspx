@@ -91,7 +91,7 @@
     <br />
     <a href="MenuEdit.aspx?pid=<%= itemId %>&mid=<%= type %>" class="btn btn-primary">Thêm menu</a>
     <% if(objData != null){ %>
-    <a href="Menu.aspx?type=<%= type %><%= (objData["PID"].ToString() != "")?"&pid="+objData["PID"].ToString():""  %>" class="btn btn-danger">Trở lại</a>
+    <a href="Menu.aspx?type=<%= type %><%= (objData["PID"].ToString() != "")?"&id="+objData["PID"].ToString():""  %>" class="btn btn-danger">Trở lại</a>
     <% } %>
 
     <!-- Modal -->

@@ -64,6 +64,53 @@ a:hover {
         color: white !important;
         background-color: #1b1841;
     }
+
+/*.btn-facebook {
+    background: #3B5998;
+    border-radius: 0;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #263961;
+}
+
+    .btn-facebook:link, .btn-facebook:visited {
+        color: #fff;
+    }
+
+    .btn-facebook:active, .btn-facebook:hover {
+        background: #263961;
+        color: #fff;
+    }*/
+.btn-social :first-child {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    line-height: 34px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    margin-right:10px;
+    padding-right:8px;
+}
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: rgba(0,0,0,0.2)
+}
+
+    .btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active, .btn-facebook.active, .open .dropdown-toggle.btn-facebook {
+        color: #fff;
+        background-color: #30487b;
+        border-color: rgba(0,0,0,0.2)
+    }
+
+    .btn-facebook:active, .btn-facebook.active, .open .dropdown-toggle.btn-facebook {
+        background-image: none
+    }
+
 /* End: Button */
 
 /* Begin: Header tag */

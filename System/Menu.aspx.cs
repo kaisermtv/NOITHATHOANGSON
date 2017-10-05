@@ -60,6 +60,8 @@ public partial class System_Menu : System.Web.UI.Page
             if (objData == null) Response.Redirect("Menu.aspx?type=" + type,false);
 
             type = (int)objData["MenuID"];
+            
+
         }
 
         ddlGroup.DataSource = objMenu.getDataToCombobox("-- Thư mục gốc --", 0, type);
