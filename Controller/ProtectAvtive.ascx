@@ -8,7 +8,9 @@
             <ItemTemplate>
                 <div class="col-sm-4 paitem">
                     <a href="/<%# SystemClass.convertToUnSign2(Eval("NAME").ToString()) %>/<%#Eval("Ma")%>" title="<%# Eval("NAME") %>">
+                    <div class="wrapper-imgproject">
                     <img src="<%# Eval("IMG") %>" alt="<%# Eval("NAME") %>" />
+                    </div>
                     </a>
                     <div class="pacontai">
                         <div class="span">Mã số: <%# Eval("MA") %>   |   <%# ((DateTime)Eval("CreateDate")).ToString("dd-MM-yyyy") %></div>
