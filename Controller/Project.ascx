@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Project.ascx.cs" Inherits="Controller_Project" %>
-
 <section class="container1 product">  
     <h2>CÁC DỰ ÁN KHÁC</h2>
     <asp:Repeater runat="server" ID="dtlProduct">
