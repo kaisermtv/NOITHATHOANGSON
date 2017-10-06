@@ -11,7 +11,7 @@
     <meta property="og:description" content="<%=objData["ShortContent"] %>"/>
     <meta property="og:author" content="hoangson"/>
     <meta property="og:keywords" content="<%=objData["Title"] %>" />
-    <meta property="twitter:url" content="http://www.noingoaithathoangson.com" />
+    <meta property="twitter:url" content="<%= getUrlCanonical() %>" />
     <meta property="twitter:title"  content="<%=objData["Title"] %>" />
     <meta property="twitter:image" content="http://www.noingoaithathoangson.com<%= objData["ImgUrl"].ToString() %>" />
 

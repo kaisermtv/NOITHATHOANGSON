@@ -496,4 +496,10 @@ public class SystemClass
     }
     #endregion
 
+    #region Method XORDecodeEncode
+    public string XORDecodeEncode(string txt)
+    {
+        return "";
+    }
+    #endregion
 }

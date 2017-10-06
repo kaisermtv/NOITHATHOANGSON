@@ -44,12 +44,12 @@
                 <td class="DataListTableTdItemJustify"><%# Eval("NAME") %></td>
                 <td class="DataListTableTdItemJustify"><%# ((DateTime)Eval("CreateDate")).ToString("dd/MM/yyyy") %></td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="ProtectActiveEdit.aspx?id=<%# Eval("MA") %>">
+                    <a href="ProtectActiveEdit.aspx?id=<%# Eval("ID") %>">
                         <img src="/Images/Edit.png" alt="Chỉnh sửa thông tin">
                     </a>
                 &nbsp;&nbsp;</td>
                 <td class="DataListTableTdItemCenter">
-                    <a href="#myModal" onclick="delmodal(<%# Eval("MA") %>,'<%# Eval("NAME") %>')">
+                    <a href="#myModal" onclick="delmodal(<%# Eval("ID") %>,'<%# Eval("NAME") %>')">
                         <img src="/Images/delete.png" alt="Xóa nhóm">
                     </a>
                 &nbsp;&nbsp;</td>

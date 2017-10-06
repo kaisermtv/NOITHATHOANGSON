@@ -12,7 +12,7 @@ public partial class ProductView : System.Web.UI.Page
     public string itemId = "";
     public DataRow objData;
 
-    private DataProduct objProduct = new DataProduct();
+    private DataProtectActive objProtect = new DataProtectActive();
     #endregion
 
     #region Even Page_Load
@@ -20,11 +20,11 @@ public partial class ProductView : System.Web.UI.Page
     {
         try
         {
-            itemId = RouteData.Values["Ma"].ToString();
-            objData = new DataProtectActive().getData(itemId);
+            itemId = getParam("Ma");
+            objData = objProtect.getData(itemId);
         }
         catch {
-            Response.Redirect("tin-tuc");
+            Response.Redirect("/du-an-da-trien-khai");
         }
 
         //if (!Page.IsPostBack)
@@ -32,15 +32,6 @@ public partial class ProductView : System.Web.UI.Page
            
         //}
 
-    }
-    #endregion
-
-    #region Method Price
-    public string Price(string price)
-    {
-        if (price == "0") return "Liên hệ";
-
-        return int.Parse(price).ToString("0,0") + " đ";
     }
     #endregion
 
