@@ -27,7 +27,14 @@ public partial class System_NewsList : System.Web.UI.Page
             ddlGroup.DataTextField = "NAME";
             ddlGroup.DataBind();
 
-            ddlGroup.SelectedValue = "0";
+            try
+            {
+                ddlGroup.SelectedValue = int.Parse(Request["group"].ToString()).ToString();
+            }
+            catch
+            {
+                ddlGroup.SelectedValue = "0";
+            }
         }
         
     }
@@ -83,6 +90,16 @@ public partial class System_NewsList : System.Web.UI.Page
     #endregion
     protected void btnSearch_Click(object sender, ImageClickEventArgs e)
     {
-        
+        string url = "NewsList.aspx";
+        if(ddlGroup.SelectedValue != "0")
+        {
+            url += "?group=" + ddlGroup.SelectedValue;
+        }
+        Response.Redirect(url);
+    }
+
+    protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        btnSearch_Click(null,null);
     }
 }

@@ -18,7 +18,7 @@
                 <input type="text" id="txtSearch" placeholder="Nhập tên bài viết cần tìm kiếm" runat="server" class="form-control" />
             </td>
             <td style="width:25%">
-                <asp:DropDownList ID="ddlGroup" runat="server" class="form-control">
+                <asp:DropDownList ID="ddlGroup" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlGroup_SelectedIndexChanged">
 
                 </asp:DropDownList>
             </td>

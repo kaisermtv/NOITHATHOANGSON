@@ -66,6 +66,7 @@ public partial class System_ProductEdit : System.Web.UI.Page
             ddlGroup.SelectedValue = objData["GROUPID"].ToString();
             LoadGroupChid();
             if (objData["PID"].ToString() != "") ddlGroupChid.SelectedValue = objData["PID"].ToString();
+
             else ddlGroupChid.SelectedValue = "0";
 
             //ddlTrangThai.SelectedValue = objData["NSTATUS"].ToString();
@@ -104,7 +105,7 @@ public partial class System_ProductEdit : System.Web.UI.Page
                 objSQL["ID"] = itemId;
             }
             objSQL["GROUPID"] = int.Parse(ddlGroup.SelectedValue);
-            objSQL["PID"] = int.Parse(ddlGroupChid.SelectedValue);
+            objSQL["PID"] = int.Parse(Request.Form["ctl00$MainContent$ddlGroupChid"]);
             
             objSQL["NAME"] = txtName.Text;
             objSQL["DESCRIBE"] = txtDescribe.Text;

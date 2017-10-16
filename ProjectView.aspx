@@ -25,7 +25,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
     <section class="container1 productview">
         <div style="display: table;width:100%">
             <div class="col-sm-4">
@@ -79,25 +78,5 @@
     </section>
        
     <uc1:Project ID="Project1" runat="server" />
- 
-    <script>(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=<%= FacebookAPI.App_id %>";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-    <script type="text/javascript">
-
-        $("#btn-save").click(function () {
-            var text = document.getElementById('article_new').textContent + '\n'
-                + document.getElementById('article_new_content').textContent;
-            var filename = 'yolo'
-            var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-            saveAs(blob, filename + ".txt");
-        });
-    </script>
-    
-    </form>
 </asp:Content>

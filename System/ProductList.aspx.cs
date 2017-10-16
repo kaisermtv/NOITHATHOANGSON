@@ -12,12 +12,22 @@ public partial class System_ProductList : System.Web.UI.Page
     private DataProduct objProduct = new DataProduct();
 
     public int index = 1;
+    public int group = 0;
     #endregion
 
     #region method Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
         Context.Items["strTitle"] = "DANH SÁCH SẢN PHẨM";
+
+        try
+        {
+            group = int.Parse(Request["group"].ToString());
+        }
+        catch
+        {
+            group = 0;
+        }
 
         if (!Page.IsPostBack)
         {
@@ -27,14 +37,7 @@ public partial class System_ProductList : System.Web.UI.Page
             ddlGroup.DataTextField = "NAME";
             ddlGroup.DataBind();
 
-            try
-            {
-                ddlGroup.SelectedValue = int.Parse(Request["group"].ToString()).ToString();
-            }
-            catch
-            {
-                ddlGroup.SelectedValue = "0";
-            }
+            ddlGroup.SelectedValue = group.ToString();
         }
 
     }
@@ -90,6 +93,17 @@ public partial class System_ProductList : System.Web.UI.Page
     #endregion
     protected void btnSearch_Click(object sender, ImageClickEventArgs e)
     {
+        string url = "ProductList.aspx";
+        if(ddlGroup.SelectedValue != "0")
+        {
+            url += "?group=" + ddlGroup.SelectedValue;
+        }
 
+        Response.Redirect(url);
+    }
+
+    protected void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        btnSearch_Click(null,null);
     }
 }
