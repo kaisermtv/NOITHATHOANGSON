@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
 <p>
-<a href="https://uhchat.net/admin/"> Click để chát với khách hàng</a>
+<a href="http://my.vchat.vn/home/act_logout.php"> Click để chát với khách hàng</a>
 <br />
 Username:noingoaithathoangson@gmail.com
 <br />
