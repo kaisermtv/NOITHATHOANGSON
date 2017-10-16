@@ -58,7 +58,8 @@
     <asp:ContentPlaceHolder id="MainContent" runat="server">        
     </asp:ContentPlaceHolder>
     <ctl:Footer runat="server" />
-    <script src="https://uhchat.net/code.php?f=dee08c"></script>
+    <script lang="javascript">        (function () { var pname = ((document.title != '') ? document.title : ((document.querySelector('h1') != null) ? document.querySelector('h1').innerHTML : '')); var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = 1; ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=032b0dea70a3b841869f2d6fa2e1e01a&data=eyJzc29faWQiOjUwODY1MDUsImhhc2giOiI0MTQ5MzFhMjUxOGUxZTYxMDdhNjE1MzI4MWIxMDQ4MCJ9&pname=' + pname; var s = document.getElementsByTagName('script'); s[0].parentNode.insertBefore(ga, s[0]); })();</script>
+
     <div class="hostline">
     <a href="tel:0979080555">
     <img src="/images/hotline2.png" alt="hotline" style="width:150px;" />

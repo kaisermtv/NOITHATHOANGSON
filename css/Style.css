@@ -212,12 +212,12 @@ nav {
                     background-color: #da251c !important;
                 }
     nav .dropdown-menu {
-        background-color: red;     
-    }
+        background-color: red;  
+       }
   
     nav .dropdown-menu li {
     }   
-    
+   .nav .dropdown-menu li { font-size:13px !important;}   
     @media screen and (min-width: 767px)
     {
         nav li:hover .dropdown-menu
@@ -226,7 +226,10 @@ nav {
         }
         .dropdown-submenu {
       position: relative;
+         font-size:13px !important;
+   
 }
+
 .dropdown-submenu>.dropdown-menu {
     top: 0;
     left: 100%;
@@ -235,7 +238,7 @@ nav {
     -webkit-border-radius: 0 6px 6px 6px;
     -moz-border-radius: 0 6px 6px;
     border-radius: 0 6px 6px 6px;
-    display:none !important;
+    display:none !important; 
 }
 
 .dropdown-submenu:hover>.dropdown-menu {
@@ -409,7 +412,7 @@ nav {
         
     }
     .product .pditem {
-        margin-bottom: 60px;
+        margin-bottom: 25px;
         /*min-height: 420px;*/
         overflow: hidden;
     }
